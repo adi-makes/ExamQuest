@@ -1,14 +1,12 @@
 <?php
 require_once 'db.php';
 
-$year_labels = [1 => 'First Year', 2 => 'Second Year', 3 => 'Third Year', 4 => 'Fourth Year'];
-
 // Read and validate GET params
 $syllabus_id = intval($_GET['syllabus_id'] ?? 0);
 $branch_id   = intval($_GET['branch_id']   ?? 0);
-$study_year  = intval($_GET['study_year']  ?? 0);
+$semester    = trim($_GET['semester']       ?? '');
 
-if ($syllabus_id <= 0 || $branch_id <= 0 || $study_year <= 0) {
+if ($syllabus_id <= 0 || $branch_id <= 0 || $semester === '') {
     header('Location: index.php');
     exit;
 }
@@ -26,19 +24,17 @@ $stmt->execute();
 $branch_label = $stmt->get_result()->fetch_assoc()['branch_name'] ?? 'Unknown';
 $stmt->close();
 
-$year_label = $year_labels[$study_year] ?? 'Year ' . $study_year;
-
 // Fetch subjects with question count
 $stmt = $conn->prepare('
     SELECT s.subject_id, s.subject_name, s.semester, s.subject_type,
            COUNT(q.question_id) AS question_count
     FROM subject s
     LEFT JOIN questions q ON q.subject_id = s.subject_id
-    WHERE s.syllabus_id = ? AND s.branch_id = ? AND s.study_year = ?
+    WHERE s.syllabus_id = ? AND s.branch_id = ? AND s.semester = ?
     GROUP BY s.subject_id
-    ORDER BY s.semester ASC, s.subject_name ASC
+    ORDER BY s.subject_name ASC
 ');
-$stmt->bind_param('iii', $syllabus_id, $branch_id, $study_year);
+$stmt->bind_param('iis', $syllabus_id, $branch_id, $semester);
 $stmt->execute();
 $subjects_result = $stmt->get_result();
 $subjects = [];
@@ -144,8 +140,8 @@ function getSubjectIconSvg(string $name): string {
                     <a href="index.php" title="Change branch">×</a>
                 </span>
                 <span class="chip">
-                    Year: <?= htmlspecialchars($year_label, ENT_QUOTES, 'UTF-8') ?>
-                    <a href="index.php" title="Change year">×</a>
+                    Semester: <?= htmlspecialchars($semester, ENT_QUOTES, 'UTF-8') ?>
+                    <a href="index.php" title="Change semester">×</a>
                 </span>
             </div>
             <div class="filter-bar__right">
@@ -161,8 +157,8 @@ function getSubjectIconSvg(string $name): string {
         <!-- Subject Grid -->
         <?php if (empty($subjects)): ?>
         <div style="text-align:center;padding:60px 24px;color:var(--color-secondary-text);">
-            <p style="font-size:16px;margin-bottom:8px;">No subjects found for the selected filters.</p>
-            <p style="font-size:14px;">Try going back and selecting different options.</p>
+            <p style="font-size:16px;margin-bottom:8px;">No subjects available for the selected filters.</p>
+            <p style="font-size:14px;">Try going back and selecting a different combination.</p>
             <a href="index.php" class="btn btn--primary" style="margin-top:16px;">← Back to Home</a>
         </div>
         <?php else: ?>
@@ -180,7 +176,7 @@ function getSubjectIconSvg(string $name): string {
                 <div class="subject-card__divider"></div>
                 <div class="subject-card__footer">
                     <span class="subject-card__count"><?= intval($subj['question_count']) ?> Questions</span>
-                    <a href="questions.php?subject_id=<?= $subj['subject_id'] ?>&syllabus_id=<?= $syllabus_id ?>&branch_id=<?= $branch_id ?>&study_year=<?= $study_year ?>"
+                    <a href="questions.php?subject_id=<?= $subj['subject_id'] ?>&syllabus_id=<?= $syllabus_id ?>&branch_id=<?= $branch_id ?>&semester=<?= urlencode($semester) ?>"
                        class="btn btn--primary btn--sm">
                         View Questions &nbsp;→
                     </a>

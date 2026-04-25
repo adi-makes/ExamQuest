@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python -c ' *)",
+      "Bash(python gen_sql.py)",
+      "Bash(grep -c \"INSERT INTO \\\\`subject\\\\`\" \"E:/Projects/ExamQuest/database.sql\")"
+    ]
+  }
+}

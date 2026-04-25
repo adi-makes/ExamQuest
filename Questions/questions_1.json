@@ -1,0 +1,1040 @@
+{
+  "papers": [
+    {
+      "syllabus": "CUSAT B.Tech 2023 Scheme",
+      "branch": "Computer Science and Engineering",
+      "subject": {
+        "subject_name": "Microprocessors",
+        "semester": "4",
+        "subject_type": "Core Subject"
+      },
+      "exam": {
+        "exam_type": "Internal Exam",
+        "exam_month": "February",
+        "exam_year": "2026"
+      },
+      "questions": [
+        {
+          "question_text": "How many T-states and machine cycles are required to execute the instruction SHLD 3050H?",
+          "marks": "4",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "During the execution of a program, a hardware device produces a very short pulse (which may be maskable if required) that must not be missed by the 8085 microprocessor. Which interrupt line would you select for this situation? Justify your answer based on its triggering mechanism and priority. Also explain how the microprocessor ensures that the short-duration signal is not missed.",
+          "marks": "4",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Assume the memory location 2000H contains 05H. Predict the contents of register A after execution of the following program: LXI H, 2000H / MOV A, M / DCR A / JZ SKIP / INR A / SKIP: HLT",
+          "marks": "4",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Explain the different addressing modes of the 8086 microprocessor with suitable examples for each.",
+          "marks": "4",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "With suitable diagrams, explain the internal working of PUSH B and POP B instructions in 8085.",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "A temperature monitoring system using the 8085 stores 10 sensor readings in consecutive memory locations starting from 3000H. The program must read each value, add them, and store the final sum in memory location 4000H. (1) Which addressing mode is used to load the starting address? Write the instruction. (2) Which addressing mode is used to access and move through consecutive memory locations? Write suitable instructions. (3) Which addressing mode is used to store the final sum at memory location 4000H? Write the instruction. (4) The program must use a counter to process 10 readings. Which addressing mode is used to load the counter value? Write the instruction. (5) Write the complete 8085 assembly program to perform the above operation.",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Draw the block diagram of the 8086 microprocessor and explain its components and working.",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        }
+      ]
+    },
+    {
+      "syllabus": "CUSAT B.Tech 2023 Scheme",
+      "branch": "Computer Science and Engineering",
+      "subject": {
+        "subject_name": "Microprocessors",
+        "semester": "4",
+        "subject_type": "Core Subject"
+      },
+      "exam": {
+        "exam_type": "Internal Exam",
+        "exam_month": "March",
+        "exam_year": "2026"
+      },
+      "questions": [
+        {
+          "question_text": "Differentiate between 8086 and 8088 microprocessors.",
+          "marks": "4",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Explain DOS interrupts.",
+          "marks": "4",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Describe the interfacing of flash memory with a microprocessor.",
+          "marks": "4",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Write about the working of the 8259 interrupt controller.",
+          "marks": "4",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Explain the assembler directives of 8086. Explain the interrupt vector table and how memory is allocated for interrupts.",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Discuss the minimum and maximum mode operations of the 8086 system with neat diagrams.",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Design the interfacing of 8255 with 8086 and explain what it is used for and its modes of operation.",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        }
+      ]
+    },
+    {
+      "syllabus": "CUSAT B.Tech 2023 Scheme",
+      "branch": "Computer Science and Engineering",
+      "subject": {
+        "subject_name": "Python for Machine Learning",
+        "semester": "3",
+        "subject_type": "Core Subject"
+      },
+      "exam": {
+        "exam_type": "Internal Exam",
+        "exam_month": "March",
+        "exam_year": "2026"
+      },
+      "questions": [
+        {
+          "question_text": "Explain escape sequences in Python. Explain the different formatted print commands in Python with suitable examples.",
+          "marks": "4",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Explain the precedence rule in arithmetic expressions. What are the rules for a valid variable name in Python?",
+          "marks": "4",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Write a Python program to calculate the sum of the digits present in a user entered string. Input: Python62#prog111new$@world08, Output: 19. What will be the value of variables x, y and z after execution of the following Python program, assuming the user enters a value 5: temp=input(\"enter a number: \") / x=temp*5 / y=int(temp)*5 / z=bool(temp*0) / print(x,y,z)",
+          "marks": "4",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Predict the output of the code: def Changer(P, Q=10): / P=P/Q / Q=P%Q / return P / A=200 / B=20 / A=Changer(A, B) / print(A, B, sep='$') / B=Changer(B) / print(A, B, sep='$', end='###'). Convert 209.375 (in decimal system) to the hexadecimal system.",
+          "marks": "4",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "With the help of an example explain in detail positional and keyword arguments in Python functions.",
+          "marks": "4",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Predict the output of the following: haystack = \"Hay hay hay hey needle nah nah nah nah, hey hey, goodbye.\" / start = haystack.index('needle') / pos = haystack[start:start + len('strpos')] / print(pos)",
+          "marks": "2",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Write a Python program to print a pyramid pattern.",
+          "marks": "3",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "What is a break, continue and pass statement in Python?",
+          "marks": "3",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Write a while loop that computes the factorial of a given integer N.",
+          "marks": "2",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Predict the output of the following: s = 'pythonisfun' / print(\"s[-6:-3:2] :\",s[-6:-3:2]) / print(\"s[7:3:-1] :\",s[7:3:-1]) / print(\"s[-6:-1:2] :\",s[-6:-1:2]) / print(\"s[1:6][1:3] :\",s[1:6][1:3])",
+          "marks": "2",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Write a Python program to print the Fibonacci series.",
+          "marks": "3",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Are strings mutable or immutable in Python? Explain the string functions split() and join() with examples.",
+          "marks": "2",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Write a function calculation() that accepts two user entered int variables and calculates the total digits in both variables and sum of digits in both variables. The function should then return both the values in a single return statement and print the result outside the function. Input: 123 and 8551. Output: Total digits: 7, Sum of digits: 25.",
+          "marks": "3",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "With the help of a diagram, explain the various stages in the Software Development Life Cycle with Waterfall Model.",
+          "marks": "6",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Explain the various control flow statements in Python.",
+          "marks": "4",
+          "module_if_available": null,
+          "frequency": 1
+        }
+      ]
+    },
+    {
+      "syllabus": "CUSAT B.Tech 2023 Scheme",
+      "branch": "Computer Science and Engineering",
+      "subject": {
+        "subject_name": "Operating Systems",
+        "semester": "4",
+        "subject_type": "Core Subject"
+      },
+      "exam": {
+        "exam_type": "Internal Exam",
+        "exam_month": "February",
+        "exam_year": "2026"
+      },
+      "questions": [
+        {
+          "question_text": "What are the major activities of an operating system? What is the role of the shell and kernel in an OS?",
+          "marks": "4",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "What is a process? What are the different states of a process and show the transition between states with a diagram?",
+          "marks": "4",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "What is Mutual Exclusion (Mutex)? What methods are used to achieve Mutex?",
+          "marks": "4",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "A computer has 1MB of RAM allocated in units of 8KB. What will be the size of the bitmap to keep track of the free memory?",
+          "marks": "4",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "What is meant by physical and logical address? Consider a logical address space of eight pages of 1024 words each, mapped to physical memory of 32 frames. (a) How many bits are there in the physical address? (b) How many bits are there in the logical address?",
+          "marks": "4",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Consider the following set of processes with the length of the CPU burst given in milliseconds: P1 (Burst 10, Arrival 0, Priority 3), P2 (Burst 1, Arrival 2, Priority 1), P3 (Burst 2, Arrival 3, Priority 5), P4 (Burst 1, Arrival 5, Priority 4), P5 (Burst 5, Arrival 7, Priority 2). (a) Draw Gantt charts that illustrate the execution of these processes using FCFS, preemptive SJF, nonpreemptive priority (a larger priority number implies a higher priority), and RR (quantum = 2). (b) What is the turnaround time of each process for each of the scheduling algorithms? (c) What is the waiting time of each process for each of these scheduling algorithms? (d) Which of the algorithms results in the minimum average waiting time over all processes?",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "What is meant by critical section problem? Explain how semaphores can be used to solve the producer consumer problem.",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Explain any three page replacement algorithms and compare their performance for the reference string 7, 0, 1, 2, 3, 2, 1, 0, 7, 4, 3, 2, 0, 7.",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Given memory partitions of 100K, 500K, 200K, 300K and 600K (in order), four processes of size 212K, 417K, 112K and 426K arrive in order. Show how the processes are allocated using (a) Best Fit (b) First Fit (c) Worst Fit algorithms. Which algorithm makes the most efficient use of memory?",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        }
+      ]
+    },
+    {
+      "syllabus": "CUSAT B.Tech 2023 Scheme",
+      "branch": "Computer Science and Engineering",
+      "subject": {
+        "subject_name": "Operating Systems",
+        "semester": "4",
+        "subject_type": "Core Subject"
+      },
+      "exam": {
+        "exam_type": "Internal Exam",
+        "exam_month": "March",
+        "exam_year": "2026"
+      },
+      "questions": [
+        {
+          "question_text": "Define a file and explain the different file attributes and operations.",
+          "marks": "4",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "How is DMA (Direct Memory Access) performed? What are its advantages in I/O operations?",
+          "marks": "4",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "What are the necessary conditions for a deadlock to occur? Explain briefly.",
+          "marks": "4",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "What is a directory? Explain different directory structures used in file systems.",
+          "marks": "4",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Explain RAID levels and their advantages.",
+          "marks": "4",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Consider a system with: Processes P1, P2, P3, P4. Resources R1 (2 instances), R2 (2 instances). Given allocation and requests: R1 -> P2, R1 -> P3, P1 -> R1, R2 -> P1, P3 -> R2, R2 -> P4. (1) Construct a Resource Allocation Graph (RAG). (2) Identify any cycle. (3) Determine whether the system is in a deadlock.",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "A disk drive has 200 cylinders (0-199). The disk head is currently positioned at cylinder 45. The pending request queue (in order of arrival) is: 99, 37, 180, 140, 24, 128, 68, 77. (a) Draw the seek sequence and compute the total head movement for FCFS, SSTF, SCAN (initial direction towards 0), and LOOK. (b) Which algorithm results in the minimum total head movement?",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Explain the following file allocation methods and discuss their advantages and disadvantages: (1) Contiguous allocation (2) Linked allocation (3) Indexed allocation.",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Consider a system with 5 processes (P0-P4) and 3 resource types (A, B, C). Allocation: P0(0,1,0), P1(2,0,0), P2(3,0,3), P3(2,1,1), P4(0,0,2). Maximum need: P0(0,1,0), P1(4,0,2), P2(3,0,3), P3(3,1,1), P4(0,0,4). Available: A=0, B=0, C=0. (a) Compute the Need matrix. (b) Determine whether the system is in a safe state. If yes, find a safe sequence. (c) Suppose process P2 requests additional resources (0, 0, 1). Check whether the request can be granted immediately using Banker's Algorithm.",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        }
+      ]
+    },
+    {
+      "syllabus": "CUSAT B.Tech 2023 Scheme",
+      "branch": "Computer Science and Engineering",
+      "subject": {
+        "subject_name": "Data and Computer Communication",
+        "semester": "4",
+        "subject_type": "Core Subject"
+      },
+      "exam": {
+        "exam_type": "Internal Exam",
+        "exam_month": "February",
+        "exam_year": "2026"
+      },
+      "questions": [
+        {
+          "question_text": "Why does the TCP/IP protocol stack not have separate session and presentation layers despite OSI mandating them?",
+          "marks": "2",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "An n-layer protocol hierarchy adds h-byte headers at each layer for messages of length M bytes. If the total overhead must not exceed 20% of the total transmitted data, derive the inequality relating n, h, and M. For M = 1000 bytes and h = 20 bytes, find the maximum permissible number of protocol layers.",
+          "marks": "2",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "A composite analog signal is formed by combining three sinusoidal components: 2sin(2π1000t), 5sin(2π3000t + π/4), and 3sin(2π5000t - π/3). Determine the bandwidth of this composite signal. According to Nyquist's theorem, what minimum sampling rate must be used to perfectly reconstruct the signal without aliasing? If the signal is quantized using 8-bit PCM, what is the resulting bit rate?",
+          "marks": "2",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "A signal of power 10 mW is transmitted over a medium with an attenuation of 0.5 dB/km. The signal also experiences an additional 3 dB loss at a connector. If the minimum detectable signal power at the receiver is -30 dBm, find (i) the maximum permissible transmission distance and (ii) the received signal power in mW at that distance.",
+          "marks": "2",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Draw the configuration showing EIA/TIA 568A/B cross-over and straight cables. Mention the uses of these cables.",
+          "marks": "2",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "A WAN spanning three cities uses routers running OSPF at the network layer, with TCP at the transport layer and TLS at the session/presentation layer. A new compression algorithm is introduced at layer n (presentation layer). (i) Explain, using the principle of layer independence, what will be the effect on layers n-1 and n+1 due to this change. Why? (ii) Suppose the new algorithm changes the PDU size significantly, analyse any cross-layer effects that could indirectly impact performance at layers n-1 and n+1. Justify your reasoning with examples.",
+          "marks": "2",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Draw the ISO/OSI reference model with all layers clearly labelled. For each layer, state its primary function, the PDU name, and the corresponding TCP/IP protocol(s) used. Additionally, trace the complete journey of an HTTP request from a browser to a web server and back, describing the encapsulation/decapsulation process at each layer on both source and destination hosts.",
+          "marks": "3",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "A high-definition television (HDTV) system transmits frames of resolution 1920 x 1080 pixels at 60 frames per second, where each pixel is encoded with 24-bit colour. (i) Calculate the uncompressed source data rate in Mbps. (ii) The signal is transmitted over a channel with 6 MHz bandwidth and a measured SNR of 40 dB. Compute the Shannon capacity and determine the compression ratio needed to fit the HDTV signal within the channel capacity. (iii) If the channel is noiseless with 6 MHz bandwidth and 256 signal levels, recalculate the maximum data rate and comment on which model gives a higher capacity.",
+          "marks": "2",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Two periodic signals are given: f1(t) = 3sin(2π400t) and f2(t) = 5cos(2π600t + π/6). (i) Find the period and frequency of f(t) = f1(t) + f2(t) and prove it is periodic by finding the LCM of their periods. (ii) Determine the bandwidth of f(t). (iii) Suppose a third component f3(t) = 2sin(2π√2·400t) is added. Analyse whether the resulting composite signal is still periodic, providing a mathematical proof, and explain the engineering implications of a non-periodic signal in a digital communication system.",
+          "marks": "2",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "A digital data source generates data at 28,800 bps and must be transmitted over an analog telephone channel. Calculate the minimum bandwidth required and the baud rate for 2-ASK, 4-ASK, 8-PSK, 16-QAM and 64-QAM. Tabulate the results and identify which scheme achieves the highest spectral efficiency. Also explain why 16-QAM is preferred over 8-PSK for the same bandwidth despite a higher SNR requirement.",
+          "marks": "2",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "An audio signal has frequency components in the range 20 Hz to 15,000 Hz. It is to be digitized using PCM. (i) State the Nyquist sampling theorem and determine the minimum sampling frequency. (ii) For a desired SNR of 50 dB, calculate the required number of quantization bits. (iii) Compute the resulting PCM bit rate. (iv) Compare PCM with Delta Modulation (DM) for the same signal and why PCM is preferred for signals representing digital data describing higher bit rates.",
+          "marks": "2",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "For BPSK, Eb/N0 = 7.5 dB is required for a BER of 10^-3. If the effective noise temperature is 27°C and the data rate is 36 kbps, what received signal level is required?",
+          "marks": "2",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "A 50 km fiber optic link has an attenuation of 0.3 dB/km. The transmitter outputs +20 dBm and the receiver requires a minimum received power of -28 dBm to operate correctly. Splices are present every 5 km with a loss of 0.1 dB each. Connectors at both ends introduce 0.5 dB loss each. (i) Compute the total link loss. (ii) Determine whether the link is feasible without repeaters. (iii) If not feasible, calculate the maximum distance without repeaters and the number and spacing of repeaters needed to cover the full 50 km.",
+          "marks": "3",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "A sine wave is to be used for two different signaling schemes: (a) PSK, (b) QPSK. The duration of a signal element is 10^-5 s. If the received signal is of the form f(t) = 0.005sin(2π10^6t + θ) and if the measured noise power at the receiver is 2.5 x 10^-8 watts, determine the Eb/N0 (in dB) for each case.",
+          "marks": "2",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "For the bit stream 01101111111110010, draw the pulse waveform for the following line encoding schemes: (i) NRZ-L, (ii) Manchester, (iii) AMI, (iv) B8ZS and (v) HDB3. State the voltage levels used, method of bit representation, DC component, self-synchronisation capability, and bandwidth requirements relative to the data rate. Which scheme is most suitable for long-distance transmission and justify your answer.",
+          "marks": "2",
+          "module_if_available": null,
+          "frequency": 1
+        }
+      ]
+    },
+    {
+      "syllabus": "CUSAT B.Tech 2023 Scheme",
+      "branch": "Computer Science and Engineering",
+      "subject": {
+        "subject_name": "Data and Computer Communication",
+        "semester": "4",
+        "subject_type": "Core Subject"
+      },
+      "exam": {
+        "exam_type": "Internal Exam",
+        "exam_month": "April",
+        "exam_year": "2026"
+      },
+      "questions": [
+        {
+          "question_text": "Draw a table showing the comparison of downstream data rate, upstream data rate, baud rate and modulation scheme for the following modems: (i) V-22bis (ii) V-32 (iii) V-32bis (iv) V-90 (v) V-92. Provide any 5 AT commands that can be used with Hayes-compatible modems.",
+          "marks": "2",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "What is DMT? Explain how DMT can be effectively used in ADSL with a telephone line.",
+          "marks": "2",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Prove that if (x+1) is a factor of G(x), the generator polynomial, CRC can detect all burst errors having odd number of bits in error. Provide any two standard CRC polynomials.",
+          "marks": "2",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Three signals with bandwidths of 200 kHz, 500 kHz, and 800 kHz are combined using FDM. A guard band of 25 kHz is required between each channel and at the two edges of the composite band. Determine: (i) the total bandwidth of the composite FDM signal, (ii) the carrier frequency of each sub-channel if the first carrier starts at 1 MHz, (iii) the spectral efficiency of the system, defined as the ratio of usable bandwidth to total allocated bandwidth.",
+          "marks": "2",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "A frequency-hopping spread spectrum system uses 256 different frequencies with a bandwidth of 25 kHz each. If the hopping rate is 1600 hops per second, what is the processing gain and the required minimum transmission bandwidth?",
+          "marks": "2",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Ten sources, six with a bit rate of 200 kbps and four with a bit rate of 400 kbps, are to be combined using multilevel TDM with no synchronising bits. Draw the multiplexing scheme. Answer the following with the final stage of the multiplexing: (i) What is the size of a frame in bits? (ii) What is the frame rate? (iii) What is the duration of a frame? (iv) What is the data rate?",
+          "marks": "2",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Draw the digital hierarchy of the telephone network. Show data rate in each line.",
+          "marks": "2",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "A switching system uses statistical time-division multiplexing to handle traffic from 18 terminals, each generating data at an average rate of 100 characters per second with a maximum burst rate of 500 characters per second. Each character is 8 bits. The link between the multiplexer and demultiplexer has a capacity of 56 kbps. (i) Calculate the multiplexing efficiency compared to conventional TDM. (ii) If the multiplexer uses a 6-bit address field, what is the overhead percentage? (iii) Determine the maximum delay for a packet during peak traffic conditions.",
+          "marks": "2",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Explain with an example the importance of power management in CDMA system.",
+          "marks": "2",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "A CRC-16 generator polynomial G(x) = x^16 + x^15 + x^2 + 1 is used for error detection. (i) Show how the bit pattern 11010011101100 would be encoded. (ii) If the transmitted bit pattern is received as 11010011101100000100000010001, determine if there is an error. (iii) Calculate the probability that the CRC will fail to detect a burst error of length 17 bits. (iv) Explain how the CRC's error detection capability changes if the message length increases.",
+          "marks": "3",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "A (15,11) Hamming code is used for error correction. (i) Calculate the Hamming distance of this code. (ii) If the code is modified to detect double errors by adding an overall parity bit, what would be the new code parameters and its error detection capability?",
+          "marks": "1",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Explain threshold decoding of a convolution code with a suitable example.",
+          "marks": "5",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Generate a trellis diagram for the following convolution encoder. What will be the code for the input stream 11011? Explain how to decode the received message 111111001111001 to correct the errors using Viterbi algorithm.",
+          "marks": "5",
+          "module_if_available": null,
+          "frequency": 1
+        }
+      ]
+    },
+    {
+      "syllabus": "CUSAT B.Tech 2023 Scheme",
+      "branch": "Computer Science and Engineering",
+      "subject": {
+        "subject_name": "Object Oriented Software Engineering",
+        "semester": "5",
+        "subject_type": "Core Subject"
+      },
+      "exam": {
+        "exam_type": "Internal Exam",
+        "exam_month": "February",
+        "exam_year": "2026"
+      },
+      "questions": [
+        {
+          "question_text": "Prototyping is best suited for object oriented development. State true or false and justify with examples.",
+          "marks": "4",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Design any two UML behavioral models for ATM transactions.",
+          "marks": "4",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Functional cohesion is the best cohesion. State true or false and justify with examples.",
+          "marks": "4",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Justify the statement 'SRS should be complete'. Also explain characteristics and format of a good SRS.",
+          "marks": "4",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Can you suggest the best life cycle models for the following systems? Give reasons. (a) A library software where requirements are huge and clear. (b) A robotic system where expertise is less. Compare and contrast evolutionary and iterative waterfall model.",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "What are different notations for class diagrams including different types of relationships? Consider the problem statement: A credit card system has to be developed where there are two types of transactions POS (point of sales) and online. Every customer can hold many credit cards which are identified by a card number and customer number. Every transaction is identified by card#, date, transaction amount and POSId or CompanyId. Follow systematic OOAD method and draw a class diagram.",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "DFD is a powerful object oriented analysis tool. State true or false and substantiate with examples and diagrams. Prepare an SRS for a library information system in IEEE format. Make your own assumptions, assuming it is a miniature implementation of major functions in a college. Strictly follow the format of SRS.",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "What are the new trends in UI/UX? Define the terms Sprint, Scrum and agility with respect to agile model. Use diagrams and examples.",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        }
+      ]
+    },
+    {
+      "syllabus": "CUSAT B.Tech 2023 Scheme",
+      "branch": "Computer Science and Engineering",
+      "subject": {
+        "subject_name": "Object Oriented Software Engineering",
+        "semester": "4",
+        "subject_type": "Core Subject"
+      },
+      "exam": {
+        "exam_type": "Internal Exam",
+        "exam_month": "April",
+        "exam_year": "2026"
+      },
+      "questions": [
+        {
+          "question_text": "Cause effect graphing is a black box testing strategy. Is it true or false? Justify your answer with an example.",
+          "marks": "4",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Distinguish organizing and controlling management functions with examples.",
+          "marks": "4",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "ISO 9002 is specifically for software companies. Justify true or false. Explain features of ISO in detail.",
+          "marks": "4",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Distinguish SQA, SQM and SCM. Use examples.",
+          "marks": "4",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Is the statement 'One of the KPA of CMM level 4 is Quality being monitored using various matrices' true or false? Justify your answer with clearly explaining all CMM levels.",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Consider the code. Using CFG, find McCabe's cyclomatic complexity for i=1 to 10 { if (i>4) printf(\"True\"); Else printf(\"False\") }",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Why we use Cause Effect Graph? Use example to demonstrate. Construct a Cause Effect Graph for the following cases: If Q>P and R<S then display okay. If A<B or C<D then display Error.",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Explain work break down structure. Construct a WBS for a project with 3 modules, 3 programmers and each module covering 1 month. Make your own assumptions.",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        }
+      ]
+    },
+    {
+      "syllabus": "CUSAT B.Tech 2023 Scheme",
+      "branch": "Computer Science and Engineering",
+      "subject": {
+        "subject_name": "Database Management Systems",
+        "semester": "4",
+        "subject_type": "Core Subject"
+      },
+      "exam": {
+        "exam_type": "Internal Exam",
+        "exam_month": "February",
+        "exam_year": "2026"
+      },
+      "questions": [
+        {
+          "question_text": "Define the following terms: (a) Functional dependency (b) Full functional dependency (c) Transitive dependency (d) Trivial functional dependency (e) Prime attributes.",
+          "marks": "5",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Explain various relational model constraints.",
+          "marks": "5",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Draw and explain 3 schema architecture.",
+          "marks": "5",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Write a function in SQL to find the factorial of a number.",
+          "marks": "5",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Consider the relation R(P, Q, R, S, T) with the following functional dependencies: P -> Q, R; Q -> S; R -> T. Determine the highest normal form (1NF, 2NF, 3NF, or BCNF) that this relation satisfies. Provide justification for your answer.",
+          "marks": "6",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "For the given table, show the result after converting to 1NF. Student_ID: 101 (Name: John, Phone Numbers: {9876543210, 9123456780}, Address: {Street: 12A, City: New York}, Courses: {Math, Science}), Student_ID: 102 (Name: Alice, Phone Numbers: {8765432109}, Address: {Street: 34B, City: Chicago}, Courses: {English, History}).",
+          "marks": "4",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Given the relations: Movie (Movie_ID, Title, Genre, Release_Year, Budget), Actor (Actor_ID, Name, Gender, Nationality), Acts_In (Actor_ID, Movie_ID). Write relational algebra for: (A) List all movie titles and their release years from the Movie table. (B) Retrieve the titles and budgets of all Action movies released after 2020. (C) List the names of actors and the titles of movies they acted in. (D) Find actors who have acted in all movies. (E) List the names of actors who acted in either the movie 'Inception' or the movie 'Interstellar' but not in both.",
+          "marks": "6",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "For the above tables (Movie, Actor, Acts_In), create a trigger that automatically sets the Genre of a movie to 'Classic' if the Release_Year is before 1980.",
+          "marks": "4",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Given the relations: Movie (Movie_ID, Title, Genre, Release_Year, Budget), Actor (Actor_ID, Name, Gender, Nationality), Acts_In (Actor_ID, Movie_ID). (1) Create tables Movie, Actor and Acts_in with all required constraints. (2) List the names of actors along with the titles of the movies they acted. (3) Find the number of movies released each year. (4) Find the actors who have acted in more than 3 movies. (5) Retrieve the top 5 most expensive movies. (6) List the names of actors who acted in the movie with the highest budget. (7) List the names of actors who acted in both 'Inception' and 'Interstellar'. (8) Find actor who acted in the most number of movies (without using limit).",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "A film industry organization wants to design a database system to manage information about movies, actors, directors, producers, and awards. The system should store details of each movie including Movie_ID, title, genre, release year, budget, and duration. For each actor, the system should record Actor_ID, name, date of birth, nationality, and gender. Each director has a Director_ID, name, years of experience, and email. Each producer has a Producer_ID, name, company name, and contact number. The system must also maintain information about awards, including Award_ID, award name, category, award year, and prize amount. A director can direct many movies, but each movie is directed by exactly one director. A producer can produce many movies, and a movie may have more than one producer. A movie can feature multiple actors, and an actor can act in multiple movies. Awards are given for specific movies, and an actor or director may receive multiple awards, but each award is associated with only one movie in a given year. Design an ER diagram for this system.",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        }
+      ]
+    },
+    {
+      "syllabus": "CUSAT B.Tech 2023 Scheme",
+      "branch": "Computer Science and Engineering",
+      "subject": {
+        "subject_name": "Database Management Systems",
+        "semester": "4",
+        "subject_type": "Core Subject"
+      },
+      "exam": {
+        "exam_type": "Internal Exam",
+        "exam_month": "March",
+        "exam_year": "2026"
+      },
+      "questions": [
+        {
+          "question_text": "What is a transaction in DBMS? What are the desirable properties of a transaction?",
+          "marks": "5",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "What is hashing? Explain external hashing technique.",
+          "marks": "5",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "A hash table of size 10 is used with the hash function h(key) = key mod 10. Insert the following keys into the hash table: 23, 33, 43, 13, 27, 88, 97, 17, 37. Insert the keys using Open Addressing (Linear Probing). Show each step clearly. Display the final hash table. Calculate the total number of collisions.",
+          "marks": "5",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Explain how basic database operations are performed in heap file organization.",
+          "marks": "5",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Consider the following schedules with 4 transactions. Check if they are conflict serializable. If yes find the corresponding serial schedule. (a) S1: r1(X); r3(X); w1(X); r1(Z); w2(Z); r3(Y); w3(Y); r2(Y); r4(Y); w4(Y). (b) S2: r1(X); r2(Z); r3(X); r1(Z); r4(Y); w1(X); r3(Y); w3(Y); r2(Y); w2(Z); w2(Y); w4(Y).",
+          "marks": "6",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Why is concurrency control needed?",
+          "marks": "4",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "A relation contains 1,00,000 records, each of size 100 bytes. The block size is 4 KB. Calculate the number of block accesses needed for multi-level indexing to search for a record if each index entry takes 16 bytes.",
+          "marks": "5",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Explain dynamic multilevel indexing.",
+          "marks": "5",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Explain various types of single level ordered index in detail.",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Define the following terms: (a) Recoverable Schedule (b) Strict Schedule (c) Serial Schedule (d) Serializable Schedule (e) Cascadeless Schedule.",
+          "marks": "5",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Consider three transactions T1, T2, and T3 with the following timestamps: TS(T1) = 5, TS(T2) = 12, TS(T3) = 20. The schedule of operations is given below: R1(X), R2(Y), W3(X), W2(X), W1(Y), R3(Y), W2(Z), R1(Z). Apply the Timestamp Ordering Protocol to the given schedule. For each operation, determine whether it is allowed or rejected, with justification.",
+          "marks": "5",
+          "module_if_available": null,
+          "frequency": 1
+        }
+      ]
+    },
+    {
+      "syllabus": "CUSAT B.Tech 2023 Scheme",
+      "branch": "Computer Science and Engineering",
+      "subject": {
+        "subject_name": "Numerical and Statistical Methods",
+        "semester": "4",
+        "subject_type": "Core Subject"
+      },
+      "exam": {
+        "exam_type": "Internal Exam",
+        "exam_month": "February",
+        "exam_year": "2026"
+      },
+      "questions": [
+        {
+          "question_text": "Write a short note on error.",
+          "marks": "2",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Find a root of the equation 3x - cos x - 1 = 0 by Newton's method.",
+          "marks": "2",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Expand log_e x in powers of (x-1) and hence evaluate log_e (1.1) correct to 4 decimal places.",
+          "marks": "2",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Define Least square.",
+          "marks": "2",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Find the real root of x^3 - x - 1 = 0 by bisection method.",
+          "marks": "2",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "By using Secant method find a root of the equation x^3 - 2x - 5 = 0.",
+          "marks": "5",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "The population in different years is given below. Find the population in 1955. Year: 1951, 1961, 1971, 1981. Population (in thousands): 35, 42, 58, 84.",
+          "marks": "5",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Find a root of the equation by iteration method: x^3 - 10x - 5 = 0.",
+          "marks": "5",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Fit a straight line for the data: X: 1 2 3 4 5, Y: 1 3 5 6 5.",
+          "marks": "5",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "From the following table find f'(1.1) and f''(1.1) by using Newton's differentiation formula. X: 1.0, 1.2, 1.4, 1.6, 1.8, 2.0. f(x): 0.0, 0.1280, 0.5440, 1.2960, 2.4320, 4.00.",
+          "marks": "5",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Evaluate the integral from 0 to 1 of 1/(1+x) dx using Gauss three point formula.",
+          "marks": "5",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Dividing the range into 10 equal parts, find the approximate value of the integral from 0 to π of sin x dx by Trapezoidal rule.",
+          "marks": "5",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Apply Runge-Kutta method of fourth order to calculate the value for x = 0.2 when dy/dx = x + 4y, y(0) = 0, taking h = 0.1.",
+          "marks": "5",
+          "module_if_available": null,
+          "frequency": 1
+        }
+      ]
+    },
+    {
+      "syllabus": "CUSAT B.Tech 2023 Scheme",
+      "branch": "Computer Science and Engineering",
+      "subject": {
+        "subject_name": "Numerical and Statistical Techniques",
+        "semester": "4",
+        "subject_type": "Core Subject"
+      },
+      "exam": {
+        "exam_type": "Internal Exam",
+        "exam_month": "UNKNOWN",
+        "exam_year": "2026"
+      },
+      "questions": [
+        {
+          "question_text": "Differentiate between discrete random variable and continuous random variable.",
+          "marks": "2",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Ten coins are tossed simultaneously. Find the probability of getting at least 7 heads.",
+          "marks": "2",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "If X is a random variable with mean -3 and variance 4, find p(x > -1.5).",
+          "marks": "2",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Define skewness and kurtosis.",
+          "marks": "2",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Define correlation.",
+          "marks": "2",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "In a binomial distribution consistency of 6 independent trials, probabilities of 1 and 2 successes are 0.28336 and 0.0506. Find the parameter of distribution.",
+          "marks": "5",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "8 unbiased coins were tossed simultaneously. Find the probability of getting: (i) Exactly 4 heads (ii) No heads at all (iii) 6 or more heads (iv) At most 2 heads (v) Number of heads ranging from 3 to 5.",
+          "marks": "5",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "A random sample of 200 tins of coconut oil gave an average weight of 4.95 kgs with a standard deviation of 0.21 kgs. Do we accept this tins not weight 5 kgs per tin at 1% level?",
+          "marks": "5",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "The standard deviation of 2 samples of size 10 and 14 from 2 normal populations are 3.5 and 3 respectively. Examine whether standard deviation of population are equal.",
+          "marks": "5",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Compute Karl Pearson's coefficient of correlation for the following data. X: 2 3 4 5 6 7 8. Y: 4 5 6 12 9 5 4.",
+          "marks": "5",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "In a competition 2 judges gave the following ranks to 8 participants. Calculate the coefficient of rank correlation. Judge x: 8 7 6 3 2 1 5 4. Judge y: 7 5 4 1 3 2 6 5.",
+          "marks": "5",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Find out the coefficient of correlation between x and y by method of rank differences. X: 15 17 14 13 11 12 16 18 10 9. Y: 18 12 4 6 7 9 3 10 2 5.",
+          "marks": "5",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Calculate the regression equations of X on Y for the following data. X: 1 2 3 4 5. Y: 2 5 3 8 7.",
+          "marks": "5",
+          "module_if_available": null,
+          "frequency": 1
+        }
+      ]
+    }
+  ]
+}

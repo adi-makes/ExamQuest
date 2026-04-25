@@ -1,8 +1,6 @@
 <?php
 require_once 'db.php';
 
-$year_labels = [1 => 'First Year (Year 1)', 2 => 'Second Year (Year 2)', 3 => 'Third Year (Year 3)', 4 => 'Fourth Year (Year 4)'];
-
 // Fetch dropdown data
 $syllabi_result  = mysqli_query($conn, 'SELECT syllabus_id, regulation_year FROM syllabus ORDER BY syllabus_id ASC');
 $branches_result = mysqli_query($conn, 'SELECT branch_id, branch_name FROM branch ORDER BY branch_name ASC');
@@ -12,15 +10,14 @@ $branches = mysqli_fetch_all($branches_result, MYSQLI_ASSOC);
 
 // Fetch ALL subjects for JS cascade (dump as JSON)
 $all_subjects_result = mysqli_query($conn,
-    'SELECT subject_id, subject_name, syllabus_id, branch_id, study_year FROM subject ORDER BY subject_name ASC'
+    'SELECT subject_id, subject_name, syllabus_id, branch_id, semester FROM subject ORDER BY subject_name ASC'
 );
 $all_subjects = mysqli_fetch_all($all_subjects_result, MYSQLI_ASSOC);
-// Cast IDs to int for reliable JS comparison
+// Cast numeric IDs to int; keep semester as string for JS comparison
 foreach ($all_subjects as &$s) {
     $s['subject_id']  = intval($s['subject_id']);
     $s['syllabus_id'] = intval($s['syllabus_id']);
     $s['branch_id']   = intval($s['branch_id']);
-    $s['study_year']  = intval($s['study_year']);
 }
 unset($s);
 
@@ -35,9 +32,9 @@ $stmt->execute();
 $flagged_count = intval($stmt->get_result()->fetch_assoc()['cnt']);
 $stmt->close();
 
-$stmt = $conn->prepare('SELECT COUNT(*) AS cnt FROM questions WHERE DATE(created_at) = CURDATE()');
+$stmt = $conn->prepare('SELECT COUNT(*) AS cnt FROM subject');
 $stmt->execute();
-$added_today = intval($stmt->get_result()->fetch_assoc()['cnt']);
+$total_subjects = intval($stmt->get_result()->fetch_assoc()['cnt']);
 $stmt->close();
 
 // Handle POST form submission
@@ -86,9 +83,9 @@ if (isset($_GET['success'])) {
     $flagged_count = intval($stmt->get_result()->fetch_assoc()['cnt']);
     $stmt->close();
 
-    $stmt = $conn->prepare('SELECT COUNT(*) AS cnt FROM questions WHERE DATE(created_at) = CURDATE()');
+    $stmt = $conn->prepare('SELECT COUNT(*) AS cnt FROM subject');
     $stmt->execute();
-    $added_today = intval($stmt->get_result()->fetch_assoc()['cnt']);
+    $total_subjects = intval($stmt->get_result()->fetch_assoc()['cnt']);
     $stmt->close();
 }
 
@@ -96,7 +93,7 @@ if (isset($_GET['success'])) {
 $form = [
     'syllabus_id'    => intval($_POST['syllabus_id']  ?? 0),
     'branch_id'      => intval($_POST['branch_id']    ?? 0),
-    'study_year'     => intval($_POST['study_year']   ?? 0),
+    'semester'       => trim($_POST['semester']        ?? ''),
     'subject_id'     => intval($_POST['subject_id']   ?? 0),
     'question_text'  => $_POST['question_text']       ?? '',
     'marks'          => $_POST['marks']               ?? '',
@@ -190,16 +187,16 @@ $form = [
                     </div>
                 </div>
 
-                <!-- Row 2: Year | Subject -->
+                <!-- Row 2: Semester | Subject -->
                 <div class="form-row">
                     <div class="form-group">
-                        <label class="form-label" for="adminYear">Select Academic Year</label>
-                        <select name="study_year" id="adminYear" class="input input--select" required>
-                            <option value="">-- Choose Year --</option>
-                            <?php foreach ($year_labels as $val => $label): ?>
-                            <option value="<?= $val ?>"
-                                <?= $form['study_year'] == $val ? 'selected' : '' ?>>
-                                <?= htmlspecialchars($label, ENT_QUOTES, 'UTF-8') ?>
+                        <label class="form-label" for="adminSemester">Select Semester</label>
+                        <select name="semester" id="adminSemester" class="input input--select" required>
+                            <option value="">-- Choose Semester --</option>
+                            <?php foreach (range(1, 8) as $s): ?>
+                            <option value="<?= $s ?>"
+                                <?= $form['semester'] == $s ? 'selected' : '' ?>>
+                                Semester <?= $s ?>
                             </option>
                             <?php endforeach; ?>
                         </select>
@@ -220,7 +217,7 @@ $form = [
                             <?php endif; ?>
                         </select>
                         <small style="color:var(--color-secondary-text);font-size:12px;margin-top:4px;">
-                            Select syllabus, branch, and year first to load subjects.
+                            Select syllabus, branch, and semester first to load subjects.
                         </small>
                     </div>
                 </div>
@@ -308,8 +305,8 @@ $form = [
                     </div>
                     <span class="stat-card__eyebrow">&nbsp;</span>
                 </div>
-                <div class="stat-card__value"><?= number_format($added_today) ?></div>
-                <div class="stat-card__label">Added Today</div>
+                <div class="stat-card__value"><?= number_format($total_subjects) ?></div>
+                <div class="stat-card__label">Total Subjects</div>
             </div>
         </div>
 
@@ -330,23 +327,23 @@ $form = [
 // All subjects data for cascading dropdown
 const ALL_SUBJECTS = <?= json_encode($all_subjects, JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_HEX_AMP) ?>;
 
-const adminSyllabus = document.getElementById('adminSyllabus');
-const adminBranch   = document.getElementById('adminBranch');
-const adminYear     = document.getElementById('adminYear');
-const adminSubject  = document.getElementById('adminSubject');
-const savedSubject  = <?= intval($form['subject_id']) ?>;
+const adminSyllabus  = document.getElementById('adminSyllabus');
+const adminBranch    = document.getElementById('adminBranch');
+const adminSemester  = document.getElementById('adminSemester');
+const adminSubject   = document.getElementById('adminSubject');
+const savedSubject   = <?= intval($form['subject_id']) ?>;
 
 function updateSubjects() {
     const syl = parseInt(adminSyllabus.value) || 0;
     const br  = parseInt(adminBranch.value)   || 0;
-    const yr  = parseInt(adminYear.value)     || 0;
+    const sem = adminSemester.value;
 
     adminSubject.innerHTML = '<option value="">-- Select Subject --</option>';
 
-    if (syl === 0 || br === 0 || yr === 0) return;
+    if (syl === 0 || br === 0 || sem === '') return;
 
     const filtered = ALL_SUBJECTS.filter(function(s) {
-        return s.syllabus_id === syl && s.branch_id === br && s.study_year === yr;
+        return s.syllabus_id === syl && s.branch_id === br && s.semester === sem;
     });
 
     filtered.forEach(function(s) {
@@ -367,12 +364,12 @@ function updateSubjects() {
 }
 
 // Update subjects when any filter changes
-[adminSyllabus, adminBranch, adminYear].forEach(function(el) {
+[adminSyllabus, adminBranch, adminSemester].forEach(function(el) {
     el.addEventListener('change', updateSubjects);
 });
 
 // Restore subjects if form was returned with errors
-if (<?= $form['syllabus_id'] ?> > 0 && <?= $form['branch_id'] ?> > 0 && <?= $form['study_year'] ?> > 0) {
+if (<?= $form['syllabus_id'] ?> > 0 && <?= $form['branch_id'] ?> > 0 && <?= json_encode($form['semester']) ?> !== '') {
     updateSubjects();
 }
 

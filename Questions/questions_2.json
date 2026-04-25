@@ -1,0 +1,3198 @@
+{
+  "papers": [
+    {
+      "syllabus": "CUSAT B.Tech 2023 Scheme",
+      "branch": "Computer Science and Engineering",
+      "subject": {
+        "subject_name": "Database Management Systems",
+        "semester": "4",
+        "subject_type": "Core Subject"
+      },
+      "exam": {
+        "exam_type": "Internal Exam",
+        "exam_month": "February",
+        "exam_year": "2025"
+      },
+      "questions": [
+        {
+          "question_text": "Define Functional dependency",
+          "marks": "1",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Define Full functional dependency",
+          "marks": "1",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Define Transitive dependency",
+          "marks": "1",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Define Prime attributes",
+          "marks": "1",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Define Normalization",
+          "marks": "1",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "What are the characteristics of Database Management Systems",
+          "marks": "5",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "What are the various types of data, and which DBMS is used for each type?",
+          "marks": "5",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Write a function in SQL to find the factorial of a number",
+          "marks": "5",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Given a relation T(A, B, C, D, E) and Functional Dependency set FD = {AD → BCE, A → BC, C → B}. Is T in 2NF? If not decompose to 2NF. Is the resultant table in 3NF? If not decompose to 3NF.",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "For the given table, show the result after converting to 1NF. Student_ID: 101 (John), Phone Numbers: {9876543210, 9123456780}, Address: {Street: 12A, City: New York}, Courses: {Math, Science}. Student_ID: 102 (Alice), Phone Numbers: {8765432109}, Address: {Street: 34B, City: Chicago}, Courses: {English, History}.",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Explain various relational model constraints",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "For Customers (ID, Name, Email, City) and Orders (Order ID, Customer ID, Product, Quantity, Price, Order Date), write relational algebra for: Display names of all customers from Mumbai; Display names of products purchased by customers from Mumbai; Display products that are purchased by all customers.",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "For Customers (ID, Name, Email, City) and Orders (Order ID, Customer ID, Product, Quantity, Price, Order Date): Create tables Customers and Orders with all required constraints; Insert at least 2 rows into the tables; Retrieve details of orders with price greater than 100; Retrieve details of all orders with details of customers who purchased them; Find total revenue for each product; Display names of customers who placed more than 1 order; Find the Most Expensive Order; Delete Orders Where Quantity is Less Than 2.",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "For the table Employee (EmpID, EmpName, Salary), create a cursor in SQL that processes each employee's salary, calculates their income tax based on the following tax slabs: 10% tax for employees earning <= 50,000, 20% tax for employees earning > 50,000. After calculating the tax, determine the net salary using the formula: Net Salary = Salary - Tax. Create a new table Employee_salary_details with all required constraints. All details of employee along with tax and net salary should be inserted into the new table.",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        }
+      ]
+    },
+    {
+      "syllabus": "CUSAT B.Tech 2023 Scheme",
+      "branch": "Computer Science and Engineering",
+      "subject": {
+        "subject_name": "Database Management Systems",
+        "semester": "4",
+        "subject_type": "Core Subject"
+      },
+      "exam": {
+        "exam_type": "Internal Exam",
+        "exam_month": "April",
+        "exam_year": "2025"
+      },
+      "questions": [
+        {
+          "question_text": "What is a transaction in DBMS? What are the desirable properties of a transaction?",
+          "marks": "5",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Differentiate between fixed length and variable length records",
+          "marks": "5",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Differentiate between spanned and un-spanned records",
+          "marks": "5",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Describe the structural constraints in relationships. Give examples.",
+          "marks": "5",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Consider an EMPLOYEE file with 10000 records where each record is of size 80 bytes. The file is sorted on employee number (15 bytes long), which is the primary key. Assuming un-spanned organization and block size of 512 bytes, compute the number of block accesses needed for selecting records based on employee number if Multi-level primary index is used. Assume a block pointer size of 6 bytes.",
+          "marks": "5",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Consider the following schedules with 4 transactions on 3 data elements. Check if they are conflict serializable, if yes find corresponding serial schedule. S1: r1(A), w1(B), r2(B), w2(C), r3(A), w3(C), r4(C), w4(A). S2: r1(A), w1(B), r2(B), w2(C), r3(C), w3(A), r4(A), w4(C), r1(C), r2(A), r3(B).",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Determine whether each schedule is strict, cascadeless, recoverable, or nonrecoverable. S3: r1(X); r2(Z); r1(Z); r3(X); r3(Y); w1(X); c1; w3(Y); c3; r2(Y); w2(Z); w2(Y); c2. S4: r1(X); r2(Z); r1(Z); r3(X); r3(Y); w1(X); w3(Y); r2(Y); w2(Z); w2(Y); c1; c2; c3.",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "What is collision in Hashing? Explain the various techniques for collision resolution.",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Explain how secondary indexes are used on key and non-key field",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Explain files of unordered and ordered type. How are they different in terms of performing insertion, deletion, searching and modification on records.",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Design an E-R diagram for an online food delivery system. The system should maintain the following information: Customers place orders from various restaurants. Each customer has a unique customer ID, name, phone number, and delivery address. Restaurants have a unique restaurant ID, name, location, and cuisine type. Each restaurant offers multiple menu items, and each menu item has an item ID, name, price, and category (e.g., starter, main course, dessert). Orders include one or more items, and each order has an order ID, date, total amount, and status (e.g., delivered, pending). A delivery agent is assigned to each order. Each delivery agent has an ID, name, and phone number.",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        }
+      ]
+    },
+    {
+      "syllabus": "CUSAT B.Tech 2023 Scheme",
+      "branch": "Computer Science and Engineering",
+      "subject": {
+        "subject_name": "Data and Computer Communication",
+        "semester": "4",
+        "subject_type": "Core Subject"
+      },
+      "exam": {
+        "exam_type": "Internal Exam",
+        "exam_month": "February",
+        "exam_year": "2025"
+      },
+      "questions": [
+        {
+          "question_text": "An image is 1024 x 768 pixels with 2 bytes/pixel. Assume the image is uncompressed. How long does it take to transmit it over a 56-kbps modem channel, over a 1-Mbps cable modem, over 100-Mbps Ethernet, and over Gigabit Ethernet?",
+          "marks": "2",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "A system has an n-layer protocol hierarchy. Applications generate messages of length m bytes. At each of the layers, an h-byte header is added. What fraction of the network bandwidth is filled with headers?",
+          "marks": "2",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "For BPSK, Eb/No = 7.5 dB is required for a BER of 10^-3. If the effective noise temperature is 27°C and the data rate is 36 kbps, what received signal level is required?",
+          "marks": "2",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Why should PCM be preferable to DM for encoding analog signals that represent digital data?",
+          "marks": "2",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Which ISO/OSI layer is called true end-to-end layer? Why?",
+          "marks": "2",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Draw ISO/OSI reference model. A WAN is designed using ISO/OSI reference model utilizing TCP/IP protocol stack. Show the protocol maps for each layer and provide the reason for choosing these protocols.",
+          "marks": "5",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Suppose the algorithms used to implement the operations at layer n is changed. How does this impact operations at layers n-1 and n+1?",
+          "marks": "5",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Suppose that a digitized TV picture is to be transmitted from a source that uses a matrix of 480 x 500 picture elements (pixels), where each pixel can take on one of 32 intensity values. Assume that 30 pictures are sent per second. Find the source data rate. Assume that the TV picture is to be transmitted over a channel with 4.5 MHz bandwidth and a 35 dB signal-to-noise ratio. Find the capacity of the channel.",
+          "marks": "5",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Consider two periodic functions f1(t) and f2(t), with periods T1 and T2, respectively. Is it always the case that the function f(t) = f1(t) + f2(t) is periodic? If so, demonstrate this fact. If not, under what conditions is f(t) periodic?",
+          "marks": "5",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "In medical digital radiology, ultrasound studies consist of about 25 images extracted from a full-motion ultrasound examination. Each image consists of 512 x 512 pixels, each with 8 bits of intensity information. How many bits are there in the 25 images? Doctors would like to use 512 x 512 8-bit frames at 30 fps. Ignoring possible compression and overhead factors, what is the minimum channel capacity required to sustain this full-motion ultrasound? Suppose each full-motion study consists of 25 seconds of frames. How many bytes of storage would be needed to store a single study in uncompressed form?",
+          "marks": "5",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Consider an audio signal with spectral components in the range 300 to 3600 Hz. Assume that a sampling rate of 7000 samples per second will be used to generate a PCM signal. For SNR = 30 dB, what is the number of uniform quantized levels needed? What data rate is required?",
+          "marks": "5",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Draw the pulse stream for the following encoding schemes for the input bit stream 01001010000011101. Also mention the bit representation and synchronization methods for each scheme: NRZ-L, NRZ-I, RZ, Manchester, Differential Manchester, AMI, HDB3.",
+          "marks": "5",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "A 6 km-long cable has an attenuation of -0.25 dB/km. A signal with a power of 2.84 mW has been received at the end of the cable. Find out the power at which the signal was transmitted from the source.",
+          "marks": "5",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "In a transmission system data to be transmitted using modem with 14400 bps. What is the minimum bandwidth required with the following modulation methods: 4-ASK, 4-FSK, 8-PSK, 16-QAM?",
+          "marks": "5",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Find the minimum Eb/No required to achieve a spectral efficiency of 25 bps/Hz.",
+          "marks": "5",
+          "module_if_available": null,
+          "frequency": 1
+        }
+      ]
+    },
+    {
+      "syllabus": "CUSAT B.Tech 2023 Scheme",
+      "branch": "Computer Science and Engineering",
+      "subject": {
+        "subject_name": "Data and Computer Communication",
+        "semester": "4",
+        "subject_type": "Core Subject"
+      },
+      "exam": {
+        "exam_type": "Internal Exam",
+        "exam_month": "April",
+        "exam_year": "2025"
+      },
+      "questions": [
+        {
+          "question_text": "Draw a table showing the comparison of downstream data rate, upstream data rate, baud rate and modulation scheme for the following modems: V-22bis, V-32, V-32bis, V-90, V-92. Provide any 5 AT commands that can be used with Hayes-compatible modems.",
+          "marks": "2",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "What is DMT? Explain how DMT can be effectively used in ADSL with a telephone line.",
+          "marks": "2",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Prove that if (x+1) is a factor of G(x), the generator polynomial, CRC can detect all burst errors having odd number of bits in error. Provide any two standard CRC polynomials.",
+          "marks": "2",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Generate code tree and provide the Huffman code for the following characters and generate the code for each character. Character: a, b, c, d, e, f. Frequency: 45, 13, 12, 16, 9, 5.",
+          "marks": "2",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "A frequency-hopping spread spectrum system uses 256 different frequencies with a bandwidth of 25 kHz each. If the hopping rate is 1600 hops per second, what is the processing gain and the required minimum transmission bandwidth?",
+          "marks": "2",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Ten sources, six with a bit rate of 200 kbps and four with a bit rate of 400 kbps, are to be combined using multilevel TDM with no synchronizing bits. Draw the multiplexing scheme. Answer the following with the final stage of the multiplexing: What is the size of a frame in bits? What is the frame rate? What is the duration of a frame? What is the data rate?",
+          "marks": "5",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Draw a digital hierarchy of the telephone network. Show data rate in each line.",
+          "marks": "5",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "A switching system uses statistical time-division multiplexing to handle traffic from 18 terminals, each generating data at an average rate of 100 characters per second with a maximum burst rate of 500 characters per second. Each character is 8 bits. The link between the multiplexer and demultiplexer has a capacity of 56 kbps. Calculate the multiplexing efficiency compared to conventional TDM. If the multiplexer uses a 6-bit address field, what is the overhead percentage? Determine the maximum delay for a packet during peak traffic conditions.",
+          "marks": "5",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Consider a system implementing Selective Repeat ARQ with the following parameters: Bandwidth: 100 Mbps, Distance between sender and receiver: 3000 km, Propagation speed: 2 x 10^8 m/s, Frame size: 1500 bytes, ACK size: 50 bytes, Link error probability: 10^-4, Maximum window size: 127 frames. Calculate the optimal window size for maximum channel utilisation. Determine the maximum achievable channel utilisation. If the sequence number field is 8 bits, is it sufficient for this scenario? Justify your answer.",
+          "marks": "5",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "A CRC-16 generator polynomial G(x) = x^16 + x^15 + x^2 + 1 is used for error detection. Show how the bit pattern 11010011101100 would be encoded. If the transmitted bit pattern is received as 11010011101100000100010000010001, determine if there is an error. Calculate the probability that the CRC will fail to detect a burst error of length 17 bits. Explain how the CRC's error detection capability changes if the message length increases.",
+          "marks": "5",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "A (15,11) Hamming code is used for error correction. Calculate the Hamming distance of this code. If the code is modified to detect double errors by adding an overall parity bit, what would be the new code parameters and its error detection capability?",
+          "marks": "5",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Explain threshold decoding of convolution code with a suitable example.",
+          "marks": "5",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Generate a convolution code tree for the given encoder for 5-bit input data. What will be the code for the input stream 11011? How to sequentially decode the received message 111111001111001 to correct the errors.",
+          "marks": "5",
+          "module_if_available": null,
+          "frequency": 1
+        }
+      ]
+    },
+    {
+      "syllabus": "CUSAT B.Tech 2023 Scheme",
+      "branch": "Computer Science and Engineering",
+      "subject": {
+        "subject_name": "Microprocessors",
+        "semester": "4",
+        "subject_type": "Core Subject"
+      },
+      "exam": {
+        "exam_type": "Internal Exam",
+        "exam_month": "February",
+        "exam_year": "2025"
+      },
+      "questions": [
+        {
+          "question_text": "When ALE goes high, AD0-AD7 lines show 55H. After ALE goes low, AD0-AD7 shows F2H. What operation is likely taking place?",
+          "marks": "2",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "If an 8085 system shows the following signals: IO/M = 1, RD = 0, WR = 1. What type of operation is being performed? What is the purpose of the instruction register and decoder in 8085?",
+          "marks": "2",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "If RST 7.5 and RST 6.5 interrupts occur simultaneously, and the mask bits for both are 0 (enabled), which interrupt will be serviced first and why?",
+          "marks": "2",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "For the instruction sequence: LXI H, 2050H; MOV M, C; INX H; MOV M, B. What addressing mode is used to store C and B registers' contents and at what memory locations?",
+          "marks": "2",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "After executing the following instructions: MVI A, 25H; MOV B, A; INR B. What will be the content of register B? If SP = 2050H, what will be its value and memory content after executing PUSH B (Assume the value for B register)?",
+          "marks": "2",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "The 8085 microprocessor follows a specific architecture that allows efficient execution of instructions. Explain how the various components of 8085 work together to execute an instruction. Illustrate your answer with a suitable example of an instruction execution cycle.",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "The 8085 microprocessor supports various types of instructions categorized based on the function it performs. Explain the significance of these instruction categories with suitable examples. How do these instructions impact the functioning of the microprocessor? Illustrate your answer with at least two examples from different categories, explaining their execution in detail.",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Define interrupts and explain their different types by their various categories. How does the 8085 prioritize and manage multiple interrupt requests? Support your explanation with a relevant example of interrupt handling.",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Write an assembly language program for the 8085 microprocessor to multiply two 8-bit numbers. Explain the logic of your program and provide necessary comments in the code.",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Explain the various addressing modes used in 8085 with suitable examples. How do these addressing modes impact instruction execution and program efficiency? Illustrate your answer with at least two different instructions demonstrating different addressing modes.",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        }
+      ]
+    },
+    {
+      "syllabus": "CUSAT B.Tech 2023 Scheme",
+      "branch": "Computer Science and Engineering",
+      "subject": {
+        "subject_name": "Microprocessors",
+        "semester": "4",
+        "subject_type": "Core Subject"
+      },
+      "exam": {
+        "exam_type": "Internal Exam",
+        "exam_month": "April",
+        "exam_year": "2025"
+      },
+      "questions": [
+        {
+          "question_text": "Describe the role and significance of the DEN (Data Enable) signal in the operation of the 8086 microprocessor.",
+          "marks": "2",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "What is the function and significance of segment registers in the architecture of the 8086 microprocessor?",
+          "marks": "2",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Describe the role and functionality of the QS0 and QS1 status pins in the 8086 microprocessor architecture.",
+          "marks": "2",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Explain two ways in which Static RAM differs from Dynamic RAM in terms of their characteristics.",
+          "marks": "2",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Identify and describe the two operating modes available in the 8257 DMA controller architecture.",
+          "marks": "2",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Illustrate and describe the memory segmentation scheme used in the 8086 microprocessor. Also, explain the method of calculating physical addresses.",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Explain the structure and purpose of the Interrupt Vector Table in the 8086 microprocessor. How is it accessed during the execution of an interrupt?",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Discuss the addressing modes supported by the 8086 microprocessor architecture. Provide suitable instruction examples to demonstrate each mode.",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Describe the structure and working principle of the 8259 Programmable Interrupt Controller. Elaborate on its initialization, interrupt handling process, and advanced features.",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Explain the architecture and working of the 8087 math coprocessor. How does it interface with the 8086 microprocessor?",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        }
+      ]
+    },
+    {
+      "syllabus": "CUSAT B.Tech 2023 Scheme",
+      "branch": "Electronics and Communication Engineering",
+      "subject": {
+        "subject_name": "Numerical and Statistical Techniques",
+        "semester": "4",
+        "subject_type": "Core Subject"
+      },
+      "exam": {
+        "exam_type": "Internal Exam",
+        "exam_month": "February",
+        "exam_year": "2025"
+      },
+      "questions": [
+        {
+          "question_text": "Explain the bisection method to solve a transcendental equation.",
+          "marks": "2",
+          "module_if_available": "Module 1",
+          "frequency": 1
+        },
+        {
+          "question_text": "Derive Newton Raphson formula to find cubic root of N.",
+          "marks": "2",
+          "module_if_available": "Module 1",
+          "frequency": 1
+        },
+        {
+          "question_text": "Using Lagrange's formula find f(4) from the following data: x: 1, 3, 8, 10; f(x): 5, 25, 30, 42.",
+          "marks": "2",
+          "module_if_available": "Module 1",
+          "frequency": 1
+        },
+        {
+          "question_text": "Derive Gauss Quadrature 2 point formula.",
+          "marks": "2",
+          "module_if_available": "Module 1",
+          "frequency": 1
+        },
+        {
+          "question_text": "Using trapezoidal rule evaluate the integral of dx/(1+x^2) from 0 to 1 taking step size h = 0.1.",
+          "marks": "2",
+          "module_if_available": "Module 1",
+          "frequency": 1
+        },
+        {
+          "question_text": "Find the real root of x^3 - x^2 - 1 = 0 using successive iteration method.",
+          "marks": "5",
+          "module_if_available": "Module 1",
+          "frequency": 1
+        },
+        {
+          "question_text": "Fit a parabola to the following data and find the value of f(x) when x = 13: x: 4, 6, 7, 12; f(x): 17, 37, 50, 145.",
+          "marks": "5",
+          "module_if_available": "Module 1",
+          "frequency": 1
+        },
+        {
+          "question_text": "Solve the following system of equations using Gauss Seidel method: 6x + 15y + 2z = 72, 27x + 6y - 2z = 85, x + y + 54z = 110.",
+          "marks": "5",
+          "module_if_available": "Module 1",
+          "frequency": 1
+        },
+        {
+          "question_text": "Find the melting point of the alloy containing 61% and 89% of lead from the following data: p: 60, 70, 80, 90; t: 216, 250, 276, 304.",
+          "marks": "5",
+          "module_if_available": "Module 1",
+          "frequency": 1
+        },
+        {
+          "question_text": "Evaluate using Simpson's 1/3 rd rule and 3/8 th rule the integral of x^2/(1+x^2) from 1 to 10 taking step size h = 1.",
+          "marks": "5",
+          "module_if_available": "Module 2",
+          "frequency": 1
+        },
+        {
+          "question_text": "Apply Runge Kutta method of 4th order to find y(0.3) from the initial value problem y(0.2) = 1 and h = 0.1, dy/dx = x + y.",
+          "marks": "5",
+          "module_if_available": "Module 2",
+          "frequency": 1
+        },
+        {
+          "question_text": "Using finite difference method solve the boundary value problem y'' + y' = x, y(0) = y(1) = 1.",
+          "marks": "5",
+          "module_if_available": "Module 2",
+          "frequency": 1
+        },
+        {
+          "question_text": "Find y' and y'' at x = 3 and at x = 4 from the following data using Newton's forward and backward formula for derivatives: x: 3, 3.2, 3.4, 3.6, 3.8, 4; y: 28, 33.768, 40.304, 47.656, 55.874, 65.",
+          "marks": "5",
+          "module_if_available": "Module 2",
+          "frequency": 1
+        }
+      ]
+    },
+    {
+      "syllabus": "CUSAT B.Tech 2023 Scheme",
+      "branch": "Electronics and Communication Engineering",
+      "subject": {
+        "subject_name": "Numerical and Statistical Techniques",
+        "semester": "4",
+        "subject_type": "Core Subject"
+      },
+      "exam": {
+        "exam_type": "Internal Exam",
+        "exam_month": "April",
+        "exam_year": "2025"
+      },
+      "questions": [
+        {
+          "question_text": "Probability that a batsman scores a century is 1/3. Find the probability that he may score century in exactly 2 matches and in no matches.",
+          "marks": "2",
+          "module_if_available": "Module 3",
+          "frequency": 1
+        },
+        {
+          "question_text": "Out of 500 items selected for inspection 0.2% are found to be defective. Find how many loads will contain exactly no defectives if there are 1000 loads.",
+          "marks": "2",
+          "module_if_available": "Module 3",
+          "frequency": 1
+        },
+        {
+          "question_text": "Find the probability that the number of heads lie in the range 185 and 220 when a fair coin in is tossed 400 times.",
+          "marks": "2",
+          "module_if_available": "Module 3",
+          "frequency": 1
+        },
+        {
+          "question_text": "Explain the use of categorical variables in regression models.",
+          "marks": "2",
+          "module_if_available": "Module 4",
+          "frequency": 1
+        },
+        {
+          "question_text": "Obtain Spearman's rank correlation coefficient for the following data: X: 68, 64, 75, 50, 64, 80, 75, 40, 55, 64; Y: 62, 58, 68, 45, 81, 60, 68, 48, 50, 70.",
+          "marks": "2",
+          "module_if_available": "Module 4",
+          "frequency": 1
+        },
+        {
+          "question_text": "Consider families with 4 children. What percent of families would you expect to have 2 boys and 2 girls, at least 1 boy, no girls, at most 2 girls? Assume equal probability for boys and girls.",
+          "marks": "5",
+          "module_if_available": "Module 3",
+          "frequency": 1
+        },
+        {
+          "question_text": "The height of the school children of a school is normally distributed with mean 54 inches and standard deviation 12 inches. What percent of students have height between 46 and 56 inches?",
+          "marks": "5",
+          "module_if_available": "Module 3",
+          "frequency": 1
+        },
+        {
+          "question_text": "Test whether accident occurs uniformly over week days on the basis of the following information: Days: Sun, Mon, Tue, Wed, Thu, Fri, Sat; No. of accidents: 11, 13, 14, 13, 15, 14, 8.",
+          "marks": "5",
+          "module_if_available": "Module 3",
+          "frequency": 1
+        },
+        {
+          "question_text": "It is claimed that a random sample of 100 tyres with mean life 15629 KM is drawn from a population of tyres which has a mean life of 15200 KM and SD = 1248 KM. Test the validity of the claim.",
+          "marks": "5",
+          "module_if_available": "Module 3",
+          "frequency": 1
+        },
+        {
+          "question_text": "Obtain Karl Pearson's coefficient of correlation for the following data and comment on the result obtained. Price (Rs): 11, 12, 13, 14, 15, 16, 17, 18, 19, 20; Demand (Kg): 30, 29, 29, 25, 24, 24, 24, 21, 18, 15.",
+          "marks": "5",
+          "module_if_available": "Module 4",
+          "frequency": 1
+        },
+        {
+          "question_text": "From the following data form two regression equations and calculate husband's age when wife's age is 19. Husband's age: 22, 25, 27, 30, 32, 35, 38, 40, 42, 45; Wife's age: 17, 20, 22, 28, 22, 25, 31, 28, 35, 40.",
+          "marks": "5",
+          "module_if_available": "Module 4",
+          "frequency": 1
+        },
+        {
+          "question_text": "Explain any 5 models used in supervised learning.",
+          "marks": "5",
+          "module_if_available": "Module 4",
+          "frequency": 1
+        },
+        {
+          "question_text": "Explain any 5 techniques used in unsupervised learning.",
+          "marks": "5",
+          "module_if_available": "Module 4",
+          "frequency": 1
+        }
+      ]
+    },
+    {
+      "syllabus": "CUSAT B.Tech 2023 Scheme",
+      "branch": "Computer Science and Engineering",
+      "subject": {
+        "subject_name": "Object Oriented Software Engineering",
+        "semester": "4",
+        "subject_type": "Core Subject"
+      },
+      "exam": {
+        "exam_type": "Internal Exam",
+        "exam_month": "February",
+        "exam_year": "2025"
+      },
+      "questions": [
+        {
+          "question_text": "Discuss any three key characteristics of agile model. Use examples.",
+          "marks": "4",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Design any two UML behavioral models for ATM transactions.",
+          "marks": "4",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Analyze any two blackbox testing techniques in detail.",
+          "marks": "4",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Explain six sigma and its various methodologies.",
+          "marks": "4",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Can you suggest the best life cycle models for the following systems? Give reasons. A hospital software where requirements are huge and clear; An object oriented system. Compare and Contrast evolutionary and Iterative waterfall model.",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "What are different types of relationships between classes? Clearly explain how OOAD helps in converting analysis classes to implementation code with examples and diagrams.",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "If a proper process is followed for production, then good quality products are bound to follow automatically. Explain how ISO 9000 makes this true for software industry with details about how to achieve it.",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Distinguish SQA and SQM along with their key activities.",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        }
+      ]
+    },
+    {
+      "syllabus": "CUSAT B.Tech 2023 Scheme",
+      "branch": "Computer Science and Engineering",
+      "subject": {
+        "subject_name": "Object Oriented Software Engineering",
+        "semester": "4",
+        "subject_type": "Core Subject"
+      },
+      "exam": {
+        "exam_type": "Internal Exam",
+        "exam_month": "April",
+        "exam_year": "2025"
+      },
+      "questions": [
+        {
+          "question_text": "List the latest trends, best practices and tools in UI development.",
+          "marks": "4",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Distinguish directing and controlling management functions with examples.",
+          "marks": "4",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Explain Heuristic techniques.",
+          "marks": "4",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Distinguish PERT chart and Gantt chart.",
+          "marks": "4",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Describe in detail the various cohesion and coupling techniques with examples.",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Suggest the best architecture styles for the following systems and explain reasons: Development of OS; A web application. Suggest what are the various possibilities of tools that can be used to develop a web application. Show diagrams for each architecture style for above systems.",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Explain COCOMO model.",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Explain work break down structure. Compare and contrast the three models used to analyze and plan staffing requirements and effort in software projects.",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        }
+      ]
+    },
+    {
+      "syllabus": "CUSAT B.Tech 2023 Scheme",
+      "branch": "Computer Science and Engineering",
+      "subject": {
+        "subject_name": "Operating System",
+        "semester": "4",
+        "subject_type": "Core Subject"
+      },
+      "exam": {
+        "exam_type": "Internal Exam",
+        "exam_month": "February",
+        "exam_year": "2025"
+      },
+      "questions": [
+        {
+          "question_text": "What is critical section? State and explain the conditions to be satisfied by a solution to the critical section problem.",
+          "marks": "4",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Differentiate between pre-emptive and non-preemptive scheduling with an example.",
+          "marks": "4",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "What is the purpose of System call? Explain the working of System call.",
+          "marks": "4",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "A counting semaphore S is initialized to 7. Then, 20 P operations and 15 V operations are performed on S. What is the final value of S?",
+          "marks": "4",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "What is the primary cause of starvation in an operating system? Explain the techniques to prevent starvation.",
+          "marks": "4",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Distinguish among the following terminologies associated with the operating system: Multiprogramming system, Multiprocessing system, Multitasking system. Write a note on the following operating system structures: Layered approach, Micro kernel, Modular approach (Modules).",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Explain the different states of process and transition between them with the help of a diagram. Explain convoy effect with an example.",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Explain types of semaphore with an example.",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "For the process listed in the following table, which of the following scheduling scheme will give the lowest average turnaround time and waiting time: Shortest Remaining First; Round Robin with Time Quantum 2; Priority Scheduling (non-pre-emptive). Process P1: Arrival 0, Burst 3, Priority 2. P2: Arrival 1, Burst 6, Priority 5. P3: Arrival 4, Burst 4, Priority 8. P4: Arrival 6, Burst 2, Priority 1. (Lowest number has higher priority).",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        }
+      ]
+    },
+    {
+      "syllabus": "CUSAT B.Tech 2023 Scheme",
+      "branch": "Computer Science and Engineering",
+      "subject": {
+        "subject_name": "Operating System",
+        "semester": "4",
+        "subject_type": "Core Subject"
+      },
+      "exam": {
+        "exam_type": "Internal Exam",
+        "exam_month": "April",
+        "exam_year": "2025"
+      },
+      "questions": [
+        {
+          "question_text": "List the page placement strategy.",
+          "marks": "4",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Explain the types of fragmentation.",
+          "marks": "4",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "What is a File Allocation Table (FAT)? Why is it used?",
+          "marks": "4",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Explain deadlock with an example.",
+          "marks": "4",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "How can you calculate the disk access time? Explain with equation.",
+          "marks": "4",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Discuss the different aspects of contiguous memory allocation. Find the number of page faults for the following page reference string with 3 page frames for Optimal page replacement and LRU algorithms: 1 2 3 4 5 1 4 1 6 3 2 3.",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Given six memory partitions of 300 KB, 600 KB, 350 KB, 200 KB, 750 KB, and 125 KB (in order), how would the first-fit, best-fit, and worst-fit algorithms place processes of size 115 KB, 500 KB, 358 KB, 200 KB, and 375 KB (in order)? Explain Segmentation with diagram.",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "The read write head is at 32. The head is moving from 124 to 0. Requests are in the order 98, 37, 14, 124, 65, 67. How much time is required by the system if the system is following: Shortest seek time first; C-Scan; Scan; FCFS. Assume 1 head movement takes 1 ms. Explain different RAID levels with their advantages and disadvantages.",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Describe the working of DMA controller with a neat diagram. Explain how it improves system performance. Describe the implementation of I/O buffering strategies (single, double, and circular buffering). Compare their advantages and limitations.",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        }
+      ]
+    },
+    {
+      "syllabus": "CUSAT B.Tech 2023 Scheme",
+      "branch": "Computer Science and Engineering",
+      "subject": {
+        "subject_name": "Discrete Computational Structures",
+        "semester": "3",
+        "subject_type": "Core Subject"
+      },
+      "exam": {
+        "exam_type": "Internal Exam",
+        "exam_month": "December",
+        "exam_year": "2023"
+      },
+      "questions": [
+        {
+          "question_text": "Let p, q, r denote the following statements about particular triangle ABC. p: Triangle ABC is isosceles; q: Triangle ABC is equilateral; r: Triangle ABC is equiangular. Translate each of the following into an English sentence: q → p; ~p → ~q; q ↔ r; p ∧ ~q; r → p.",
+          "marks": "4",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Write the converse, inverse, and contrapositive of each of the following implications. For each implication, determine its truth value as well as the truth values of its corresponding converse, inverse, and contrapositive: if 0+0=0 then 1+1=1; if -1 < 3 and 3+7=10, then sin(3) = -1. Give primitive statements p, q, r, show that the implication [(p v q) ∧ (~p v r)] → (q v r) is a tautology.",
+          "marks": "4",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Write the following statements in symbolic form: At least one integer is even; There exists a positive integer that is even; If x is even, then x is not divisible by 5; No even integer is divisible by 5. Give a direct proof for each of the following: for all integers k and m, if k, m are both even, then k+m is even; for all integers k and m, if k, m are both even, then km is even.",
+          "marks": "4",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "For A = {1, 2, 3, 4, 5, 6, 7} determine the number of: Subsets of A; Nonempty subsets of A; Proper subsets of A; Subsets of A containing five elements, including 1, 2.",
+          "marks": "4",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "A professor has seven different programming books on a book shelf. Three of the books deal with C++, the other four with Java. In how many ways can the professor arrange these books on the shelf: if there are no restrictions; if the languages should alternate; if all the C++ books must be next to each other; if all the C++ books must be next to each other and all the Java books must be next to each other? Over the internet, data are transmitted in structured blocks of bits called datagrams. In how many ways can the letters in DATAGRAM be arranged? For the arrangements of part (a) how many have all the three A's together?",
+          "marks": "4",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Without constructing truth tables prove the following: ~p → (q → r) ≡ q → (p v r). Negate and simplify each of the following: ∃x[p(x) v q(x)]; ∀x[p(x) ∧ ~q(x)]. How many subsets of {1,2,3,...,11} contain at least one even integer? How many subsets of {1,2,3,...,12} contain at least one even integer? Generalize the results.",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Explain the Principle of Mathematical Induction. Prove the following for all n ≥ 1 by the Principle of Mathematical Induction: 1.3 + 2.4 + ... + n(n+2) = [n(n+1)(2n+7)]/6.",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Define one-to-one function. For each of the following functions, determine whether it is one-to-one and determine its range: f: Z → Z, f(x) = 2x+1; f: Q → Q, f(x) = 2x+1; f: Z → Z, f(x) = x^2 - x; f: Z → Z, f(x) = e^x.",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Define Equivalence relation. Which of the following is an equivalence relation? Write down the reason: The relation R on Z defined by aRb if a^2 - b^2 ≤ 7; The relation R on Z defined by aRb if a^2 - b^2 = 0.",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        }
+      ]
+    },
+    {
+      "syllabus": "CUSAT B.Tech 2023 Scheme",
+      "branch": "Computer Science and Engineering",
+      "subject": {
+        "subject_name": "Data Structures and Algorithms",
+        "semester": "3",
+        "subject_type": "Core Subject"
+      },
+      "exam": {
+        "exam_type": "Internal Exam",
+        "exam_month": "October",
+        "exam_year": "2024"
+      },
+      "questions": [
+        {
+          "question_text": "What is the concept of a priority Queue? What are the two types? Explain.",
+          "marks": "4",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Differentiate between linear and Circular Queue. In an array implementation of Circular Queue, how do you find whether: Queue is empty or not; Queue is full or not; Number of elements present.",
+          "marks": "4",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Represent a polynomial in one variable to a doubly linked list using a suitable node structure (e.g. 7x^5 - 6x^3 + 4x^2 + 9). Develop an algorithm to add two such polynomials.",
+          "marks": "4",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Give the code sequences for push() and pop() operations when a stack is implemented with a Singly linked list.",
+          "marks": "4",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "What is a circular list? Write the code sequence for finding the number of elements in it.",
+          "marks": "4",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Implement a DLL and do the following operations: Rotate the list left by n positions; Swap the adjacent nodes and create the new list. Write a program to input a decimal number, convert to binary and digits should be stored in a Singly linked list. Print the binary equivalent by reading the linked list.",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Write Infix to Prefix Algorithm. Using the Algorithm convert the following expression to prefix: (M + N - P) + Q/R/S + ((T * U)/V).",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Create a doubly linked list containing two digit numbers with a checksum in the last node (checksum is the sum of all numbers with sum adjusted to two digits by ignoring the carry). Admin user has the provision to add/delete new data to the list and modify the checksum accordingly. Ordinary users can only verify permission to check if the checksum is correct or not. Model the whole system.",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Write a suitable algorithm for the postfix evaluation. Feed the following infix expression in postfix form to the algorithm, evaluate by showing the intermediate stack contents each time: 2*(5*(3+6))/15 - 2.",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Implement a Toll booth with collection counters separated for Cars, Buses and Large trucks. When a vehicle approaches, it is to be assigned a counter number according to the category. At the counter, toll should be collected as per the order in which it arrives, except for ambulance, police or fireforce vehicles. At the end of the day, total collections must be tabulated category wise and also total number of vehicles passed through that particular counter on that day. Use an appropriate data structure for the implementation.",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        }
+      ]
+    },
+    {
+      "syllabus": "CUSAT B.Tech 2023 Scheme",
+      "branch": "Computer Science and Engineering",
+      "subject": {
+        "subject_name": "Principles of Programming Languages",
+        "semester": "3",
+        "subject_type": "Core Subject"
+      },
+      "exam": {
+        "exam_type": "Internal Exam",
+        "exam_month": "October",
+        "exam_year": "2024"
+      },
+      "questions": [
+        {
+          "question_text": "What is an ambiguous grammar? Check whether the following grammar is ambiguous or not: S --> A; A --> A + A / id; id --> a/b/c.",
+          "marks": "5",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Some programming languages are typeless. What are the advantages and disadvantages of having no types in a language? Also write why dynamic type binding is closely related to implicit heap dynamic variable.",
+          "marks": "5",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "What are the different attributes associated to a variable? Explain with example.",
+          "marks": "5",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "What are the primary design issues for names in programming languages? Also suggest some possible solutions for the said issues.",
+          "marks": "5",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Write an evaluation of C++ programming language using the different language evaluation criteria.",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "What is attribute grammar? Write the formal definition of finding different attributes in attribute grammar with suitable examples. Write how type combatability in assignment statement is verified using attribute grammar.",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "What is binding? Discuss any five types of binding times with simple C program statements.",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Discuss the classification of variables according to their life time.",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        }
+      ]
+    },
+    {
+      "syllabus": "CUSAT B.Tech 2023 Scheme",
+      "branch": "Computer Science and Engineering",
+      "subject": {
+        "subject_name": "Computer Architecture and Organisation",
+        "semester": "3",
+        "subject_type": "Core Subject"
+      },
+      "exam": {
+        "exam_type": "Internal Exam",
+        "exam_month": "October",
+        "exam_year": "2024"
+      },
+      "questions": [
+        {
+          "question_text": "Discuss about the history of computers by explaining the developments in each generation.",
+          "marks": "5",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Explain how DDR SDRAM achieves high data transfer rates during block transfers.",
+          "marks": "5",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Explain how a CMOS SRAM cell maintains data stability and enables fast access times compared to other memory types, including a supporting figure.",
+          "marks": "5",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Explain the different states involved in an instruction cycle state diagram.",
+          "marks": "5",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "What types of instructions were supported by the IAS computer? Give examples under each type.",
+          "marks": "5",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Describe the memory formats with figures and explain the different registers used in the IAS computer architecture.",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Describe interconnection structures in computing. Explain bus interconnection structure and point to point interconnection. Also give a comparison.",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Draw and explain the internal organization of a 16M DRAM chip organised as a 2048 x 2048 x 4 cell array.",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Describe the major components of an IAS computer and how do they interact with each other? Explain with the help of a diagram.",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        }
+      ]
+    },
+    {
+      "syllabus": "CUSAT B.Tech 2023 Scheme",
+      "branch": "Computer Science and Engineering",
+      "subject": {
+        "subject_name": "Automata Languages and Computation",
+        "semester": "3",
+        "subject_type": "Core Subject"
+      },
+      "exam": {
+        "exam_type": "Internal Exam",
+        "exam_month": "October",
+        "exam_year": "2024"
+      },
+      "questions": [
+        {
+          "question_text": "Define a Deterministic Finite Automata. How does it differ from a Non Deterministic Finite Automata? Give example for each.",
+          "marks": "4",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Eliminate ε from the following finite automata using ε-closure.",
+          "marks": "4",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Write regular expressions for: set of binary strings that have odd number of 0's followed by odd number of 1's; strings from {a,b,c} whose length is ≥ 5, starting with 'aa' and ending with 'cc'; L = {a^n b^m | n ≥ 1, m ≥ 1, n+m ≥ 3}; all strings from Σ = {a,b} which contain at least one occurrence of 'a' and 'b'; L = {x^n | n is divisible by 3 or 5}.",
+          "marks": "4",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Construct NFA for the following expressions starting from the basic expressions for 0 and 1: 1*10* + 011*; (0+1)* 111 (0+1)*.",
+          "marks": "4",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Define Moore and Mealy machines. Design a Moore machine where Σ = {a,b}. The machine outputs 'y' whenever there are three consecutive a's or three consecutive b's. In all other cases the output is 'n'.",
+          "marks": "4",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Show that the language L = {a^x | where x = i^3 and i > 0} is not regular using pumping lemma. What is a regular grammar? Represent the following grammar as a finite automata: S → aA | bB | c; A → bC | a; B → aB | b.",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Design a DFA for the regular expression 1*(10)*1*.",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Convert the given finite automata to a minimized DFA.",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Using Arden's theorem find the regular expression for the given finite automata.",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        }
+      ]
+    },
+    {
+      "syllabus": "CUSAT B.Tech 2023 Scheme",
+      "branch": "Computer Science and Engineering",
+      "subject": {
+        "subject_name": "Data Structures and Algorithms",
+        "semester": "3",
+        "subject_type": "Core Subject"
+      },
+      "exam": {
+        "exam_type": "Internal Exam",
+        "exam_month": "November",
+        "exam_year": "2024"
+      },
+      "questions": [
+        {
+          "question_text": "Derive and find the expressions for maximum number of leaves and non leaves in a binary tree of depth T.",
+          "marks": "4",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Convert the following expression to an expression tree: (5+3)*7^8 - 9 + 6*2. Find the postfix equivalent from the tree.",
+          "marks": "4",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Represent the given binary tree using implicit array representation. For a node at position p, its left child is located at __ and right child at __.",
+          "marks": "4",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Differentiate between B tree and B+-trees. Why are B+ trees considered more suitable for Queries?",
+          "marks": "4",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Write the code sequence for deleting a node with one child in a binary search tree.",
+          "marks": "4",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "What are threads? Write a routine for doing threaded inorder traversal. Illustrate with a suitable example. Write a Java program to create a binary search tree of given numbers. Given the value of two nodes, check whether they are siblings or not.",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Write a Java program to input two integers low and high. Output the sum of values from the tree of all nodes having values in the range low to high (Assume the tree is existing). Insert the following values step by step into a B-tree of order 3: 35, 5, 20, 7, 20, 15, 30, 32, 25, 50. After building the tree explain the process of deletion of 32.",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "How do you check whether the tree given is an AVL tree or not? If not, what are the rotations applied? Create an AVL tree using the following set of numbers: 30, 20, 50, 25, 22, 18, 15, 18, 100, 60, 150.",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        }
+      ]
+    },
+    {
+      "syllabus": "CUSAT B.Tech 2023 Scheme",
+      "branch": "Computer Science and Engineering",
+      "subject": {
+        "subject_name": "Discrete Computational Structures",
+        "semester": "3",
+        "subject_type": "Core Subject"
+      },
+      "exam": {
+        "exam_type": "Internal Exam",
+        "exam_month": "November",
+        "exam_year": "2024"
+      },
+      "questions": [
+        {
+          "question_text": "For each of the following degree sequences, find if there exists a graph. In each case, either draw a graph or explain why no graphs exist: 5, 5, 4, 3, 2, 1; 3, 3, 3, 3, 3, 3. Prove that K4 is planar.",
+          "marks": "4",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Solve the recurrence relation a_n - 7a_{n-1} + 10a_{n-2} = 0, a_0 = 0, a_1 = 6.",
+          "marks": "4",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Write down the conditions for graph isomorphism. Determine whether the given figures are isomorphic. Write the reason.",
+          "marks": "4",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Which of the simple graphs have a Hamilton circuit or, if not, a Hamilton path? Write the reason.",
+          "marks": "4",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Define n-regular graph. Give one example for each of 2-regular and 3-regular graphs.",
+          "marks": "4",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Find the number of vertices, the number of edges, and the degree of each vertex in the given undirected graphs. Verify also the Handshaking theorem in each case.",
+          "marks": "4",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Represent the given graphs by adjacency matrices. Draw the graph represented by the given incidence matrices.",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Define a binary tree when it is called a full binary tree. Sketch the 13 vertex binary tree with minimum and maximum height. Also find the path length of both trees.",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "State the necessary and sufficient condition for the existence of an Eulerian path in a connected graph. By applying Fleury's Algorithm, find the Euler Cycle in the given graph.",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "State Kruskal's algorithm and using Kruskal's algorithm, find the minimum spanning tree of the given Graph G.",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        }
+      ]
+    },
+    {
+      "syllabus": "CUSAT B.Tech 2023 Scheme",
+      "branch": "Computer Science and Engineering",
+      "subject": {
+        "subject_name": "Principles of Programming Languages",
+        "semester": "3",
+        "subject_type": "Core Subject"
+      },
+      "exam": {
+        "exam_type": "Internal Exam",
+        "exam_month": "November",
+        "exam_year": "2024"
+      },
+      "questions": [
+        {
+          "question_text": "What are coroutines? Distinguish between coroutines and subroutines with necessary diagrams.",
+          "marks": "5",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "What are the advantages and disadvantages of using inheritance?",
+          "marks": "5",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Distinguish between LET and LAMBDA expression with suitable examples.",
+          "marks": "5",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Write a Scheme function that counts the number of zero elements in a given simple list. (ZERO parameter) is the function to check whether the element is zero or not. Example: Given simple list is (1 0 0 1 0) Answer: 3.",
+          "marks": "5",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Compare different implementation models of parameter passing with suitable examples.",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "How are heap allocated objects allocated and deallocated in C++ and Java? Under what circumstances a C++ method call dynamically bounds to a method? Explain with suitable example.",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Explain the use of CONS, APPEND, MAPCAR, COND and MEMBER functions with examples.",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        }
+      ]
+    },
+    {
+      "syllabus": "CUSAT B.Tech 2023 Scheme",
+      "branch": "Computer Science and Engineering",
+      "subject": {
+        "subject_name": "Automata Languages and Computations",
+        "semester": "3",
+        "subject_type": "Core Subject"
+      },
+      "exam": {
+        "exam_type": "Internal Exam",
+        "exam_month": "November",
+        "exam_year": "2024"
+      },
+      "questions": [
+        {
+          "question_text": "Write a CFG for the language: L(G) = {a^n b^m c^m d^2n | n>0, m>0}; L(G) = {(a^n b^n) | n>0}.",
+          "marks": "4",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Show how left recursion is eliminated in the following rules: A → Abc | bB | a; B → Baa | Bbb | c.",
+          "marks": "4",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Convert the following grammar to CNF: S → Abc | caB; A → bAB | aB | aAlb; B → AaSB | bSA | b | ε.",
+          "marks": "4",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Convert the following grammar to Greibach normal form: S → Abb | ab | c; A → baA | B; B → bAb | cA | a.",
+          "marks": "4",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Remove useless symbols from the following grammar: S → 0B | 1X; A → 1SX | BA1 | 0; B → 0SB | 1BX; X → SB0 | 01.",
+          "marks": "4",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Consider the following grammar and the input string 'aabbaa': S → aAS | a; A → SbA | SS | ba. Give the left most derivation of the string; Give the right most derivation of the string; Draw the parse tree of above derivations. Define a Turing machine. Design a Turing machine to find the one's complement of a binary string.",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Design a PDA to accept L(M) = {a^n b^n c^m d^m | m, n > 0}.",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Design a Turing machine to accept L(M) = {a^n b^n c^n | n > 0}.",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "How do you represent the Instantaneous Description (ID) of a Turing machine (TM)? Write the ID of the Turing machine based on given information. Show how the ID changes as transition rules are applied.",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        }
+      ]
+    },
+    {
+      "syllabus": "CUSAT B.Tech 2023 Scheme",
+      "branch": "Computer Science and Engineering",
+      "subject": {
+        "subject_name": "Differential Equations and Complex Variables",
+        "semester": "3",
+        "subject_type": "Core Subject"
+      },
+      "exam": {
+        "exam_type": "Internal Exam",
+        "exam_month": "November",
+        "exam_year": "2024"
+      },
+      "questions": [
+        {
+          "question_text": "Find the Residue of f(z) = z^2 / ((z-1)^2(z+2)) at each pole.",
+          "marks": "2",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Form Partial Differential Equation from z = f(x + iy) + g(x - iy).",
+          "marks": "2",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Solve p + q = z.",
+          "marks": "2",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Solve p√x + q√y = √z.",
+          "marks": "2",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "State Cauchy's Residue Theorem.",
+          "marks": "2",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Using Residue Theorem, evaluate the integral of e^z / (z^2 + π^2) dz where C is the circle |z| = 4.",
+          "marks": "5",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Evaluate the integral from 0 to 2π of dθ/(2 + cosθ).",
+          "marks": "5",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Solve x^2p^2 + y^2q^2 = z^2.",
+          "marks": "6",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Form the Partial Differential Equation of (x-a)^2 + (y-b)^2 + z^2 = c^2.",
+          "marks": "4",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Solve x(y-z)p + y(z-x)q = z(x-y).",
+          "marks": "5",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Solve r + s - 6t = cos(2x + y).",
+          "marks": "5",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Using Cauchy's Residue theorem, evaluate the integral of (3z^2+z-1)/((z^2-1)(z-3)) dz where C is the circle |z| = 2.",
+          "marks": "5",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Evaluate the integral from 0 to π of (1 + cosθ)/(5 + 3cosθ) dθ using Cauchy's Residue Theorem.",
+          "marks": "5",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Solve the equation ∂u/∂x = 2∂u/∂t + u, given u(x, 0) = 6e^(-3x).",
+          "marks": "5",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Solve (D^2 + DD' - 6D'^2)z = y cos x.",
+          "marks": "5",
+          "module_if_available": null,
+          "frequency": 1
+        }
+      ]
+    },
+    {
+      "syllabus": "CUSAT B.Tech 2023 Scheme",
+      "branch": "Computer Science and Engineering",
+      "subject": {
+        "subject_name": "Computer Architecture and Organisation",
+        "semester": "3",
+        "subject_type": "Core Subject"
+      },
+      "exam": {
+        "exam_type": "Internal Exam",
+        "exam_month": "October",
+        "exam_year": "2024"
+      },
+      "questions": [
+        {
+          "question_text": "Write a short note on the Translation Lookaside Buffer (TLB) and its role in virtual memory.",
+          "marks": "5",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Describe the working of Direct Memory Access (DMA) and its advantages.",
+          "marks": "5",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Write a short note on Floating Point Representation (IEEE 754 standard).",
+          "marks": "5",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Compare and contrast Partitioning and Segmentation in memory management.",
+          "marks": "5",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Compare and contrast RISC and CISC instruction execution characteristics.",
+          "marks": "5",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Explain the concept of Instruction Pipelining stages (Fetch, Decode, Execute, etc.). How does pipelining improve CPU performance? Use a diagram.",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Perform Booth's multiplication for the following pairs of numbers: 1010 (-10) and 1100 (12); 0110 (6) and 1011 (-5).",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "A system uses paging with 4KB page size and 32-bit addresses. Calculate the number of pages and page table entries.",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Explain the working of Interrupt-Driven I/O and its advantages. Provide a diagram illustrating the interrupt handling process.",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        }
+      ]
+    },
+    {
+      "syllabus": "CUSAT B.Tech 2023 Scheme",
+      "branch": "Computer Science and Engineering",
+      "subject": {
+        "subject_name": "Differential Equations and Complex Variables",
+        "semester": "3",
+        "subject_type": "Core Subject"
+      },
+      "exam": {
+        "exam_type": "Internal Exam",
+        "exam_month": "October",
+        "exam_year": "2024"
+      },
+      "questions": [
+        {
+          "question_text": "Test whether the function f(z) = xy + iy is analytic or not.",
+          "marks": "2",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Show that the transformation w = 1/z transforms all circles and straight lines into circles and straight lines in W-plane. Which circles in the z-plane becomes straight lines and which circles are transformed into other circles?",
+          "marks": "2",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "State Cauchy's Integral Theorem.",
+          "marks": "2",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Find the analytic function whose imaginary part is 3x^2y - y^3.",
+          "marks": "2",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Evaluate the integral from (0,0) to (2+i) of (x^2 - iy) dz along the path y = x^2.",
+          "marks": "2",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Show that the function f(z) = √|xy| is not regular at the origin, although C-R equations are satisfied. Find the analytic function whose real part is e^(-x)(x sin y - y cos y).",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "State and Prove Cauchy's Integral Formula. Verify Cauchy's Theorem for f(z) = z + 1 taken over the boundary of a square with vertices 0, 1, 1+i, i.",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Find the bilinear transformation which maps the points z = 2, i, -2 into the points w = -1, i, 1. Find the analytic function f(z), if u + v = x/(x^2+y^2) and f(1) = 1.",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Find the image of the circle |z - 2i| = 2 in the complex plane under the mapping w = 1/z. Evaluate the integral of (z^2+5)/((z-3)) dz where C is the circle: |z| = 4; |z| = 1.",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        }
+      ]
+    },
+    {
+      "syllabus": "CUSAT B.Tech 2023 Scheme",
+      "branch": "Computer Science and Engineering",
+      "subject": {
+        "subject_name": "Numerical and Statistical Techniques",
+        "semester": "4",
+        "subject_type": "Core Subject"
+      },
+      "exam": {
+        "exam_type": "Internal Exam",
+        "exam_month": "April",
+        "exam_year": "2025"
+      },
+      "questions": [
+        {
+          "question_text": "A bank record transactions are either original or fraud. Suppose the random variable X denotes the number of fraud transactions out of 3 transactions. Find the probability mass function of X, Mean, Variance and Standard Deviation.",
+          "marks": "4",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "A random sample of size 12 is taken from a normal population with N(μ,3). Find the probability that variance of the sample lies between 3.4 and 14.8.",
+          "marks": "4",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "A trucking firm is suspicious of the claim that the average lifetime of certain tyres is at least 28000 miles. To check the claim, the firm puts 40 of these tyres on its trucks and gets a mean lifetime of 27473 miles with a standard deviation of 1348 miles. What can it conclude if α = 0.01?",
+          "marks": "4",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Using Spearman's Rank Correlation Method, find the coefficient of correlation for the following data: x: 12, 17, 22, 27, 31; y: 113, 119, 117, 115, 121.",
+          "marks": "4",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "What are the Measures of Dispersion in Descriptive Statistics? Write the formula for each measure.",
+          "marks": "4",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "A sample of 100 dry battery cells tested to find the length of life produce the following results: x̄ = 12 hrs and σ = 3 hrs. Assuming the data to be normally distributed, what percentage of battery cells are expected to have more than 15 hrs and less than 6 hrs?",
+          "marks": "5",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Derive the Mean and Variance of Binomial Distribution.",
+          "marks": "5",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Intelligence test of two groups of boys and girls gives the following results: Girls Mean=84, SD=10, N=121; Boys Mean=81, SD=12, N=81. Is the difference of Mean scores significant? Is the difference of Standard Deviations significant?",
+          "marks": "5",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "The standard deviation of a sample of size 50 is 3.6. Examine whether the sample was taken from population with SD 3.3 at α = 1%.",
+          "marks": "5",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "The following table gives the number of units produced per day by two workers A and B for a number of days. Should these results be accepted as evidence that the two workers are equally stable? A: 40, 30, 38, 41, 38, 35; B: 39, 38, 41, 33, 32, 39, 40, 34.",
+          "marks": "5",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Find the correlation co-efficient and equations of regression lines for the following values of x and y: x: 1, 2, 3, 4, 5; y: 2, 5, 3, 8, 7.",
+          "marks": "5",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Fit a Poisson distribution to the following data and test for its goodness of fit at 5% level of significance: x: 0, 1, 2, 3, 4; f: 419, 352, 154, 56, 9.",
+          "marks": "5",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Find the mean of variables x and y and the correlation coefficient, given: Regression of y on x is 2y - x - 50 = 0; Regression of x on y is 3y - 2x - 10 = 0.",
+          "marks": "5",
+          "module_if_available": null,
+          "frequency": 1
+        }
+      ]
+    },
+    {
+      "syllabus": "CUSAT B.Tech 2023 Scheme",
+      "branch": "Computer Science and Engineering",
+      "subject": {
+        "subject_name": "Numerical and Statistical Techniques",
+        "semester": "4",
+        "subject_type": "Core Subject"
+      },
+      "exam": {
+        "exam_type": "Internal Exam",
+        "exam_month": "February",
+        "exam_year": "2025"
+      },
+      "questions": [
+        {
+          "question_text": "Find a positive value of cube root of 5 using Newton Raphson method correct to 2 decimal places.",
+          "marks": "2",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Apply Simpson's 1/3 rd rule to evaluate the integral of dx/(1+x^2) from 0 to 1 taking step size h = 0.1.",
+          "marks": "2",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Derive the mean and variance of binomial distribution.",
+          "marks": "2",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Describe the terms level of significance and power of test in testing of hypothesis.",
+          "marks": "2",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "What are the two measures of shapes in descriptive statistics? Explain.",
+          "marks": "2",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Find a real root of the equation x^3 - x^2 - 1 = 0 using secant method correct to 3 decimal places.",
+          "marks": "5",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Use Newton's divided difference formula to find f(4) if f(0) = 2, f(1) = 3, f(2) = 12 and f(5) = 147.",
+          "marks": "5",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Solve the system of equations using Gauss Seidel Method: 5x + 2y + z = 12, x + 4y + 2z = 15 and x + 2y + 5z = 20.",
+          "marks": "5",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Fit a second degree curve to the following data and find the value of y when x = 7: x: 1, 2, 3, 4, 5; y: 7, 25, 53, 91, 139.",
+          "marks": "5",
+          "module_if_available": null,
+          "frequency": 1
+        }
+      ]
+    },
+    {
+      "syllabus": "CUSAT B.Tech 2023 Scheme",
+      "branch": "Computer Science and Engineering",
+      "subject": {
+        "subject_name": "Numerical and Statistical Techniques",
+        "semester": "3",
+        "subject_type": "Core Subject"
+      },
+      "exam": {
+        "exam_type": "Internal Exam",
+        "exam_month": "February",
+        "exam_year": "2025"
+      },
+      "questions": [
+        {
+          "question_text": "With diagram, explain the steps in interpreting a Python program.",
+          "marks": "4",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Explain the differences between the data types int and float with example code for reading and printing values of these datatypes.",
+          "marks": "4",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Write a program that calculates and prints the number of minutes in a month chosen by the user.",
+          "marks": "4",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "With example code, explain the difference between Lazy Evaluation and Short Circuit Evaluation.",
+          "marks": "4",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Write a Python program using indefinite iteration to calculate the factorial of an integer.",
+          "marks": "4",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Write a Python program to get the name and marks (out of 100) of 5 students from a user and calculate the total marks and average marks. Identify and explain the datatypes used to store the variables used in the above program with syntax for input and output operations.",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Write a Python program to calculate the attendance percentage of a student for a year of 300 working days following the waterfall model for software development. Conditions are: No of leaves below and equal to 10 can be ignored; Each student is allowed maximum 5 leaves for cocurricular activities; Students with medical emergencies can be allowed an additional attendance of 2%, if total attendance falls below 75%.",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Explain selection in Python with diagrams of its working and example programs.",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Write a Python program to encrypt a string with Caesar cipher with the distance value provided by user. Explain output with diagram.",
+          "marks": "5",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Write a Python program to convert a binary number to its octal form and decimal form.",
+          "marks": "5",
+          "module_if_available": null,
+          "frequency": 1
+        }
+      ]
+    },
+    {
+      "syllabus": "CUSAT B.Tech 2023 Scheme",
+      "branch": "Computer Science and Engineering",
+      "subject": {
+        "subject_name": "Numerical and Statistical Techniques",
+        "semester": "4",
+        "subject_type": "Core Subject"
+      },
+      "exam": {
+        "exam_type": "Internal Exam",
+        "exam_month": "April",
+        "exam_year": "2025"
+      },
+      "questions": [
+        {
+          "question_text": "What is a transaction in DBMS? What are the desirable properties of a transaction?",
+          "marks": "5",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Differentiate between fixed length and variable length records. Differentiate between spanned and un-spanned records.",
+          "marks": "5",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Describe the structural constraints in relationships. Give examples.",
+          "marks": "5",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Consider an EMPLOYEE file with 10000 records where each record is of size 80 bytes. The file is sorted on employee number (15 bytes long), which is the primary key. Assuming un-spanned organization and block size of 512 bytes compute the number of block accesses needed for selecting records based on employee number if Multi-level primary index is used. Assume a block pointer size of 6 bytes.",
+          "marks": "5",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Consider the following schedules with 4 transactions on 3 data elements. Check if they are conflict serializable, if yes find corresponding serial schedule. S1: r1(A), w1(B), r2(B), w2(C), r3(A), w3(C), r4(C), w4(A). S2: r1(A), w1(B), r2(B), w2(C), r3(C), w3(A), r4(A), w4(C), r1(C), r2(A), r3(B). Determine whether each schedule is strict, cascadeless, recoverable, or nonrecoverable. S3: r1(X); r2(Z); r1(Z); r3(X); r3(Y); w1(X); c1; w3(Y); c3; r2(Y); w2(Z); w2(Y); c2. S4: r1(X); r2(Z); r1(Z); r3(X); r3(Y); w1(X); w3(Y); r2(Y); w2(Z); w2(Y); c1; c2; c3.",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "What is collision in Hashing? Explain the various techniques for collision resolution. Explain how secondary indexes are used on key and non-key field.",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Explain files of unordered and ordered type. How are they different in terms of performing insertion, deletion, searching and modification on records.",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Design an E-R diagram for an online food delivery system. The system should maintain: Customers place orders from various restaurants. Each customer has a unique customer ID, name, phone number, and delivery address. Restaurants have a unique restaurant ID, name, location, and cuisine type. Each restaurant offers multiple menu items with item ID, name, price, and category. Orders include one or more items, with order ID, date, total amount, and status. A delivery agent is assigned to each order with ID, name, and phone number.",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        }
+      ]
+    },
+    {
+      "syllabus": "CUSAT B.Tech 2023 Scheme",
+      "branch": "Computer Science and Engineering",
+      "subject": {
+        "subject_name": "Numerical and Statistical Techniques",
+        "semester": "4",
+        "subject_type": "Core Subject"
+      },
+      "exam": {
+        "exam_type": "End Semester",
+        "exam_month": "April",
+        "exam_year": "2025"
+      },
+      "questions": [
+        {
+          "question_text": "Find a positive value of cube root of 5 using Newton Raphson method correct to 2 decimal places.",
+          "marks": "2",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Apply Simpson's 1/3 rd rule to evaluate the integral of dx/(1+x^2) from 0 to 1 taking step size h = 0.1.",
+          "marks": "2",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Derive the mean and variance of binomial distribution.",
+          "marks": "2",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Describe the terms level of significance and power of test in testing of hypothesis.",
+          "marks": "2",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "What are the two measures of shapes in descriptive statistics? Explain.",
+          "marks": "2",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Find a real root of the equation x^3 - x^2 - 1 = 0 using secant method correct to 3 decimal places.",
+          "marks": "5",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Use Newton's divided difference formula to find f(4) if f(0) = 2, f(1) = 3, f(2) = 12 and f(5) = 147.",
+          "marks": "5",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Solve the system of equations using Gauss Seidel Method: 5x + 2y + z = 12, x + 4y + 2z = 15 and x + 2y + 5z = 20.",
+          "marks": "5",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Fit a second degree curve to the following data and find the value of y when x = 7: x: 1, 2, 3, 4, 5; y: 7, 25, 53, 91, 139.",
+          "marks": "5",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "A slider in a machine moves along a fixed straight rod. Its distance x cm along the rod is given for various values of time t seconds. Find the velocity and acceleration of the slider when t = 0.3 seconds. t: 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6; x: 32.30, 32.81, 34.05, 34.53, 34.95, 35.09, 35.42.",
+          "marks": "5",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "When a train is moving 30 m/sec, steam is shut off and breaks are applied. The speed of the train V in m/sec after t sec is given in the following table. Applying trapezoidal rule determine the distance moved in 40 seconds: t: 0, 5, 10, 15, 20, 25, 30, 35, 40; V: 35, 27, 18.5, 12.3, 10.2, 8, 6.7, 6, 4.",
+          "marks": "5",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Apply Runge-Kutta method of fourth order to calculate the value for x = 0.2 correct to 3 decimal places when dy/dx = x + 4y, y(0) = 0, taking h = 0.1.",
+          "marks": "5",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Derive Gauss Quadrature 2 point formula and use it to evaluate the integral of (1+x^4) dx from -1 to 1.",
+          "marks": "5",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "A car hire firm has 2 cars which it hires out day by day. The number of demand for a car on each day is distributed as Poisson variate with mean 1.5. Calculate the proportion of the days for which neither car is hired and some demand is refused.",
+          "marks": "5",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "In a competitive examination 5000 students have appeared in a subject in Computer Science. Their average mark was 62 and standard deviation was 12. If there are only 100 vacancies, find the minimum mark that one should score in order to get selected. Assume that the question paper followed a Bloom's taxonomy to ensure normal distribution of marks.",
+          "marks": "5",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Electric bulbs manufactured by two companies X and Y give the following results. State whether there is any significant difference in the mean life of the two makes: X: Number of bulbs=100, Mean life=1300 Hrs, SD=82; Y: Number of bulbs=100, Mean life=1248 Hrs, SD=93.",
+          "marks": "5",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "The following table gives the number of units produced per day by two workers A and B. Should this data be accepted as evidence that the two workers are equally stable? A: 40, 30, 38, 41, 38, 35; B: 39, 38, 41, 33, 32, 39, 40, 34.",
+          "marks": "5",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Compute Karl Pearson's Coefficient of Correlation and comment on the result obtained. Price (₹): 11, 12, 13, 14, 15, 16, 17, 18, 19, 20; Demand (kg): 30, 29, 29, 25, 24, 24, 24, 21, 18, 15.",
+          "marks": "5",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "A panel of two judges P and Q graded seven dramatic performances by independently awarding marks. The eighth performance, for which the judge Q could not attend, was awarded 37 marks by judge P. If judge Q has also been present, how many marks would be expected to have been awarded by him to the eighth performance? Performance: 1-7; Marks by P: 46, 42, 44, 40, 43, 41, 45; Marks by Q: 40, 38, 36, 35, 39, 37, 41.",
+          "marks": "5",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Explain four various types of regression models that are used in supervised learning.",
+          "marks": "5",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Explain the clustering techniques that are used in unsupervised learning.",
+          "marks": "5",
+          "module_if_available": null,
+          "frequency": 1
+        }
+      ]
+    },
+    {
+      "syllabus": "CUSAT B.Tech 2023 Scheme",
+      "branch": "Computer Science and Engineering",
+      "subject": {
+        "subject_name": "Operating Systems",
+        "semester": "4",
+        "subject_type": "Core Subject"
+      },
+      "exam": {
+        "exam_type": "End Semester",
+        "exam_month": "April",
+        "exam_year": "2025"
+      },
+      "questions": [
+        {
+          "question_text": "Describe the differences among short-term, medium-term and long-term schedulers.",
+          "marks": "2",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "How is segmentation different from paging?",
+          "marks": "2",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Differentiate internal fragmentation and external fragmentation.",
+          "marks": "2",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "What is a File Allocation Table (FAT)? Why is it used?",
+          "marks": "2",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Define the strict two-phase locking protocol.",
+          "marks": "2",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Draw the Gantt Chart, find the average waiting time for the following algorithms: FCFS, Preemptive priority, Non-preemptive priority. Process P1: Arrival=0, Burst=8, Priority=4. P2: Arrival=2, Burst=6, Priority=1. P3: Arrival=2, Burst=1, Priority=2. P4: Arrival=1, Burst=9, Priority=2. P5: Arrival=3, Burst=3, Priority=3.",
+          "marks": "6",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "What is a process? With the help of a diagram, explain the different process states.",
+          "marks": "4",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Describe how semaphores can be used as a synchronisation mechanism.",
+          "marks": "6",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "With the help of a diagram, explain how a multilevel feedback queue scheduling works.",
+          "marks": "4",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Given six memory partitions of 300 KB, 600 KB, 350 KB, 200 KB, 750 KB and 125 KB (in order), how would the first-fit, best-fit and worst-fit algorithms place processes of size 115 KB, 500 KB, 358 KB, 200 KB and 375 KB (in order).",
+          "marks": "5",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Discuss the different aspects of contiguous memory allocation.",
+          "marks": "5",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "With a diagram, explain how paging is done with TLB. Find the number of page faults for the following page reference string with three page frames for optimal page replacement and LRU algorithms: 2 3 4 2 1 3 7 5 4 3.",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "The read write head is at 97. The head is moving from 299 to 0. Requests are in the order 94, 82, 101, 110, 198, 75, 87, 124, 136. How much time is required by the system if the system is following: Shortest Seek Time First (SSTF); C-Scan. Assume 1 head movement takes 1 ms.",
+          "marks": "5",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Describe the working of DMA controller with a neat diagram. Explain how it improves system performance.",
+          "marks": "5",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Describe the implementation of I/O buffering strategies (single, double and circular buffering). Compare their advantages and limitations.",
+          "marks": "5",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Describe the implementation of RAID systems. Explain different RAID levels with their advantages and disadvantages.",
+          "marks": "5",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Discuss how resource allocation graphs can be used to represent deadlock situations. Illustrate with examples showing both deadlock and no-deadlock cases.",
+          "marks": "5",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Explain the banker's algorithm for deadlock avoidance with a step-by-step example.",
+          "marks": "5",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Explain two-phase locking protocol in detail. Discuss how it ensures serializability in database transactions.",
+          "marks": "5",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Explain various deadlock recovery techniques in detail.",
+          "marks": "5",
+          "module_if_available": null,
+          "frequency": 1
+        }
+      ]
+    },
+    {
+      "syllabus": "CUSAT B.Tech 2023 Scheme",
+      "branch": "Computer Science and Engineering",
+      "subject": {
+        "subject_name": "Database Management Systems",
+        "semester": "4",
+        "subject_type": "Core Subject"
+      },
+      "exam": {
+        "exam_type": "End Semester",
+        "exam_month": "April",
+        "exam_year": "2025"
+      },
+      "questions": [
+        {
+          "question_text": "What are the constraints on specialization and generalization?",
+          "marks": "2",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Describe record blocking and the process of calculating the blocking factor.",
+          "marks": "2",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Differentiate between trivial and non-trivial functional dependencies; partial and full functional dependencies.",
+          "marks": "2",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Describe the desirable properties of a transaction.",
+          "marks": "2",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "How do sharding and replication differ in MongoDB?",
+          "marks": "2",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Design an ER diagram for a cricket management system with four main entities, including a derived attribute. The system should track teams, players, matches and scores. Each team should have multiple players, while each player belongs to only one team. Matches involve two teams and record the winner. Player performances should be tracked through individual scores in each match. Define relationships between these entities and include a derived attribute to calculate a player's statistical performance based on match data. Explain how the above E-R diagram can be extended to enhanced entity relationship diagram, what are the subclasses and how are they modelled?",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Illustrate three schema architecture and explain how it achieves the various characteristics of DBMS. Differentiate between weak entity types and strong entity types with examples, and explain how weak entities are linked to strong entities.",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Consider an EMPLOYEE file with 10000 records where each record is of size 80 bytes. The file is sorted on employee number (15 bytes long), which is the primary key. Assuming un-spanned organization and block size of 512 bytes, compute the number of block accesses needed for selecting records based on employee number if: no index is used; single level primary index is used. Assume a block pointer size of 6 bytes. Briefly explain various hashing techniques.",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Explain the different types of single level ordered indexes in detail.",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "For Patients (PatientID, Name, Age, Gender, Disease), Doctors (DoctorID, Name, Specialization), Appointments (AppointmentID, PatientID, DoctorID, FeesPaid, AppointmentDate_Time): Retrieve the names and ages of all female patients diagnosed with Diabetes; Retrieve the names of patients along with the doctors treating them; Get the total number of doctors in the hospital; Count the number of patients for each disease; Find doctors who have collected more than $10,000 in consultation fees; Remove patients who have never booked an appointment; Create a trigger that prevents a doctor from having multiple appointments at the same time.",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "For Patients (PatientID, Name, Age, Gender, Disease), Doctors (DoctorID, Name, Specialization), Appointments (AppointmentID, PatientID, DoctorID, FeesPaid, AppointmentDate_Time), write relational algebra queries for: Retrieve all male patients; Find the names of all doctors who are cardiologists; Retrieve patient names and their corresponding doctor names; Retrieve all patients who have never booked an appointment; Find the doctors who have treated all patients in the hospital. Consider the relation R(P, Q, R, S, T) with the following functional dependencies: P → Q, R; Q → S; R → T. Determine the highest normal form this relation satisfies. Provide justification for your answer.",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "What is timestamp ordering? What are the various approaches used in timestamp ordering? Explain the Two-Phase Locking (2PL) protocol and how it ensures serializability.",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Consider the three transactions T1, T2 and T3 and the schedules S1 and S2 given below. Draw the serializability (precedence) graphs for S1 and S2 and state whether each schedule is serializable or not. If a schedule is serializable, write down the equivalent serial schedule(s). T1: r1(X); r1(Z); w1(X). T2: r2(Z); r2(Y); w2(Z); w2(Y). T3: r3(X); r3(Y); w3(Y). S1: r1(X); r2(Z); r1(Z); r3(X); r3(Y); w1(X); w3(Y); r2(Y); w2(Z); w2(Y). S2: r1(X); r2(Z); r3(X); r1(Z); r2(Y); r3(Y); w1(X); w2(Z); w3(Y); w2(Y). Differentiate between recoverable, cascadeless and strict schedules with examples.",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        }
+      ]
+    },
+    {
+      "syllabus": "CUSAT B.Tech 2023 Scheme",
+      "branch": "Computer Science and Engineering",
+      "subject": {
+        "subject_name": "Data Structures and Algorithms",
+        "semester": "3",
+        "subject_type": "Core Subject"
+      },
+      "exam": {
+        "exam_type": "End Semester",
+        "exam_month": "November",
+        "exam_year": "2024"
+      },
+      "questions": [
+        {
+          "question_text": "What are the advantages of using linked lists over arrays?",
+          "marks": "2",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Describe the structure of a doubly linked list.",
+          "marks": "2",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Explain the differences between a binary tree and a binary search tree.",
+          "marks": "2",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Define spanning trees. Explain the concept of a minimum spanning tree.",
+          "marks": "2",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Define hashing, hash tables and hash function.",
+          "marks": "2",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Evaluate the postfix expression 5 6 2 + * 12 4 /- using a stack. Show the steps and the contents of the stack at each stage.",
+          "marks": "5",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Explain the implementation of stacks using arrays and linked lists. Provide algorithms for push, pop and peek operations.",
+          "marks": "5",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Describe linear and circular queues. Explain their implementations, operations (enqueue, dequeue) and applications.",
+          "marks": "5",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Convert the infix expression to postfix using the stack method. Show the step-by-step working of the stack: (A + B) * (C ^ D - E) / (F + G).",
+          "marks": "5",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Insert the elements 50, 30, 70, 20, 40, 60, 80, 10 into a Binary Search Tree (BST). Show the tree after each insertion and perform an in-order traversal. Write the algorithm to delete the node containing 10. Write the algorithm to delete the node containing 50.",
+          "marks": "5",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Given the expression (A + B) * (C - D) / E, construct its expression tree. Perform pre-order, in-order and post-order traversals on the tree.",
+          "marks": "5",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Describe AVL trees and their balancing mechanisms. Construct an AVL tree by inserting the following sequence of elements 6, 7, 9, 4, 3, 5, 8 step-by-step. Show the resultant tree after each insertion. Write the techniques for LL, LR, RL and RR rotations.",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Describe Kruskal's and Prim's algorithms for finding the minimum spanning tree. Explain how each algorithm works on the given graph.",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Implement the Depth-First Search (DFS) and Breadth-First Search (BFS) algorithms on the given graph starting from vertex e. Write adjacency list and adjacency matrix for the given graph.",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Explain merge sort algorithm. Illustrate the working of merge sort algorithm using the following numbers: 50, 45, 16, 32, 26, 17, 35, 60.",
+          "marks": "5",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Write the algorithm for quick sort. Explain how you choose the pivot element. Explain the steps while sorting the following sequence of elements: 15, 40, 28, 10, 23, 58, 19, 30.",
+          "marks": "5",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Define collision in hashing. Explain in detail open hashing and closed hashing.",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        }
+      ]
+    },
+    {
+      "syllabus": "CUSAT B.Tech 2023 Scheme",
+      "branch": "Computer Science and Engineering",
+      "subject": {
+        "subject_name": "Principles of Programming Languages",
+        "semester": "3",
+        "subject_type": "Core Subject"
+      },
+      "exam": {
+        "exam_type": "End Semester",
+        "exam_month": "November",
+        "exam_year": "2024"
+      },
+      "questions": [
+        {
+          "question_text": "Differentiate between static semantics and dynamic semantics in programming languages.",
+          "marks": "2",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Discuss the concepts of scope and lifetime of variables in programming languages.",
+          "marks": "2",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "What is the purpose of exception handling in programming? How does exception handling differ between C++ and Java?",
+          "marks": "2",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Differentiate between checked and unchecked exceptions in Java.",
+          "marks": "2",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Explain the design issues involved in various constructs of object-oriented programming language.",
+          "marks": "2",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Explain the different programming domains and discuss the criteria used for evaluating a programming language. Highlight the significance of readability, writability and reliability in language evaluation.",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Explain the concept of Attribute Grammars in the context of formal methods for describing the syntax of programming languages. How do attribute grammars enhance context-free grammars? Illustrate with an example.",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Explain the three semantics models of parameter passing when physical moves are used. How the various implementation models of parameter passing are actually implemented?",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Describe the stack contents for the points labelled 1, 2, and 3 with activation record instances for the given program with functions fun1, fun2, fun3 and main.",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Explain the concepts of data abstraction and encapsulation in object-oriented programming. How do these concepts contribute to the security and modularity of a software system? Provide examples in any object-oriented language to illustrate your answer.",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Differentiate between static and dynamic polymorphism in object-oriented programming. Provide examples in C++ or Java to show how both types of polymorphism can be implemented.",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Explain Lambda Calculus and its role in functional programming languages.",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Explain the key features of Prolog as a logic programming language.",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        }
+      ]
+    },
+    {
+      "syllabus": "CUSAT B.Tech 2023 Scheme",
+      "branch": "Computer Science and Engineering",
+      "subject": {
+        "subject_name": "Automata Languages and Computations",
+        "semester": "3",
+        "subject_type": "Core Subject"
+      },
+      "exam": {
+        "exam_type": "End Semester",
+        "exam_month": "November",
+        "exam_year": "2024"
+      },
+      "questions": [
+        {
+          "question_text": "Draw a finite automata accepting the language of all strings over {a,b} in which both number of a's and b's are even.",
+          "marks": "2",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Give the automation for the regular grammar G = (V,T,P,S) where V = {S,A,B}, T = {a,b} and P is defined as: S → bS | aA | ε; A → aA | bB | b; B → bS.",
+          "marks": "2",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Consider the following grammar: S → AB | aaB; A → a | Aa; B → b. Check whether the given grammar is ambiguous. Justify your answer.",
+          "marks": "2",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Explain any two techniques for Turing machine construction.",
+          "marks": "2",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Write short note on Linear Bounded Automata.",
+          "marks": "2",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Convert the following NFA to DFA.",
+          "marks": "7",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Construct a Moore machine which calculates residue mod 4 for each binary string treated as binary integer.",
+          "marks": "3",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Minimise the given DFA. Convert the given Moore machine into equivalent Mealy machine.",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Using pumping lemma prove that the language L = {a^n b^n | n > 0} is not regular. Construct the finite automata equivalent to the regular expression ((0+1)(0+1))* + ((0+1)(0+1)(0+1))*.",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Find the regular expression for the given transition system. Find the regular expression representing the following sets over {a,b}*: The language of all strings in which every a is immediately followed by bb; The language of all strings containing the substring bba; The language of all strings that do not end with bb.",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Convert to CNF: S → TU | V; T → aTb | ε; U → cU | ε; V → aVc | W; W → bW | ε. Design a push down automata for the language L = {a^n b^(n+1) : n > 0}. Also explain with a suitable sample string.",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Convert the following grammar into GNF: S → XA | BB; B → b | SB; X → b; A → a. Remove the unit productions from the following grammar: S → A | bb; A → B | b; B → S | a.",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Design a Turing machine which accepts the language L = {a^n b^(2n)}. Also explain its workings with a suitable string in the input tape. Give a brief discussion on Universal Turing machine.",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Construct a Turing machine that computes f(n,m) = n*m, where n and m are unary numbers. Write short notes on Chomsky hierarchy.",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        }
+      ]
+    },
+    {
+      "syllabus": "CUSAT B.Tech 2023 Scheme",
+      "branch": "Computer Science and Engineering",
+      "subject": {
+        "subject_name": "Differential Equations and Complex Variables",
+        "semester": "3",
+        "subject_type": "Core Subject"
+      },
+      "exam": {
+        "exam_type": "End Semester",
+        "exam_month": "November",
+        "exam_year": "2024"
+      },
+      "questions": [
+        {
+          "question_text": "Find the fixed points of the mapping w = (5-4z)/(4z-2).",
+          "marks": "2",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Expand the Laurent's series of z^2 * e^(1/z).",
+          "marks": "2",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Evaluate the integral of (e^z + z^2)/(z-0.5)^2 dz where C is |z| = 1.",
+          "marks": "2",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Form the partial differential equation from z = f(x^2 + y^2).",
+          "marks": "2",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Write the various possible solutions of one-dimensional heat equation.",
+          "marks": "2",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Find the bilinear transformation which maps z = i, -1, 1 on to w = 0, 1, ∞.",
+          "marks": "5",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Describe the image of x^2 + y^2 = r^2 under the mapping w = 1/z.",
+          "marks": "5",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Find the analytic function f(z) = u + iv if u - v = (x + y)(x^2 - 2xy + y^2).",
+          "marks": "5",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Describe the image of |z - 1| = 1 under the mapping w = z^2.",
+          "marks": "5",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Evaluate the integral from 0 to 2π of dθ/(5-3cosθ) using contour integration.",
+          "marks": "5",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Evaluate the integral of (z^6+1)/(z^2(2z-1)(z-2)) dz where C is |z| = 1 using residue theorem.",
+          "marks": "5",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "State and prove Cauchy's integral formula. Evaluate the integral of e^z/((z^2+4)(z-i)^2) dz where C is |z-i| = 1/2 using Cauchy's integral formula.",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Solve z(p^2 - q^2) = x - y. Solve ∂^3z/∂x^3 - 4∂^3z/∂x^2∂y + 4∂^3z/∂x∂y^2 = 4sin(2x+y).",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Find the integral surface of x(y^2+z)p - y(x^2+z)q = z(x^2-y^2). Solve ∂u/∂x = 2∂u/∂t + u, given u(x,0) = 6e^(-3x).",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Derive one dimensional heat equation. Derive the solution of one-dimensional wave equation.",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "An infinite long plate is bounded by two parallel edges and an edge at right angles to them. The breadth is π and this end is maintained at a temperature u0 at all points and the other edges are in zero temperature. Determine the temperature at any point on the plate in steady state.",
+          "marks": "5",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "The vibration of a string is given by ∂^2u/∂t^2 = c^2 ∂^2u/∂x^2. The string is stretched and fastened to two points l apart. The motion is started by displacing the string from y = a sin(πx/l) from which it is released at time t = 0. Find the displacement of any point at a distance x from one end at time t.",
+          "marks": "5",
+          "module_if_available": null,
+          "frequency": 1
+        }
+      ]
+    },
+    {
+      "syllabus": "CUSAT B.Tech 2023 Scheme",
+      "branch": "Computer Science and Engineering",
+      "subject": {
+        "subject_name": "Computer Architecture and Organisation",
+        "semester": "3",
+        "subject_type": "Core Subject"
+      },
+      "exam": {
+        "exam_type": "End Semester",
+        "exam_month": "November",
+        "exam_year": "2024"
+      },
+      "questions": [
+        {
+          "question_text": "What are the main components of a computer system and how are they interconnected?",
+          "marks": "2",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Describe the main features of embedded systems and give an example of where they are used.",
+          "marks": "2",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Describe the primary difference between flash memory and traditional magnetic disk storage.",
+          "marks": "2",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "How does PCI bus interconnection enable communication between multiple devices and the processor?",
+          "marks": "2",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Compare any three characteristics of RISC and CISC architectures.",
+          "marks": "2",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Explain the ARM architecture and discuss its significance in the field of embedded systems.",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "What are the main characteristics of the Intel x86 architecture and why has it become significant in computing? Use a block diagram to support your answer.",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Explain the significance of memory hierarchy in a computer system and discuss its main characteristics. What is the purpose of cache memory in a computer system and how does it improve system performance? A computer system has a cache with a hit rate of 0.85 (85%). Which is the best Cache mapping technique to make the hit ratio close to 100%? Explain it briefly.",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Describe Direct Memory Access (DMA) and its role in I/O operations. How does DMA improve system performance compared to Programmed I/O?",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Explain Booth's Algorithm for binary multiplication. How does it optimize the multiplication process, especially when dealing with signed numbers? Discuss its advantages over traditional multiplication methods.",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Explain the IEEE 754 standard for binary floating-point representation, including the roles of the sign bit, exponent and mantissa. Convert -12.75 into IEEE 754 single-precision format, showing each step.",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Discuss the concept of addressing modes in computer systems. Provide examples of common addressing modes from x86 processor.",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Explain the concept of micro-operations and microinstruction sequencing in a processor. How does the control unit manage and sequence these operations to execute an instruction?",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        }
+      ]
+    },
+    {
+      "syllabus": "CUSAT B.Tech 2023 Scheme",
+      "branch": "Computer Science and Engineering",
+      "subject": {
+        "subject_name": "Discrete Computational Structures",
+        "semester": "3",
+        "subject_type": "Core Subject"
+      },
+      "exam": {
+        "exam_type": "End Semester",
+        "exam_month": "November",
+        "exam_year": "2024"
+      },
+      "questions": [
+        {
+          "question_text": "Construct the truth table for p ↔ [(q ∧ r) → ~(s v r)].",
+          "marks": "2",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Let R = {(1,2),(3,4),(2,2)} and S = {(4,2),(2,5),(3,1),(1,3)}. Find RoS, SoR, Ro(SoR) and RoR.",
+          "marks": "2",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "In how many different ways can the letters of the word 'MATHEMATICS' be arranged such that the vowels must always come together?",
+          "marks": "2",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Find the adjacency and incidence matrix for the given graph.",
+          "marks": "2",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "With suitable examples define GLB and LUB of a partially ordered set.",
+          "marks": "2",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Without using truth table prove that (P v Q) ∧ (~P ∧ ~Q) v (~P ∧ ~R)) v (~P ∧ ~Q) v (~P ∧ ~R) is a tautology. Let A = {1,2,3,4,5,6,7}. Let R be a relation on A defined by R = {(a,b) | a-b is divisible by 3}. Show that R is an equivalence relation.",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Use mathematical induction to prove that 1^2 + 2^2 + 3^2 + ... + n^2 = (1/6)(n(n+1)(2n+1)) for all n ∈ N. Let f: R → R and g: R → R be functions defined by f = x^2 - 3 and g(x) = x + 4. Find gof and fog. Find whether gof and fog are one to one or onto.",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Solve the recurrence relation a_n = 2a_{n-1} + 5a_{n-2} - 6a_{n-3} with a_0 = 7, a_1 = -4 and a_2 = 8. State the first and second counting principles. A student can choose a computer project from one of three lists containing 23, 15 and 19 possible projects respectively. No project is on more than one list. How many possible projects are there to choose from?",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Solve the recurrence relation a_n = -6a_{n-1} - 9a_{n-2} for n ≥ 2, a_0 = 3, a_1 = -3. State Pigeonhole principle. Show that among any 4 numbers one can find 2 numbers so that their difference is divisible by 3. Use the Pigeonhole Principle.",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "State Fleury's algorithm. Use the algorithm to construct an Euler circuit for the given graph. Let G = (V, E) is a connected graph with |E| = 17 and deg(v) ≥ 3 for all v ∈ V. What is the maximum value for |V|? Show that when any edge is removed from K5, the resulting subgraph is planar. Is this true for the graph K3,3?",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Explain the minimum spanning tree (MST). Construct the MST for the given graph using Kruskal's Algorithm. Determine whether the given graphs are isomorphic or not. Justify your answer.",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Define the Abelian group. Prove that the algebraic structure (Q*, *) is an abelian group where * is defined on Q* by a*b = (ab)/2. Draw the Hasse diagram for (L, ⊆) where L = {S0, S1, S2, S3, S4, S5, S6, S7}: S0 = {1,2,3,4,5,6}, S1 = {1,2,3,4,5}, S2 = {1,2,3,5,6}, S3 = {1,2,3,5}, S4 = {1,2,3,5}, S5 = {1,2}, S6 = {1,3}, S7 = {1}.",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Define a Lattice. Consider the set D50 = {1, 2, 5, 10, 25, 50} and the relation divides (/) be a partial ordering relation on D50. Draw the Hasse diagram of D50 with relation divides. Determine all upper bounds of 5 and 10. Determine all lower bounds of 5 and 10. Determine the greatest and least element of D50. Define Minimal Elements in a Partially Ordered Set. What is the relationship between the Maximal Element and Upper Bounds? Is every maximal element of a set also an upper bound of the set? Explain with an example.",
+          "marks": "10",
+          "module_if_available": null,
+          "frequency": 1
+        }
+      ]
+    },
+    {
+      "syllabus": "CUSAT B.Tech 2023 Scheme",
+      "branch": "Computer Science and Engineering",
+      "subject": {
+        "subject_name": "Numerical and Statistical Techniques",
+        "semester": "3",
+        "subject_type": "Core Subject"
+      },
+      "exam": {
+        "exam_type": "Internal Exam",
+        "exam_month": "November",
+        "exam_year": "2024"
+      },
+      "questions": [
+        {
+          "question_text": "With diagram, explain the steps in interpreting a Python program.",
+          "marks": "4",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Explain the differences between the data types int and float with example code for reading and printing values.",
+          "marks": "4",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Write a program that calculates and prints the number of minutes in a month chosen by the user.",
+          "marks": "4",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "With example code, explain the difference between Lazy Evaluation and Short Circuit Evaluation.",
+          "marks": "4",
+          "module_if_available": null,
+          "frequency": 1
+        },
+        {
+          "question_text": "Write a Python program using indefinite iteration to calculate the factorial of an integer.",
+          "marks": "4",
+          "module_if_available": null,
+          "frequency": 1
+        }
+      ]
+    }
+  ]
+}

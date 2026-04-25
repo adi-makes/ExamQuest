@@ -3,13 +3,11 @@ require_once 'db.php';
 
 define('PER_PAGE', 6);
 
-$year_labels = [1 => 'First Year', 2 => 'Second Year', 3 => 'Third Year', 4 => 'Fourth Year'];
-
 // Validate incoming params
 $subject_id  = intval($_GET['subject_id']  ?? 0);
 $syllabus_id = intval($_GET['syllabus_id'] ?? 0);
 $branch_id   = intval($_GET['branch_id']   ?? 0);
-$study_year  = intval($_GET['study_year']  ?? 0);
+$semester    = trim($_GET['semester']       ?? '');
 $page        = max(1, intval($_GET['page'] ?? 1));
 
 if ($subject_id <= 0) {
@@ -21,7 +19,7 @@ if ($subject_id <= 0) {
 $stmt = $conn->prepare('
     SELECT s.subject_name, s.semester, s.subject_type,
            sy.regulation_year, b.branch_name,
-           s.syllabus_id, s.branch_id, s.study_year
+           s.syllabus_id, s.branch_id
     FROM subject s
     JOIN syllabus sy ON sy.syllabus_id = s.syllabus_id
     JOIN branch   b  ON b.branch_id   = s.branch_id
@@ -40,7 +38,7 @@ if (!$subject_info) {
 // Fill in missing URL params from DB record if not passed
 if ($syllabus_id <= 0) $syllabus_id = intval($subject_info['syllabus_id']);
 if ($branch_id   <= 0) $branch_id   = intval($subject_info['branch_id']);
-if ($study_year  <= 0) $study_year  = intval($subject_info['study_year']);
+if ($semester === '')  $semester    = $subject_info['semester'];
 
 // Count total questions
 $stmt = $conn->prepare('SELECT COUNT(*) AS total FROM questions WHERE subject_id = ?');
@@ -110,7 +108,6 @@ function pageUrl(int $p): string {
     return '?' . http_build_query($params);
 }
 
-$year_label = $year_labels[$study_year] ?? 'Year ' . $study_year;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -128,7 +125,7 @@ $year_label = $year_labels[$study_year] ?? 'Year ' . $study_year;
         <a href="index.php" class="nav__brand">ExamQuest</a>
         <div class="nav__links">
             <a href="index.php">Home</a>
-            <a href="subject.php?syllabus_id=<?= $syllabus_id ?>&branch_id=<?= $branch_id ?>&study_year=<?= $study_year ?>" class="active">Subjects</a>
+            <a href="subject.php?syllabus_id=<?= $syllabus_id ?>&branch_id=<?= $branch_id ?>&semester=<?= urlencode($semester) ?>" class="active">Subjects</a>
             <a href="admin.php">Admin</a>
             <a href="about.php">About</a>
         </div>
@@ -150,7 +147,7 @@ $year_label = $year_labels[$study_year] ?? 'Year ' . $study_year;
         <nav class="breadcrumb" aria-label="Breadcrumb">
             <a href="index.php">Home</a>
             <span class="breadcrumb__sep">›</span>
-            <a href="subject.php?syllabus_id=<?= $syllabus_id ?>&branch_id=<?= $branch_id ?>&study_year=<?= $study_year ?>">Subjects</a>
+            <a href="subject.php?syllabus_id=<?= $syllabus_id ?>&branch_id=<?= $branch_id ?>&semester=<?= urlencode($semester) ?>">Subjects</a>
             <span class="breadcrumb__sep">›</span>
             <span class="breadcrumb__current"><?= htmlspecialchars(strtoupper($subject_info['subject_name']), ENT_QUOTES, 'UTF-8') ?></span>
         </nav>
@@ -170,15 +167,15 @@ $year_label = $year_labels[$study_year] ?? 'Year ' . $study_year;
         <!-- Active Filters -->
         <div class="card active-filters">
             <span class="active-filters__label">Active Filters:</span>
-            <span class="chip">Subject: <?= htmlspecialchars($subject_info['subject_name'], ENT_QUOTES, 'UTF-8') ?> <a href="subject.php?syllabus_id=<?= $syllabus_id ?>&branch_id=<?= $branch_id ?>&study_year=<?= $study_year ?>">×</a></span>
+            <span class="chip">Subject: <?= htmlspecialchars($subject_info['subject_name'], ENT_QUOTES, 'UTF-8') ?> <a href="subject.php?syllabus_id=<?= $syllabus_id ?>&branch_id=<?= $branch_id ?>&semester=<?= urlencode($semester) ?>">×</a></span>
             <span class="chip">Status: Most Repeated <a href="<?= pageUrl(1) ?>">×</a></span>
-            <a href="subject.php?syllabus_id=<?= $syllabus_id ?>&branch_id=<?= $branch_id ?>&study_year=<?= $study_year ?>" class="link--clear">Clear All</a>
+            <a href="subject.php?syllabus_id=<?= $syllabus_id ?>&branch_id=<?= $branch_id ?>&semester=<?= urlencode($semester) ?>" class="link--clear">Clear All</a>
         </div>
 
         <!-- Question Table -->
         <?php if (empty($questions)): ?>
         <div class="card" style="text-align:center;padding:48px;color:var(--color-secondary-text);">
-            <p>No questions found for this subject yet.</p>
+            <p>No questions available for this subject yet.</p>
             <a href="admin.php" class="btn btn--primary" style="margin-top:16px;">Add Questions</a>
         </div>
         <?php else: ?>

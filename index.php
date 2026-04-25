@@ -5,13 +5,11 @@ require_once 'db.php';
 $syllabi  = mysqli_query($conn, 'SELECT syllabus_id, regulation_year FROM syllabus ORDER BY syllabus_id ASC');
 $branches = mysqli_query($conn, 'SELECT branch_id, branch_name FROM branch ORDER BY branch_name ASC');
 
-$year_labels = [1 => 'First Year', 2 => 'Second Year', 3 => 'Third Year', 4 => 'Fourth Year'];
-
-// Fetch distinct study years that actually have subjects
-$years_result = mysqli_query($conn, 'SELECT DISTINCT study_year FROM subject ORDER BY study_year ASC');
-$years = [];
-while ($row = mysqli_fetch_assoc($years_result)) {
-    $years[] = $row['study_year'];
+// Fetch distinct semesters that actually have subjects
+$semesters_result = mysqli_query($conn, 'SELECT DISTINCT semester FROM subject ORDER BY CAST(semester AS UNSIGNED) ASC');
+$semesters = [];
+while ($row = mysqli_fetch_assoc($semesters_result)) {
+    $semesters[] = $row['semester'];
 }
 
 // Handle form submission
@@ -19,10 +17,10 @@ $error = '';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $syllabus_id = intval($_POST['syllabus_id'] ?? 0);
     $branch_id   = intval($_POST['branch_id']   ?? 0);
-    $study_year  = intval($_POST['study_year']  ?? 0);
+    $semester    = trim($_POST['semester']       ?? '');
 
-    if ($syllabus_id > 0 && $branch_id > 0 && $study_year > 0) {
-        header('Location: subject.php?syllabus_id=' . $syllabus_id . '&branch_id=' . $branch_id . '&study_year=' . $study_year);
+    if ($syllabus_id > 0 && $branch_id > 0 && $semester !== '') {
+        header('Location: subject.php?syllabus_id=' . $syllabus_id . '&branch_id=' . $branch_id . '&semester=' . urlencode($semester));
         exit;
     } else {
         $error = 'Please select all three fields before continuing.';
@@ -104,13 +102,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 </div>
 
                 <div class="form-group" style="margin-bottom:24px;">
-                    <label class="form-label" for="study_year">Select Academic Year</label>
-                    <select name="study_year" id="study_year" class="input input--select" required>
-                        <option value="">Choose Year</option>
-                        <?php foreach ($years as $y): ?>
-                        <option value="<?= $y ?>"
-                            <?= (isset($_POST['study_year']) && $_POST['study_year'] == $y) ? 'selected' : '' ?>>
-                            <?= htmlspecialchars($year_labels[$y] ?? 'Year ' . $y, ENT_QUOTES, 'UTF-8') ?>
+                    <label class="form-label" for="semester">Select Semester</label>
+                    <select name="semester" id="semester" class="input input--select" required>
+                        <option value="">Choose Semester</option>
+                        <?php foreach ($semesters as $s): ?>
+                        <option value="<?= htmlspecialchars($s, ENT_QUOTES, 'UTF-8') ?>"
+                            <?= (isset($_POST['semester']) && $_POST['semester'] === $s) ? 'selected' : '' ?>>
+                            Semester <?= htmlspecialchars($s, ENT_QUOTES, 'UTF-8') ?>
                         </option>
                         <?php endforeach; ?>
                     </select>
