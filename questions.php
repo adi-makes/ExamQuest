@@ -59,7 +59,8 @@ $stmt = $conn->prepare('
     ORDER BY frequency DESC, marks DESC
     LIMIT ? OFFSET ?
 ');
-$stmt->bind_param('iii', $subject_id, PER_PAGE, $offset);
+$per_page = PER_PAGE;
+$stmt->bind_param('iii', $subject_id, $per_page, $offset);
 $stmt->execute();
 $questions_result = $stmt->get_result();
 $questions = [];
