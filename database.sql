@@ -1,12 +1,11 @@
 -- =============================================================
--- ExamQuest Database - Full Setup (CUSAT B.Tech, 2023 Scheme)
--- Drop-and-recreate for idempotent import in phpMyAdmin
+-- ExamQuest Database — Full Setup (CUSAT B.Tech, 2023 Scheme)
 -- =============================================================
-
-CREATE DATABASE IF NOT EXISTS examquest_db
-    CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-
-USE examquest_db;
+-- IMPORTANT for InfinityFree:
+--   Do NOT add CREATE DATABASE or USE statements here.
+--   Import this file directly via phpMyAdmin into your
+--   pre-created InfinityFree database.
+-- =============================================================
 
 SET FOREIGN_KEY_CHECKS = 0;
 DROP TABLE IF EXISTS questions;
@@ -17,6 +16,7 @@ SET FOREIGN_KEY_CHECKS = 1;
 
 -- -------------------------------------------------------
 -- Table: syllabus
+-- Stores regulation/scheme year (e.g. CUSAT 2023 Scheme)
 -- -------------------------------------------------------
 CREATE TABLE syllabus (
     syllabus_id     INT AUTO_INCREMENT PRIMARY KEY,
@@ -25,6 +25,7 @@ CREATE TABLE syllabus (
 
 -- -------------------------------------------------------
 -- Table: branch
+-- Stores engineering branch names
 -- -------------------------------------------------------
 CREATE TABLE branch (
     branch_id   INT AUTO_INCREMENT PRIMARY KEY,
@@ -33,6 +34,8 @@ CREATE TABLE branch (
 
 -- -------------------------------------------------------
 -- Table: subject
+-- Stores subjects linked to a syllabus, branch, and semester
+-- UNIQUE constraint prevents duplicate subject entries
 -- -------------------------------------------------------
 CREATE TABLE subject (
     subject_id   INT AUTO_INCREMENT PRIMARY KEY,
@@ -48,6 +51,8 @@ CREATE TABLE subject (
 
 -- -------------------------------------------------------
 -- Table: questions
+-- Stores exam questions linked to a subject
+-- ON DUPLICATE KEY UPDATE increments frequency for repeated questions
 -- -------------------------------------------------------
 CREATE TABLE questions (
     question_id   INT AUTO_INCREMENT PRIMARY KEY,
@@ -63,12 +68,12 @@ CREATE TABLE questions (
 -- SEED DATA
 -- =============================================================
 
--- Syllabi
+-- Syllabi: regulation years offered
 INSERT INTO syllabus (regulation_year) VALUES
     ('CUSAT B.Tech 2023 Scheme'),
     ('CUSAT B.Tech 2019 Scheme');
 
--- Branches
+-- Branches: engineering departments
 INSERT INTO branch (branch_name) VALUES
     ('Civil Engineering'),
     ('Computer Science and Engineering'),
@@ -79,9 +84,9 @@ INSERT INTO branch (branch_name) VALUES
     ('Safety and Fire Engineering');
 
 -- =============================================================
--- Subjects (14 unique records, duplicates and errors corrected)
--- ID  Subject Name                                  Sem
---  1  Automata Languages and Computation             4
+-- Subjects — 13 unique records (corrected and deduplicated)
+-- ID  Subject Name                                  Sem   Note
+--  1  Automata Languages and Computation             3    Fixed: was Sem 4
 --  2  Computer Architecture and Organisation         3
 --  3  Data and Computer Communication                4
 --  4  Data Structures and Algorithms                 3
@@ -89,15 +94,14 @@ INSERT INTO branch (branch_name) VALUES
 --  6  Differential Equations and Complex Variables   3
 --  7  Discrete Computational Structures              3
 --  8  Microprocessors                                4
---  9  Numerical and Statistical Methods              4
--- 10  Numerical and Statistical Techniques           4
--- 11  Object Oriented Software Engineering           4
--- 12  Operating Systems                              4
--- 13  Principles of Programming Languages            3
--- 14  Python for Machine Learning                    4
+--  9  Numerical and Statistical Techniques           4    Merged: absorbed NSM (was id 9+10)
+-- 10  Object Oriented Software Engineering           4    Was id 11
+-- 11  Operating Systems                              4    Was id 12
+-- 12  Principles of Programming Languages            3    Was id 13
+-- 13  Python for Machine Learning                    4    Was id 14
 -- =============================================================
 INSERT INTO subject (subject_name, semester, subject_type, syllabus_id, branch_id) VALUES
-    ('Automata Languages and Computation',            '4', 'Core Subject', 1, 2),
+    ('Automata Languages and Computation',            '3', 'Core Subject', 1, 2),
     ('Computer Architecture and Organisation',        '3', 'Core Subject', 1, 2),
     ('Data and Computer Communication',               '4', 'Core Subject', 1, 2),
     ('Data Structures and Algorithms',                '3', 'Core Subject', 1, 2),
@@ -105,7 +109,6 @@ INSERT INTO subject (subject_name, semester, subject_type, syllabus_id, branch_i
     ('Differential Equations and Complex Variables',  '3', 'Core Subject', 1, 2),
     ('Discrete Computational Structures',             '3', 'Core Subject', 1, 2),
     ('Microprocessors',                               '4', 'Core Subject', 1, 2),
-    ('Numerical and Statistical Methods',             '4', 'Core Subject', 1, 2),
     ('Numerical and Statistical Techniques',          '4', 'Core Subject', 1, 2),
     ('Object Oriented Software Engineering',          '4', 'Core Subject', 1, 2),
     ('Operating Systems',                             '4', 'Core Subject', 1, 2),
@@ -116,8 +119,10 @@ INSERT INTO subject (subject_name, semester, subject_type, syllabus_id, branch_i
 -- QUESTIONS
 -- =============================================================
 
--- Subject 1: Automata Languages and Computation (Semester 4)
--- Merged from original subjects 1 (ALC) and 2 (ALC with typo)
+-- -------------------------------------------------------
+-- Subject 1: Automata Languages and Computation (Semester 3)
+-- Corrected from Semester 4; subject_id = 1 (unchanged)
+-- -------------------------------------------------------
 INSERT INTO questions (subject_id, question_text, marks, frequency) VALUES
     (1, 'Define a Deterministic Finite Automata. How does it differ from a Non Deterministic Finite Automata? Give example for each.', 4, 1),
     (1, 'Eliminate ε from the following finite automata using ε-closure.', 4, 1),
@@ -153,7 +158,9 @@ INSERT INTO questions (subject_id, question_text, marks, frequency) VALUES
     (1, 'Construct a Turing machine that computes f(n,m) = n*m, where n and m are unary numbers. Write short notes on Chomsky hierarchy.', 10, 1)
 ON DUPLICATE KEY UPDATE frequency = frequency + VALUES(frequency);
 
+-- -------------------------------------------------------
 -- Subject 2: Computer Architecture and Organisation (Semester 3)
+-- -------------------------------------------------------
 INSERT INTO questions (subject_id, question_text, marks, frequency) VALUES
     (2, 'Discuss about the history of computers by explaining the developments in each generation.', 5, 1),
     (2, 'Explain how DDR SDRAM achieves high data transfer rates during block transfers.', 5, 1),
@@ -188,7 +195,9 @@ INSERT INTO questions (subject_id, question_text, marks, frequency) VALUES
     (2, 'Explain the concept of micro-operations and microinstruction sequencing in a processor. How does the control unit manage and sequence these operations to execute an instruction?', 10, 1)
 ON DUPLICATE KEY UPDATE frequency = frequency + VALUES(frequency);
 
+-- -------------------------------------------------------
 -- Subject 3: Data and Computer Communication (Semester 4)
+-- -------------------------------------------------------
 INSERT INTO questions (subject_id, question_text, marks, frequency) VALUES
     (3, 'Why does the TCP/IP protocol stack not have separate session and presentation layers despite OSI mandating them?', 2, 1),
     (3, 'An n-layer protocol hierarchy adds h-byte headers at each layer for messages of length M bytes. If the total overhead must not exceed 20% of the total transmitted data, derive the inequality relating n, h, and M. For M = 1000 bytes and h = 20 bytes, find the maximum permissible number of protocol layers.', 2, 1),
@@ -245,7 +254,9 @@ INSERT INTO questions (subject_id, question_text, marks, frequency) VALUES
     (3, 'Generate a convolution code tree for the given encoder for 5-bit input data. What will be the code for the input stream 11011? How to sequentially decode the received message 111111001111001 to correct the errors.', 5, 1)
 ON DUPLICATE KEY UPDATE frequency = frequency + VALUES(frequency);
 
+-- -------------------------------------------------------
 -- Subject 4: Data Structures and Algorithms (Semester 3)
+-- -------------------------------------------------------
 INSERT INTO questions (subject_id, question_text, marks, frequency) VALUES
     (4, 'What is the concept of a priority Queue? What are the two types? Explain.', 4, 1),
     (4, 'Differentiate between linear and Circular Queue. In an array implementation of Circular Queue, how do you find whether: Queue is empty or not; Queue is full or not; Number of elements present.', 4, 1),
@@ -284,7 +295,9 @@ INSERT INTO questions (subject_id, question_text, marks, frequency) VALUES
     (4, 'Define collision in hashing. Explain in detail open hashing and closed hashing.', 10, 1)
 ON DUPLICATE KEY UPDATE frequency = frequency + VALUES(frequency);
 
+-- -------------------------------------------------------
 -- Subject 5: Database Management Systems (Semester 4)
+-- -------------------------------------------------------
 INSERT INTO questions (subject_id, question_text, marks, frequency) VALUES
     (5, 'Define the following terms: (a) Functional dependency (b) Full functional dependency (c) Transitive dependency (d) Trivial functional dependency (e) Prime attributes.', 5, 1),
     (5, 'Explain various relational model constraints.', 5, 1),
@@ -345,7 +358,9 @@ INSERT INTO questions (subject_id, question_text, marks, frequency) VALUES
     (5, 'Consider T1: r1(X); r1(Z); w1(X). T2: r2(Z); r2(Y); w2(Z); w2(Y). T3: r3(X); r3(Y); w3(Y). Draw the serializability graphs for S1 and S2 and state whether each schedule is serializable.', 10, 1)
 ON DUPLICATE KEY UPDATE frequency = frequency + VALUES(frequency);
 
+-- -------------------------------------------------------
 -- Subject 6: Differential Equations and Complex Variables (Semester 3)
+-- -------------------------------------------------------
 INSERT INTO questions (subject_id, question_text, marks, frequency) VALUES
     (6, 'Find the Residue of f(z) = z^2 / ((z-1)^2(z+2)) at each pole.', 2, 1),
     (6, 'Form Partial Differential Equation from z = f(x + iy) + g(x - iy).', 2, 1),
@@ -390,7 +405,9 @@ INSERT INTO questions (subject_id, question_text, marks, frequency) VALUES
     (6, 'The vibration of a string is given by ∂^2u/∂t^2 = c^2 ∂^2u/∂x^2. Find the displacement of any point at a distance x from one end at time t.', 5, 1)
 ON DUPLICATE KEY UPDATE frequency = frequency + VALUES(frequency);
 
+-- -------------------------------------------------------
 -- Subject 7: Discrete Computational Structures (Semester 3)
+-- -------------------------------------------------------
 INSERT INTO questions (subject_id, question_text, marks, frequency) VALUES
     (7, 'Let p, q, r denote the following statements about particular triangle ABC. p: Triangle ABC is isosceles; q: Triangle ABC is equilateral; r: Triangle ABC is equiangular. Translate each of the following into an English sentence: q → p; ~p → ~q; q ↔ r; p ∧ ~q; r → p.', 4, 1),
     (7, 'Write the converse, inverse, and contrapositive of each of the following implications. Give primitive statements p, q, r, show that the implication [(p v q) ∧ (~p v r)] → (q v r) is a tautology.', 4, 1),
@@ -426,7 +443,9 @@ INSERT INTO questions (subject_id, question_text, marks, frequency) VALUES
     (7, 'Define a Lattice. Consider the set D50 = {1, 2, 5, 10, 25, 50} with the divides relation. Draw the Hasse diagram of D50. Determine all upper bounds of 5 and 10. Determine all lower bounds of 5 and 10.', 10, 1)
 ON DUPLICATE KEY UPDATE frequency = frequency + VALUES(frequency);
 
+-- -------------------------------------------------------
 -- Subject 8: Microprocessors (Semester 4)
+-- -------------------------------------------------------
 INSERT INTO questions (subject_id, question_text, marks, frequency) VALUES
     (8, 'How many T-states and machine cycles are required to execute the instruction SHLD 3050H?', 4, 1),
     (8, 'During the execution of a program, a hardware device produces a very short pulse (which may be maskable if required) that must not be missed by the 8085 microprocessor. Which interrupt line would you select for this situation? Justify your answer.', 4, 1),
@@ -464,8 +483,15 @@ INSERT INTO questions (subject_id, question_text, marks, frequency) VALUES
     (8, 'Explain the architecture and working of the 8087 math coprocessor. How does it interface with the 8086 microprocessor?', 10, 1)
 ON DUPLICATE KEY UPDATE frequency = frequency + VALUES(frequency);
 
--- Subject 9: Numerical and Statistical Methods (Semester 4)
+-- -------------------------------------------------------
+-- Subject 9: Numerical and Statistical Techniques (Semester 4)
+-- Merged from two previously duplicate entries:
+--   - "Numerical and Statistical Methods"    (old subject 9)
+--   - "Numerical and Statistical Techniques" (old subject 10)
+-- Both are now unified under a single subject_id = 9
+-- -------------------------------------------------------
 INSERT INTO questions (subject_id, question_text, marks, frequency) VALUES
+    -- Numerical Methods topics (previously under NSM)
     (9, 'Write a short note on error.', 2, 1),
     (9, 'Find a root of the equation 3x - cos x - 1 = 0 by Newton''s method.', 2, 1),
     (9, 'Expand log_e x in powers of (x-1) and hence evaluate log_e (1.1) correct to 4 decimal places.', 2, 1),
@@ -478,220 +504,225 @@ INSERT INTO questions (subject_id, question_text, marks, frequency) VALUES
     (9, 'From the following table find f''(1.1) and f''''(1.1) by using Newton''s differentiation formula.', 5, 1),
     (9, 'Evaluate the integral from 0 to 1 of 1/(1+x) dx using Gauss three point formula.', 5, 1),
     (9, 'Dividing the range into 10 equal parts, find the approximate value of the integral from 0 to π of sin x dx by Trapezoidal rule.', 5, 1),
-    (9, 'Apply Runge-Kutta method of fourth order to calculate the value for x = 0.2 when dy/dx = x + 4y, y(0) = 0, taking h = 0.1.', 5, 1)
+    (9, 'Apply Runge-Kutta method of fourth order to calculate the value for x = 0.2 when dy/dx = x + 4y, y(0) = 0, taking h = 0.1.', 5, 1),
+    -- Statistical Techniques topics (previously under NST)
+    (9, 'Differentiate between discrete random variable and continuous random variable.', 2, 1),
+    (9, 'Ten coins are tossed simultaneously. Find the probability of getting at least 7 heads.', 2, 1),
+    (9, 'If X is a random variable with mean -3 and variance 4, find p(x > -1.5).', 2, 1),
+    (9, 'Define skewness and kurtosis.', 2, 1),
+    (9, 'Define correlation.', 2, 1),
+    (9, 'In a binomial distribution consistency of 6 independent trials, probabilities of 1 and 2 successes are 0.28336 and 0.0506. Find the parameter of distribution.', 5, 1),
+    (9, '8 unbiased coins were tossed simultaneously. Find the probability of getting: (i) Exactly 4 heads (ii) No heads at all (iii) 6 or more heads (iv) At most 2 heads (v) Number of heads ranging from 3 to 5.', 5, 1),
+    (9, 'A random sample of 200 tins of coconut oil gave an average weight of 4.95 kgs with a standard deviation of 0.21 kgs. Do we accept this tins not weight 5 kgs per tin at 1% level?', 5, 1),
+    (9, 'The standard deviation of 2 samples of size 10 and 14 from 2 normal populations are 3.5 and 3 respectively. Examine whether standard deviation of population are equal.', 5, 1),
+    (9, 'Compute Karl Pearson''s coefficient of correlation for the following data. X: 2 3 4 5 6 7 8. Y: 4 5 6 12 9 5 4.', 5, 1),
+    (9, 'In a competition 2 judges gave the following ranks to 8 participants. Calculate the coefficient of rank correlation.', 5, 1),
+    (9, 'Find out the coefficient of correlation between x and y by method of rank differences.', 5, 1),
+    (9, 'Calculate the regression equations of X on Y for the following data. X: 1 2 3 4 5. Y: 2 5 3 8 7.', 5, 1),
+    (9, 'A bank record transactions are either original or fraud. Find the probability mass function of X, Mean, Variance and Standard Deviation.', 4, 1),
+    (9, 'A random sample of size 12 is taken from a normal population with N(μ,3). Find the probability that variance of the sample lies between 3.4 and 14.8.', 4, 1),
+    (9, 'A trucking firm is suspicious of the claim that the average lifetime of certain tyres is at least 28000 miles. What can it conclude if α = 0.01?', 4, 1),
+    (9, 'Using Spearman''s Rank Correlation Method, find the coefficient of correlation for the following data: x: 12, 17, 22, 27, 31; y: 113, 119, 117, 115, 121.', 4, 1),
+    (9, 'What are the Measures of Dispersion in Descriptive Statistics? Write the formula for each measure.', 4, 1),
+    (9, 'A sample of 100 dry battery cells tested to find the length of life produce the following results: x̄ = 12 hrs and σ = 3 hrs. What percentage of battery cells are expected to have more than 15 hrs and less than 6 hrs?', 5, 1),
+    (9, 'Derive the Mean and Variance of Binomial Distribution.', 5, 1),
+    (9, 'Intelligence test of two groups of boys and girls gives the following results: Girls Mean=84, SD=10, N=121; Boys Mean=81, SD=12, N=81. Is the difference of Mean scores significant?', 5, 1),
+    (9, 'The standard deviation of a sample of size 50 is 3.6. Examine whether the sample was taken from population with SD 3.3 at α = 1%.', 5, 1),
+    (9, 'The following table gives the number of units produced per day by two workers A and B. Should these results be accepted as evidence that the two workers are equally stable?', 5, 1),
+    (9, 'Find the correlation co-efficient and equations of regression lines for the following values of x and y: x: 1, 2, 3, 4, 5; y: 2, 5, 3, 8, 7.', 5, 1),
+    (9, 'Fit a Poisson distribution to the following data and test for its goodness of fit at 5% level of significance: x: 0, 1, 2, 3, 4; f: 419, 352, 154, 56, 9.', 5, 1),
+    (9, 'Find the mean of variables x and y and the correlation coefficient, given: Regression of y on x is 2y - x - 50 = 0; Regression of x on y is 3y - 2x - 10 = 0.', 5, 1),
+    (9, 'Find a positive value of cube root of 5 using Newton Raphson method correct to 2 decimal places.', 2, 2),
+    (9, 'Apply Simpson''s 1/3 rd rule to evaluate the integral of dx/(1+x^2) from 0 to 1 taking step size h = 0.1.', 2, 2),
+    (9, 'Derive the mean and variance of binomial distribution.', 2, 2),
+    (9, 'Describe the terms level of significance and power of test in testing of hypothesis.', 2, 2),
+    (9, 'What are the two measures of shapes in descriptive statistics? Explain.', 2, 2),
+    (9, 'Find a real root of the equation x^3 - x^2 - 1 = 0 using secant method correct to 3 decimal places.', 5, 2),
+    (9, 'Use Newton''s divided difference formula to find f(4) if f(0) = 2, f(1) = 3, f(2) = 12 and f(5) = 147.', 5, 2),
+    (9, 'Solve the system of equations using Gauss Seidel Method: 5x + 2y + z = 12, x + 4y + 2z = 15 and x + 2y + 5z = 20.', 5, 2),
+    (9, 'Fit a second degree curve to the following data and find the value of y when x = 7: x: 1, 2, 3, 4, 5; y: 7, 25, 53, 91, 139.', 5, 2),
+    (9, 'Explain the bisection method to solve a transcendental equation.', 2, 1),
+    (9, 'Derive Newton Raphson formula to find cubic root of N.', 2, 1),
+    (9, 'Using Lagrange''s formula find f(4) from the following data: x: 1, 3, 8, 10; f(x): 5, 25, 30, 42.', 2, 1),
+    (9, 'Derive Gauss Quadrature 2 point formula.', 2, 1),
+    (9, 'Using trapezoidal rule evaluate the integral of dx/(1+x^2) from 0 to 1 taking step size h = 0.1.', 2, 1),
+    (9, 'Find the real root of x^3 - x^2 - 1 = 0 using successive iteration method.', 5, 1),
+    (9, 'Fit a parabola to the following data and find the value of f(x) when x = 13: x: 4, 6, 7, 12; f(x): 17, 37, 50, 145.', 5, 1),
+    (9, 'Solve the following system of equations using Gauss Seidel method: 6x + 15y + 2z = 72, 27x + 6y - 2z = 85, x + y + 54z = 110.', 5, 1),
+    (9, 'Evaluate using Simpson''s 1/3 rd rule and 3/8 th rule the integral of x^2/(1+x^2) from 1 to 10 taking step size h = 1.', 5, 1),
+    (9, 'Apply Runge Kutta method of 4th order to find y(0.3) from the initial value problem y(0.2) = 1 and h = 0.1, dy/dx = x + y.', 5, 1),
+    (9, 'Find y'' and y'''' at x = 3 and at x = 4 from the following data using Newton''s forward and backward formula for derivatives.', 5, 1),
+    (9, 'Probability that a batsman scores a century is 1/3. Find the probability that he may score century in exactly 2 matches and in no matches.', 2, 1),
+    (9, 'Explain the use of categorical variables in regression models.', 2, 1),
+    (9, 'Consider families with 4 children. What percent of families would you expect to have 2 boys and 2 girls, at least 1 boy, no girls, at most 2 girls?', 5, 1),
+    (9, 'The height of the school children of a school is normally distributed with mean 54 inches and standard deviation 12 inches. What percent of students have height between 46 and 56 inches?', 5, 1),
+    (9, 'Test whether accident occurs uniformly over week days on the basis of the following information: Days: Sun, Mon, Tue, Wed, Thu, Fri, Sat; No. of accidents: 11, 13, 14, 13, 15, 14, 8.', 5, 1),
+    (9, 'It is claimed that a random sample of 100 tyres with mean life 15629 KM is drawn from a population of tyres which has a mean life of 15200 KM and SD = 1248 KM. Test the validity of the claim.', 5, 1),
+    (9, 'Obtain Karl Pearson''s coefficient of correlation for the following data and comment on the result obtained. Price (Rs): 11, 12, 13, 14, 15, 16, 17, 18, 19, 20; Demand (Kg): 30, 29, 29, 25, 24, 24, 24, 21, 18, 15.', 5, 1),
+    (9, 'From the following data form two regression equations and calculate husband''s age when wife''s age is 19.', 5, 1),
+    (9, 'Explain any 5 models used in supervised learning.', 5, 1),
+    (9, 'Explain any 5 techniques used in unsupervised learning.', 5, 1)
 ON DUPLICATE KEY UPDATE frequency = frequency + VALUES(frequency);
 
--- Subject 10: Numerical and Statistical Techniques (Semester 4)
--- Merged from original subjects 12 (NST Sem4 CSE) and 19 (NST Sem4 ECE)
+-- -------------------------------------------------------
+-- Subject 10: Object Oriented Software Engineering (Semester 4)
+-- Previously subject_id 11
+-- -------------------------------------------------------
 INSERT INTO questions (subject_id, question_text, marks, frequency) VALUES
-    (10, 'Differentiate between discrete random variable and continuous random variable.', 2, 1),
-    (10, 'Ten coins are tossed simultaneously. Find the probability of getting at least 7 heads.', 2, 1),
-    (10, 'If X is a random variable with mean -3 and variance 4, find p(x > -1.5).', 2, 1),
-    (10, 'Define skewness and kurtosis.', 2, 1),
-    (10, 'Define correlation.', 2, 1),
-    (10, 'In a binomial distribution consistency of 6 independent trials, probabilities of 1 and 2 successes are 0.28336 and 0.0506. Find the parameter of distribution.', 5, 1),
-    (10, '8 unbiased coins were tossed simultaneously. Find the probability of getting: (i) Exactly 4 heads (ii) No heads at all (iii) 6 or more heads (iv) At most 2 heads (v) Number of heads ranging from 3 to 5.', 5, 1),
-    (10, 'A random sample of 200 tins of coconut oil gave an average weight of 4.95 kgs with a standard deviation of 0.21 kgs. Do we accept this tins not weight 5 kgs per tin at 1% level?', 5, 1),
-    (10, 'The standard deviation of 2 samples of size 10 and 14 from 2 normal populations are 3.5 and 3 respectively. Examine whether standard deviation of population are equal.', 5, 1),
-    (10, 'Compute Karl Pearson''s coefficient of correlation for the following data. X: 2 3 4 5 6 7 8. Y: 4 5 6 12 9 5 4.', 5, 1),
-    (10, 'In a competition 2 judges gave the following ranks to 8 participants. Calculate the coefficient of rank correlation.', 5, 1),
-    (10, 'Find out the coefficient of correlation between x and y by method of rank differences.', 5, 1),
-    (10, 'Calculate the regression equations of X on Y for the following data. X: 1 2 3 4 5. Y: 2 5 3 8 7.', 5, 1),
-    (10, 'A bank record transactions are either original or fraud. Find the probability mass function of X, Mean, Variance and Standard Deviation.', 4, 1),
-    (10, 'A random sample of size 12 is taken from a normal population with N(μ,3). Find the probability that variance of the sample lies between 3.4 and 14.8.', 4, 1),
-    (10, 'A trucking firm is suspicious of the claim that the average lifetime of certain tyres is at least 28000 miles. What can it conclude if α = 0.01?', 4, 1),
-    (10, 'Using Spearman''s Rank Correlation Method, find the coefficient of correlation for the following data: x: 12, 17, 22, 27, 31; y: 113, 119, 117, 115, 121.', 4, 1),
-    (10, 'What are the Measures of Dispersion in Descriptive Statistics? Write the formula for each measure.', 4, 1),
-    (10, 'A sample of 100 dry battery cells tested to find the length of life produce the following results: x̄ = 12 hrs and σ = 3 hrs. What percentage of battery cells are expected to have more than 15 hrs and less than 6 hrs?', 5, 1),
-    (10, 'Derive the Mean and Variance of Binomial Distribution.', 5, 1),
-    (10, 'Intelligence test of two groups of boys and girls gives the following results: Girls Mean=84, SD=10, N=121; Boys Mean=81, SD=12, N=81. Is the difference of Mean scores significant?', 5, 1),
-    (10, 'The standard deviation of a sample of size 50 is 3.6. Examine whether the sample was taken from population with SD 3.3 at α = 1%.', 5, 1),
-    (10, 'The following table gives the number of units produced per day by two workers A and B. Should these results be accepted as evidence that the two workers are equally stable?', 5, 1),
-    (10, 'Find the correlation co-efficient and equations of regression lines for the following values of x and y: x: 1, 2, 3, 4, 5; y: 2, 5, 3, 8, 7.', 5, 1),
-    (10, 'Fit a Poisson distribution to the following data and test for its goodness of fit at 5% level of significance: x: 0, 1, 2, 3, 4; f: 419, 352, 154, 56, 9.', 5, 1),
-    (10, 'Find the mean of variables x and y and the correlation coefficient, given: Regression of y on x is 2y - x - 50 = 0; Regression of x on y is 3y - 2x - 10 = 0.', 5, 1),
-    (10, 'Find a positive value of cube root of 5 using Newton Raphson method correct to 2 decimal places.', 2, 2),
-    (10, 'Apply Simpson''s 1/3 rd rule to evaluate the integral of dx/(1+x^2) from 0 to 1 taking step size h = 0.1.', 2, 2),
-    (10, 'Derive the mean and variance of binomial distribution.', 2, 2),
-    (10, 'Describe the terms level of significance and power of test in testing of hypothesis.', 2, 2),
-    (10, 'What are the two measures of shapes in descriptive statistics? Explain.', 2, 2),
-    (10, 'Find a real root of the equation x^3 - x^2 - 1 = 0 using secant method correct to 3 decimal places.', 5, 2),
-    (10, 'Use Newton''s divided difference formula to find f(4) if f(0) = 2, f(1) = 3, f(2) = 12 and f(5) = 147.', 5, 2),
-    (10, 'Solve the system of equations using Gauss Seidel Method: 5x + 2y + z = 12, x + 4y + 2z = 15 and x + 2y + 5z = 20.', 5, 2),
-    (10, 'Fit a second degree curve to the following data and find the value of y when x = 7: x: 1, 2, 3, 4, 5; y: 7, 25, 53, 91, 139.', 5, 2),
-    (10, 'Explain the bisection method to solve a transcendental equation.', 2, 1),
-    (10, 'Derive Newton Raphson formula to find cubic root of N.', 2, 1),
-    (10, 'Using Lagrange''s formula find f(4) from the following data: x: 1, 3, 8, 10; f(x): 5, 25, 30, 42.', 2, 1),
-    (10, 'Derive Gauss Quadrature 2 point formula.', 2, 1),
-    (10, 'Using trapezoidal rule evaluate the integral of dx/(1+x^2) from 0 to 1 taking step size h = 0.1.', 2, 1),
-    (10, 'Find the real root of x^3 - x^2 - 1 = 0 using successive iteration method.', 5, 1),
-    (10, 'Fit a parabola to the following data and find the value of f(x) when x = 13: x: 4, 6, 7, 12; f(x): 17, 37, 50, 145.', 5, 1),
-    (10, 'Solve the following system of equations using Gauss Seidel method: 6x + 15y + 2z = 72, 27x + 6y - 2z = 85, x + y + 54z = 110.', 5, 1),
-    (10, 'Evaluate using Simpson''s 1/3 rd rule and 3/8 th rule the integral of x^2/(1+x^2) from 1 to 10 taking step size h = 1.', 5, 1),
-    (10, 'Apply Runge Kutta method of 4th order to find y(0.3) from the initial value problem y(0.2) = 1 and h = 0.1, dy/dx = x + y.', 5, 1),
-    (10, 'Find y'' and y'''' at x = 3 and at x = 4 from the following data using Newton''s forward and backward formula for derivatives.', 5, 1),
-    (10, 'Probability that a batsman scores a century is 1/3. Find the probability that he may score century in exactly 2 matches and in no matches.', 2, 1),
-    (10, 'Explain the use of categorical variables in regression models.', 2, 1),
-    (10, 'Consider families with 4 children. What percent of families would you expect to have 2 boys and 2 girls, at least 1 boy, no girls, at most 2 girls?', 5, 1),
-    (10, 'The height of the school children of a school is normally distributed with mean 54 inches and standard deviation 12 inches. What percent of students have height between 46 and 56 inches?', 5, 1),
-    (10, 'Test whether accident occurs uniformly over week days on the basis of the following information: Days: Sun, Mon, Tue, Wed, Thu, Fri, Sat; No. of accidents: 11, 13, 14, 13, 15, 14, 8.', 5, 1),
-    (10, 'It is claimed that a random sample of 100 tyres with mean life 15629 KM is drawn from a population of tyres which has a mean life of 15200 KM and SD = 1248 KM. Test the validity of the claim.', 5, 1),
-    (10, 'Obtain Karl Pearson''s coefficient of correlation for the following data and comment on the result obtained. Price (Rs): 11, 12, 13, 14, 15, 16, 17, 18, 19, 20; Demand (Kg): 30, 29, 29, 25, 24, 24, 24, 21, 18, 15.', 5, 1),
-    (10, 'From the following data form two regression equations and calculate husband''s age when wife''s age is 19.', 5, 1),
-    (10, 'Explain any 5 models used in supervised learning.', 5, 1),
-    (10, 'Explain any 5 techniques used in unsupervised learning.', 5, 1)
+    (10, 'Cause effect graphing is a black box testing strategy. Is it true or false? Justify your answer with an example.', 4, 1),
+    (10, 'Distinguish organizing and controlling management functions with examples.', 4, 1),
+    (10, 'ISO 9002 is specifically for software companies. Justify true or false. Explain features of ISO in detail.', 4, 1),
+    (10, 'Distinguish SQA, SQM and SCM. Use examples.', 4, 1),
+    (10, 'Is the statement ''One of the KPA of CMM level 4 is Quality being monitored using various matrices'' true or false? Justify your answer with clearly explaining all CMM levels.', 10, 1),
+    (10, 'Consider the code. Using CFG, find McCabe''s cyclomatic complexity for i=1 to 10 { if (i>4) printf("True"); Else printf("False") }', 10, 1),
+    (10, 'Why we use Cause Effect Graph? Use example to demonstrate. Construct a Cause Effect Graph for the following cases: If Q>P and R<S then display okay. If A<B or C<D then display Error.', 10, 1),
+    (10, 'Explain work break down structure. Construct a WBS for a project with 3 modules, 3 programmers and each module covering 1 month. Make your own assumptions.', 10, 1),
+    (10, 'Discuss any three key characteristics of agile model. Use examples.', 4, 1),
+    (10, 'Design any two UML behavioral models for ATM transactions.', 4, 1),
+    (10, 'Analyze any two blackbox testing techniques in detail.', 4, 1),
+    (10, 'Explain six sigma and its various methodologies.', 4, 1),
+    (10, 'Can you suggest the best life cycle models for the following systems? A hospital software where requirements are huge and clear; An object oriented system. Compare and Contrast evolutionary and Iterative waterfall model.', 10, 1),
+    (10, 'What are different types of relationships between classes? Clearly explain how OOAD helps in converting analysis classes to implementation code with examples and diagrams.', 10, 1),
+    (10, 'If a proper process is followed for production, then good quality products are bound to follow automatically. Explain how ISO 9000 makes this true for software industry.', 10, 1),
+    (10, 'Distinguish SQA and SQM along with their key activities.', 10, 1),
+    (10, 'List the latest trends, best practices and tools in UI development.', 4, 1),
+    (10, 'Distinguish directing and controlling management functions with examples.', 4, 1),
+    (10, 'Explain Heuristic techniques.', 4, 1),
+    (10, 'Distinguish PERT chart and Gantt chart.', 4, 1),
+    (10, 'Describe in detail the various cohesion and coupling techniques with examples.', 10, 1),
+    (10, 'Suggest the best architecture styles for the following systems: Development of OS; A web application. Show diagrams for each architecture style.', 10, 1),
+    (10, 'Explain COCOMO model.', 10, 1),
+    (10, 'Explain work break down structure. Compare and contrast the three models used to analyze and plan staffing requirements and effort in software projects.', 10, 1),
+    (10, 'Prototyping is best suited for object oriented development. State true or false and justify with examples.', 4, 1),
+    (10, 'Functional cohesion is the best cohesion. State true or false and justify with examples.', 4, 1),
+    (10, 'Justify the statement ''SRS should be complete''. Also explain characteristics and format of a good SRS.', 4, 1),
+    (10, 'Can you suggest the best life cycle models for the following systems? A library software where requirements are huge and clear; A robotic system where expertise is less. Compare and contrast evolutionary and iterative waterfall model.', 10, 1),
+    (10, 'What are different notations for class diagrams including different types of relationships? Draw a class diagram for a credit card system with POS and online transactions.', 10, 1),
+    (10, 'DFD is a powerful object oriented analysis tool. State true or false and substantiate with examples and diagrams. Prepare an SRS for a library information system in IEEE format.', 10, 1),
+    (10, 'What are the new trends in UI/UX? Define the terms Sprint, Scrum and agility with respect to agile model. Use diagrams and examples.', 10, 1)
 ON DUPLICATE KEY UPDATE frequency = frequency + VALUES(frequency);
 
--- Subject 11: Object Oriented Software Engineering (Semester 4)
--- Merged from original subjects 13 (OOSE Sem4) and 14 (OOSE Sem5)
+-- -------------------------------------------------------
+-- Subject 11: Operating Systems (Semester 4)
+-- Previously subject_id 12
+-- -------------------------------------------------------
 INSERT INTO questions (subject_id, question_text, marks, frequency) VALUES
-    (11, 'Cause effect graphing is a black box testing strategy. Is it true or false? Justify your answer with an example.', 4, 1),
-    (11, 'Distinguish organizing and controlling management functions with examples.', 4, 1),
-    (11, 'ISO 9002 is specifically for software companies. Justify true or false. Explain features of ISO in detail.', 4, 1),
-    (11, 'Distinguish SQA, SQM and SCM. Use examples.', 4, 1),
-    (11, 'Is the statement ''One of the KPA of CMM level 4 is Quality being monitored using various matrices'' true or false? Justify your answer with clearly explaining all CMM levels.', 10, 1),
-    (11, 'Consider the code. Using CFG, find McCabe''s cyclomatic complexity for i=1 to 10 { if (i>4) printf("True"); Else printf("False") }', 10, 1),
-    (11, 'Why we use Cause Effect Graph? Use example to demonstrate. Construct a Cause Effect Graph for the following cases: If Q>P and R<S then display okay. If A<B or C<D then display Error.', 10, 1),
-    (11, 'Explain work break down structure. Construct a WBS for a project with 3 modules, 3 programmers and each module covering 1 month. Make your own assumptions.', 10, 1),
-    (11, 'Discuss any three key characteristics of agile model. Use examples.', 4, 1),
-    (11, 'Design any two UML behavioral models for ATM transactions.', 4, 1),
-    (11, 'Analyze any two blackbox testing techniques in detail.', 4, 1),
-    (11, 'Explain six sigma and its various methodologies.', 4, 1),
-    (11, 'Can you suggest the best life cycle models for the following systems? A hospital software where requirements are huge and clear; An object oriented system. Compare and Contrast evolutionary and Iterative waterfall model.', 10, 1),
-    (11, 'What are different types of relationships between classes? Clearly explain how OOAD helps in converting analysis classes to implementation code with examples and diagrams.', 10, 1),
-    (11, 'If a proper process is followed for production, then good quality products are bound to follow automatically. Explain how ISO 9000 makes this true for software industry.', 10, 1),
-    (11, 'Distinguish SQA and SQM along with their key activities.', 10, 1),
-    (11, 'List the latest trends, best practices and tools in UI development.', 4, 1),
-    (11, 'Distinguish directing and controlling management functions with examples.', 4, 1),
-    (11, 'Explain Heuristic techniques.', 4, 1),
-    (11, 'Distinguish PERT chart and Gantt chart.', 4, 1),
-    (11, 'Describe in detail the various cohesion and coupling techniques with examples.', 10, 1),
-    (11, 'Suggest the best architecture styles for the following systems: Development of OS; A web application. Show diagrams for each architecture style.', 10, 1),
-    (11, 'Explain COCOMO model.', 10, 1),
-    (11, 'Explain work break down structure. Compare and contrast the three models used to analyze and plan staffing requirements and effort in software projects.', 10, 1),
-    (11, 'Prototyping is best suited for object oriented development. State true or false and justify with examples.', 4, 1),
-    (11, 'Functional cohesion is the best cohesion. State true or false and justify with examples.', 4, 1),
-    (11, 'Justify the statement ''SRS should be complete''. Also explain characteristics and format of a good SRS.', 4, 1),
-    (11, 'Can you suggest the best life cycle models for the following systems? A library software where requirements are huge and clear; A robotic system where expertise is less. Compare and contrast evolutionary and iterative waterfall model.', 10, 1),
-    (11, 'What are different notations for class diagrams including different types of relationships? Draw a class diagram for a credit card system with POS and online transactions.', 10, 1),
-    (11, 'DFD is a powerful object oriented analysis tool. State true or false and substantiate with examples and diagrams. Prepare an SRS for a library information system in IEEE format.', 10, 1),
-    (11, 'What are the new trends in UI/UX? Define the terms Sprint, Scrum and agility with respect to agile model. Use diagrams and examples.', 10, 1)
+    (11, 'What is critical section? State and explain the conditions to be satisfied by a solution to the critical section problem.', 4, 1),
+    (11, 'Differentiate between pre-emptive and non-preemptive scheduling with an example.', 4, 1),
+    (11, 'What is the purpose of System call? Explain the working of System call.', 4, 1),
+    (11, 'A counting semaphore S is initialized to 7. Then, 20 P operations and 15 V operations are performed on S. What is the final value of S?', 4, 1),
+    (11, 'What is the primary cause of starvation in an operating system? Explain the techniques to prevent starvation.', 4, 1),
+    (11, 'Distinguish among the following terminologies: Multiprogramming system, Multiprocessing system, Multitasking system. Write a note on the following OS structures: Layered approach, Micro kernel, Modular approach.', 10, 1),
+    (11, 'Explain the different states of process and transition between them with the help of a diagram. Explain convoy effect with an example.', 10, 1),
+    (11, 'Explain types of semaphore with an example.', 10, 1),
+    (11, 'For the process table, determine which scheduling scheme gives the lowest average turnaround time and waiting time: Shortest Remaining First; Round Robin with Time Quantum 2; Priority Scheduling (non-pre-emptive). P1: Arrival 0, Burst 3, Priority 2. P2: Arrival 1, Burst 6, Priority 5. P3: Arrival 4, Burst 4, Priority 8. P4: Arrival 6, Burst 2, Priority 1.', 10, 1),
+    (11, 'List the page placement strategy.', 4, 1),
+    (11, 'Explain the types of fragmentation.', 4, 1),
+    (11, 'What is a File Allocation Table (FAT)? Why is it used?', 4, 2),
+    (11, 'Explain deadlock with an example.', 4, 1),
+    (11, 'How can you calculate the disk access time? Explain with equation.', 4, 1),
+    (11, 'Discuss the different aspects of contiguous memory allocation. Find the number of page faults for the following page reference string with 3 page frames for Optimal and LRU algorithms: 1 2 3 4 5 1 4 1 6 3 2 3.', 10, 1),
+    (11, 'Given six memory partitions of 300 KB, 600 KB, 350 KB, 200 KB, 750 KB, and 125 KB (in order), how would first-fit, best-fit, and worst-fit algorithms place processes of size 115 KB, 500 KB, 358 KB, 200 KB, and 375 KB? Explain Segmentation with diagram.', 10, 1),
+    (11, 'The read write head is at 32. The head is moving from 124 to 0. Requests are in the order 98, 37, 14, 124, 65, 67. How much time is required by the system for: SSTF; C-Scan; Scan; FCFS? Explain different RAID levels.', 10, 1),
+    (11, 'Describe the working of DMA controller with a neat diagram. Describe the implementation of I/O buffering strategies (single, double, and circular buffering). Compare their advantages and limitations.', 10, 1),
+    (11, 'What are the major activities of an operating system? What is the role of the shell and kernel in an OS?', 4, 1),
+    (11, 'What is a process? What are the different states of a process and show the transition between states with a diagram?', 4, 1),
+    (11, 'What is Mutual Exclusion (Mutex)? What methods are used to achieve Mutex?', 4, 1),
+    (11, 'A computer has 1MB of RAM allocated in units of 8KB. What will be the size of the bitmap to keep track of the free memory?', 4, 1),
+    (11, 'What is meant by physical and logical address? Consider a logical address space of eight pages of 1024 words each, mapped to physical memory of 32 frames.', 4, 1),
+    (11, 'Consider the following set of processes: P1 (Burst 10, Arrival 0, Priority 3), P2 (Burst 1, Arrival 2, Priority 1), P3 (Burst 2, Arrival 3, Priority 5), P4 (Burst 1, Arrival 5, Priority 4), P5 (Burst 5, Arrival 7, Priority 2). Draw Gantt charts for FCFS, preemptive SJF, nonpreemptive priority, and RR (quantum = 2). Compute turnaround and waiting times for each.', 10, 1),
+    (11, 'What is meant by critical section problem? Explain how semaphores can be used to solve the producer consumer problem.', 10, 1),
+    (11, 'Explain any three page replacement algorithms and compare their performance for the reference string 7, 0, 1, 2, 3, 2, 1, 0, 7, 4, 3, 2, 0, 7.', 10, 1),
+    (11, 'Given memory partitions of 100K, 500K, 200K, 300K and 600K, four processes of size 212K, 417K, 112K and 426K arrive. Show allocations using Best Fit, First Fit, Worst Fit. Which makes most efficient use of memory?', 10, 1),
+    (11, 'Define a file and explain the different file attributes and operations.', 4, 1),
+    (11, 'How is DMA (Direct Memory Access) performed? What are its advantages in I/O operations?', 4, 1),
+    (11, 'What are the necessary conditions for a deadlock to occur? Explain briefly.', 4, 1),
+    (11, 'What is a directory? Explain different directory structures used in file systems.', 4, 1),
+    (11, 'Explain RAID levels and their advantages.', 4, 1),
+    (11, 'Construct a Resource Allocation Graph for the given system. Identify any cycle. Determine whether the system is in a deadlock.', 10, 1),
+    (11, 'A disk drive has 200 cylinders (0-199). The disk head is at cylinder 45. The pending request queue is: 99, 37, 180, 140, 24, 128, 68, 77. Compute total head movement for FCFS, SSTF, SCAN, and LOOK.', 10, 1),
+    (11, 'Explain the following file allocation methods: (1) Contiguous allocation (2) Linked allocation (3) Indexed allocation.', 10, 1),
+    (11, 'Consider a system with 5 processes (P0-P4) and 3 resource types (A, B, C). Apply the Banker''s Algorithm to determine if the system is in a safe state and if process P2 request can be granted.', 10, 1),
+    (11, 'Describe the differences among short-term, medium-term and long-term schedulers.', 2, 1),
+    (11, 'How is segmentation different from paging?', 2, 1),
+    (11, 'Differentiate internal fragmentation and external fragmentation.', 2, 1),
+    (11, 'Define the strict two-phase locking protocol.', 2, 1),
+    (11, 'Draw the Gantt Chart, find the average waiting time for FCFS, Preemptive priority, Non-preemptive priority. P1: Arrival=0, Burst=8, Priority=4. P2: Arrival=2, Burst=6, Priority=1. P3: Arrival=2, Burst=1, Priority=2. P4: Arrival=1, Burst=9, Priority=2. P5: Arrival=3, Burst=3, Priority=3.', 6, 1),
+    (11, 'Describe how semaphores can be used as a synchronisation mechanism.', 6, 1),
+    (11, 'With the help of a diagram, explain how a multilevel feedback queue scheduling works.', 4, 1),
+    (11, 'Discuss the different aspects of contiguous memory allocation.', 5, 1),
+    (11, 'With a diagram, explain how paging is done with TLB. Find the number of page faults for page reference string 2 3 4 2 1 3 7 5 4 3 with three page frames using optimal and LRU algorithms.', 10, 1),
+    (11, 'The read write head is at 97. The head is moving from 299 to 0. Requests are in the order 94, 82, 101, 110, 198, 75, 87, 124, 136. How much time is required for SSTF and C-Scan?', 5, 1),
+    (11, 'Describe the implementation of RAID systems. Explain different RAID levels with their advantages and disadvantages.', 5, 1),
+    (11, 'Discuss how resource allocation graphs can be used to represent deadlock situations. Illustrate with examples showing both deadlock and no-deadlock cases.', 5, 1),
+    (11, 'Explain the banker''s algorithm for deadlock avoidance with a step-by-step example.', 5, 1),
+    (11, 'Explain two-phase locking protocol in detail. Discuss how it ensures serializability in database transactions.', 5, 1),
+    (11, 'Explain various deadlock recovery techniques in detail.', 5, 1)
 ON DUPLICATE KEY UPDATE frequency = frequency + VALUES(frequency);
 
--- Subject 12: Operating Systems (Semester 4)
--- Merged from original subjects 15 (Operating System) and 16 (Operating Systems)
+-- -------------------------------------------------------
+-- Subject 12: Principles of Programming Languages (Semester 3)
+-- Previously subject_id 13
+-- -------------------------------------------------------
 INSERT INTO questions (subject_id, question_text, marks, frequency) VALUES
-    (12, 'What is critical section? State and explain the conditions to be satisfied by a solution to the critical section problem.', 4, 1),
-    (12, 'Differentiate between pre-emptive and non-preemptive scheduling with an example.', 4, 1),
-    (12, 'What is the purpose of System call? Explain the working of System call.', 4, 1),
-    (12, 'A counting semaphore S is initialized to 7. Then, 20 P operations and 15 V operations are performed on S. What is the final value of S?', 4, 1),
-    (12, 'What is the primary cause of starvation in an operating system? Explain the techniques to prevent starvation.', 4, 1),
-    (12, 'Distinguish among the following terminologies: Multiprogramming system, Multiprocessing system, Multitasking system. Write a note on the following OS structures: Layered approach, Micro kernel, Modular approach.', 10, 1),
-    (12, 'Explain the different states of process and transition between them with the help of a diagram. Explain convoy effect with an example.', 10, 1),
-    (12, 'Explain types of semaphore with an example.', 10, 1),
-    (12, 'For the process table, determine which scheduling scheme gives the lowest average turnaround time and waiting time: Shortest Remaining First; Round Robin with Time Quantum 2; Priority Scheduling (non-pre-emptive). P1: Arrival 0, Burst 3, Priority 2. P2: Arrival 1, Burst 6, Priority 5. P3: Arrival 4, Burst 4, Priority 8. P4: Arrival 6, Burst 2, Priority 1.', 10, 1),
-    (12, 'List the page placement strategy.', 4, 1),
-    (12, 'Explain the types of fragmentation.', 4, 1),
-    (12, 'What is a File Allocation Table (FAT)? Why is it used?', 4, 2),
-    (12, 'Explain deadlock with an example.', 4, 1),
-    (12, 'How can you calculate the disk access time? Explain with equation.', 4, 1),
-    (12, 'Discuss the different aspects of contiguous memory allocation. Find the number of page faults for the following page reference string with 3 page frames for Optimal and LRU algorithms: 1 2 3 4 5 1 4 1 6 3 2 3.', 10, 1),
-    (12, 'Given six memory partitions of 300 KB, 600 KB, 350 KB, 200 KB, 750 KB, and 125 KB (in order), how would first-fit, best-fit, and worst-fit algorithms place processes of size 115 KB, 500 KB, 358 KB, 200 KB, and 375 KB? Explain Segmentation with diagram.', 10, 1),
-    (12, 'The read write head is at 32. The head is moving from 124 to 0. Requests are in the order 98, 37, 14, 124, 65, 67. How much time is required by the system for: SSTF; C-Scan; Scan; FCFS? Explain different RAID levels.', 10, 1),
-    (12, 'Describe the working of DMA controller with a neat diagram. Describe the implementation of I/O buffering strategies (single, double, and circular buffering). Compare their advantages and limitations.', 10, 1),
-    (12, 'What are the major activities of an operating system? What is the role of the shell and kernel in an OS?', 4, 1),
-    (12, 'What is a process? What are the different states of a process and show the transition between states with a diagram?', 4, 1),
-    (12, 'What is Mutual Exclusion (Mutex)? What methods are used to achieve Mutex?', 4, 1),
-    (12, 'A computer has 1MB of RAM allocated in units of 8KB. What will be the size of the bitmap to keep track of the free memory?', 4, 1),
-    (12, 'What is meant by physical and logical address? Consider a logical address space of eight pages of 1024 words each, mapped to physical memory of 32 frames.', 4, 1),
-    (12, 'Consider the following set of processes: P1 (Burst 10, Arrival 0, Priority 3), P2 (Burst 1, Arrival 2, Priority 1), P3 (Burst 2, Arrival 3, Priority 5), P4 (Burst 1, Arrival 5, Priority 4), P5 (Burst 5, Arrival 7, Priority 2). Draw Gantt charts for FCFS, preemptive SJF, nonpreemptive priority, and RR (quantum = 2). Compute turnaround and waiting times for each.', 10, 1),
-    (12, 'What is meant by critical section problem? Explain how semaphores can be used to solve the producer consumer problem.', 10, 1),
-    (12, 'Explain any three page replacement algorithms and compare their performance for the reference string 7, 0, 1, 2, 3, 2, 1, 0, 7, 4, 3, 2, 0, 7.', 10, 1),
-    (12, 'Given memory partitions of 100K, 500K, 200K, 300K and 600K, four processes of size 212K, 417K, 112K and 426K arrive. Show allocations using Best Fit, First Fit, Worst Fit. Which makes most efficient use of memory?', 10, 1),
-    (12, 'Define a file and explain the different file attributes and operations.', 4, 1),
-    (12, 'How is DMA (Direct Memory Access) performed? What are its advantages in I/O operations?', 4, 1),
-    (12, 'What are the necessary conditions for a deadlock to occur? Explain briefly.', 4, 1),
-    (12, 'What is a directory? Explain different directory structures used in file systems.', 4, 1),
-    (12, 'Explain RAID levels and their advantages.', 4, 1),
-    (12, 'Construct a Resource Allocation Graph for the given system. Identify any cycle. Determine whether the system is in a deadlock.', 10, 1),
-    (12, 'A disk drive has 200 cylinders (0-199). The disk head is at cylinder 45. The pending request queue is: 99, 37, 180, 140, 24, 128, 68, 77. Compute total head movement for FCFS, SSTF, SCAN, and LOOK.', 10, 1),
-    (12, 'Explain the following file allocation methods: (1) Contiguous allocation (2) Linked allocation (3) Indexed allocation.', 10, 1),
-    (12, 'Consider a system with 5 processes (P0-P4) and 3 resource types (A, B, C). Apply the Banker''s Algorithm to determine if the system is in a safe state and if process P2 request can be granted.', 10, 1),
-    (12, 'Describe the differences among short-term, medium-term and long-term schedulers.', 2, 1),
-    (12, 'How is segmentation different from paging?', 2, 1),
-    (12, 'Differentiate internal fragmentation and external fragmentation.', 2, 1),
-    (12, 'Define the strict two-phase locking protocol.', 2, 1),
-    (12, 'Draw the Gantt Chart, find the average waiting time for FCFS, Preemptive priority, Non-preemptive priority. P1: Arrival=0, Burst=8, Priority=4. P2: Arrival=2, Burst=6, Priority=1. P3: Arrival=2, Burst=1, Priority=2. P4: Arrival=1, Burst=9, Priority=2. P5: Arrival=3, Burst=3, Priority=3.', 6, 1),
-    (12, 'Describe how semaphores can be used as a synchronisation mechanism.', 6, 1),
-    (12, 'With the help of a diagram, explain how a multilevel feedback queue scheduling works.', 4, 1),
-    (12, 'Discuss the different aspects of contiguous memory allocation.', 5, 1),
-    (12, 'With a diagram, explain how paging is done with TLB. Find the number of page faults for page reference string 2 3 4 2 1 3 7 5 4 3 with three page frames using optimal and LRU algorithms.', 10, 1),
-    (12, 'The read write head is at 97. The head is moving from 299 to 0. Requests are in the order 94, 82, 101, 110, 198, 75, 87, 124, 136. How much time is required for SSTF and C-Scan?', 5, 1),
-    (12, 'Describe the implementation of RAID systems. Explain different RAID levels with their advantages and disadvantages.', 5, 1),
-    (12, 'Discuss how resource allocation graphs can be used to represent deadlock situations. Illustrate with examples showing both deadlock and no-deadlock cases.', 5, 1),
-    (12, 'Explain the banker''s algorithm for deadlock avoidance with a step-by-step example.', 5, 1),
-    (12, 'Explain two-phase locking protocol in detail. Discuss how it ensures serializability in database transactions.', 5, 1),
-    (12, 'Explain various deadlock recovery techniques in detail.', 5, 1)
+    (12, 'What is an ambiguous grammar? Check whether the following grammar is ambiguous or not: S --> A; A --> A + A / id; id --> a/b/c.', 5, 1),
+    (12, 'Some programming languages are typeless. What are the advantages and disadvantages of having no types in a language? Also write why dynamic type binding is closely related to implicit heap dynamic variable.', 5, 1),
+    (12, 'What are the different attributes associated to a variable? Explain with example.', 5, 1),
+    (12, 'What are the primary design issues for names in programming languages? Also suggest some possible solutions for the said issues.', 5, 1),
+    (12, 'Write an evaluation of C++ programming language using the different language evaluation criteria.', 10, 1),
+    (12, 'What is attribute grammar? Write the formal definition of finding different attributes in attribute grammar with suitable examples. Write how type combatability in assignment statement is verified using attribute grammar.', 10, 1),
+    (12, 'What is binding? Discuss any five types of binding times with simple C program statements.', 10, 1),
+    (12, 'Discuss the classification of variables according to their life time.', 10, 1),
+    (12, 'What are coroutines? Distinguish between coroutines and subroutines with necessary diagrams.', 5, 1),
+    (12, 'What are the advantages and disadvantages of using inheritance?', 5, 1),
+    (12, 'Distinguish between LET and LAMBDA expression with suitable examples.', 5, 1),
+    (12, 'Write a Scheme function that counts the number of zero elements in a given simple list.', 5, 1),
+    (12, 'Compare different implementation models of parameter passing with suitable examples.', 10, 1),
+    (12, 'How are heap allocated objects allocated and deallocated in C++ and Java? Under what circumstances a C++ method call dynamically bounds to a method? Explain with suitable example.', 10, 1),
+    (12, 'Explain the use of CONS, APPEND, MAPCAR, COND and MEMBER functions with examples.', 10, 1),
+    (12, 'Differentiate between static semantics and dynamic semantics in programming languages.', 2, 1),
+    (12, 'Discuss the concepts of scope and lifetime of variables in programming languages.', 2, 1),
+    (12, 'What is the purpose of exception handling in programming? How does exception handling differ between C++ and Java?', 2, 1),
+    (12, 'Differentiate between checked and unchecked exceptions in Java.', 2, 1),
+    (12, 'Explain the design issues involved in various constructs of object-oriented programming language.', 2, 1),
+    (12, 'Explain the different programming domains and discuss the criteria used for evaluating a programming language. Highlight the significance of readability, writability and reliability in language evaluation.', 10, 1),
+    (12, 'Explain the concept of Attribute Grammars in the context of formal methods for describing the syntax of programming languages. How do attribute grammars enhance context-free grammars? Illustrate with an example.', 10, 1),
+    (12, 'Explain the three semantics models of parameter passing when physical moves are used. How the various implementation models of parameter passing are actually implemented?', 10, 1),
+    (12, 'Describe the stack contents for the points labelled 1, 2, and 3 with activation record instances for the given program with functions fun1, fun2, fun3 and main.', 10, 1),
+    (12, 'Explain the concepts of data abstraction and encapsulation in object-oriented programming. How do these concepts contribute to the security and modularity of a software system?', 10, 1),
+    (12, 'Differentiate between static and dynamic polymorphism in object-oriented programming. Provide examples in C++ or Java to show how both types of polymorphism can be implemented.', 10, 1),
+    (12, 'Explain Lambda Calculus and its role in functional programming languages.', 10, 1),
+    (12, 'Explain the key features of Prolog as a logic programming language.', 10, 1)
 ON DUPLICATE KEY UPDATE frequency = frequency + VALUES(frequency);
 
--- Subject 13: Principles of Programming Languages (Semester 3)
+-- -------------------------------------------------------
+-- Subject 13: Python for Machine Learning (Semester 4)
+-- Previously subject_id 14
+-- -------------------------------------------------------
 INSERT INTO questions (subject_id, question_text, marks, frequency) VALUES
-    (13, 'What is an ambiguous grammar? Check whether the following grammar is ambiguous or not: S --> A; A --> A + A / id; id --> a/b/c.', 5, 1),
-    (13, 'Some programming languages are typeless. What are the advantages and disadvantages of having no types in a language? Also write why dynamic type binding is closely related to implicit heap dynamic variable.', 5, 1),
-    (13, 'What are the different attributes associated to a variable? Explain with example.', 5, 1),
-    (13, 'What are the primary design issues for names in programming languages? Also suggest some possible solutions for the said issues.', 5, 1),
-    (13, 'Write an evaluation of C++ programming language using the different language evaluation criteria.', 10, 1),
-    (13, 'What is attribute grammar? Write the formal definition of finding different attributes in attribute grammar with suitable examples. Write how type combatability in assignment statement is verified using attribute grammar.', 10, 1),
-    (13, 'What is binding? Discuss any five types of binding times with simple C program statements.', 10, 1),
-    (13, 'Discuss the classification of variables according to their life time.', 10, 1),
-    (13, 'What are coroutines? Distinguish between coroutines and subroutines with necessary diagrams.', 5, 1),
-    (13, 'What are the advantages and disadvantages of using inheritance?', 5, 1),
-    (13, 'Distinguish between LET and LAMBDA expression with suitable examples.', 5, 1),
-    (13, 'Write a Scheme function that counts the number of zero elements in a given simple list.', 5, 1),
-    (13, 'Compare different implementation models of parameter passing with suitable examples.', 10, 1),
-    (13, 'How are heap allocated objects allocated and deallocated in C++ and Java? Under what circumstances a C++ method call dynamically bounds to a method? Explain with suitable example.', 10, 1),
-    (13, 'Explain the use of CONS, APPEND, MAPCAR, COND and MEMBER functions with examples.', 10, 1),
-    (13, 'Differentiate between static semantics and dynamic semantics in programming languages.', 2, 1),
-    (13, 'Discuss the concepts of scope and lifetime of variables in programming languages.', 2, 1),
-    (13, 'What is the purpose of exception handling in programming? How does exception handling differ between C++ and Java?', 2, 1),
-    (13, 'Differentiate between checked and unchecked exceptions in Java.', 2, 1),
-    (13, 'Explain the design issues involved in various constructs of object-oriented programming language.', 2, 1),
-    (13, 'Explain the different programming domains and discuss the criteria used for evaluating a programming language. Highlight the significance of readability, writability and reliability in language evaluation.', 10, 1),
-    (13, 'Explain the concept of Attribute Grammars in the context of formal methods for describing the syntax of programming languages. How do attribute grammars enhance context-free grammars? Illustrate with an example.', 10, 1),
-    (13, 'Explain the three semantics models of parameter passing when physical moves are used. How the various implementation models of parameter passing are actually implemented?', 10, 1),
-    (13, 'Describe the stack contents for the points labelled 1, 2, and 3 with activation record instances for the given program with functions fun1, fun2, fun3 and main.', 10, 1),
-    (13, 'Explain the concepts of data abstraction and encapsulation in object-oriented programming. How do these concepts contribute to the security and modularity of a software system?', 10, 1),
-    (13, 'Differentiate between static and dynamic polymorphism in object-oriented programming. Provide examples in C++ or Java to show how both types of polymorphism can be implemented.', 10, 1),
-    (13, 'Explain Lambda Calculus and its role in functional programming languages.', 10, 1),
-    (13, 'Explain the key features of Prolog as a logic programming language.', 10, 1)
-ON DUPLICATE KEY UPDATE frequency = frequency + VALUES(frequency);
-
--- Subject 14: Python for Machine Learning (Semester 4)
--- Merged from original subject 18 (Python ML Sem3 → now Sem4) and subject 11 (Python questions mislabeled under NST Sem3)
-INSERT INTO questions (subject_id, question_text, marks, frequency) VALUES
-    (14, 'With diagram, explain the steps in interpreting a Python program.', 4, 2),
-    (14, 'Explain the differences between the data types int and float with example code for reading and printing values of these datatypes.', 4, 2),
-    (14, 'Write a program that calculates and prints the number of minutes in a month chosen by the user.', 4, 2),
-    (14, 'With example code, explain the difference between Lazy Evaluation and Short Circuit Evaluation.', 4, 2),
-    (14, 'Write a Python program using indefinite iteration to calculate the factorial of an integer.', 4, 2),
-    (14, 'Write a Python program to get the name and marks (out of 100) of 5 students from a user and calculate the total marks and average marks. Identify and explain the datatypes used to store the variables used in the above program with syntax for input and output operations.', 10, 1),
-    (14, 'Write a Python program to calculate the attendance percentage of a student for a year of 300 working days following the waterfall model for software development.', 10, 1),
-    (14, 'Explain selection in Python with diagrams of its working and example programs.', 10, 1),
-    (14, 'Write a Python program to encrypt a string with Caesar cipher with the distance value provided by user. Explain output with diagram.', 5, 1),
-    (14, 'Write a Python program to convert a binary number to its octal form and decimal form.', 5, 1),
-    (14, 'Explain escape sequences in Python. Explain the different formatted print commands in Python with suitable examples.', 4, 1),
-    (14, 'Explain the precedence rule in arithmetic expressions. What are the rules for a valid variable name in Python?', 4, 1),
-    (14, 'Write a Python program to calculate the sum of the digits present in a user entered string. Input: Python62#prog111new$@world08, Output: 19.', 4, 1),
-    (14, 'Predict the output of the code: def Changer(P, Q=10): P=P/Q; Q=P%Q; return P. A=200, B=20, A=Changer(A,B). Also convert 209.375 (decimal) to hexadecimal.', 4, 1),
-    (14, 'With the help of an example explain in detail positional and keyword arguments in Python functions.', 4, 1),
-    (14, 'Predict the output of the following: haystack = "Hay hay hay hey needle nah nah nah nah, hey hey, goodbye." Then find the substring starting at ''needle''.', 2, 1),
-    (14, 'Write a Python program to print a pyramid pattern.', 3, 1),
-    (14, 'What is a break, continue and pass statement in Python?', 3, 1),
-    (14, 'Write a while loop that computes the factorial of a given integer N.', 2, 1),
-    (14, 'Predict the output of the following string slicing operations on s = ''pythonisfun''.', 2, 1),
-    (14, 'Write a Python program to print the Fibonacci series.', 3, 1),
-    (14, 'Are strings mutable or immutable in Python? Explain the string functions split() and join() with examples.', 2, 1),
-    (14, 'Write a function calculation() that accepts two user entered int variables and calculates the total digits in both variables and sum of digits in both variables.', 3, 1),
-    (14, 'With the help of a diagram, explain the various stages in the Software Development Life Cycle with Waterfall Model.', 6, 1),
-    (14, 'Explain the various control flow statements in Python.', 4, 1)
+    (13, 'With diagram, explain the steps in interpreting a Python program.', 4, 2),
+    (13, 'Explain the differences between the data types int and float with example code for reading and printing values of these datatypes.', 4, 2),
+    (13, 'Write a program that calculates and prints the number of minutes in a month chosen by the user.', 4, 2),
+    (13, 'With example code, explain the difference between Lazy Evaluation and Short Circuit Evaluation.', 4, 2),
+    (13, 'Write a Python program using indefinite iteration to calculate the factorial of an integer.', 4, 2),
+    (13, 'Write a Python program to get the name and marks (out of 100) of 5 students from a user and calculate the total marks and average marks. Identify and explain the datatypes used to store the variables used in the above program with syntax for input and output operations.', 10, 1),
+    (13, 'Write a Python program to calculate the attendance percentage of a student for a year of 300 working days following the waterfall model for software development.', 10, 1),
+    (13, 'Explain selection in Python with diagrams of its working and example programs.', 10, 1),
+    (13, 'Write a Python program to encrypt a string with Caesar cipher with the distance value provided by user. Explain output with diagram.', 5, 1),
+    (13, 'Write a Python program to convert a binary number to its octal form and decimal form.', 5, 1),
+    (13, 'Explain escape sequences in Python. Explain the different formatted print commands in Python with suitable examples.', 4, 1),
+    (13, 'Explain the precedence rule in arithmetic expressions. What are the rules for a valid variable name in Python?', 4, 1),
+    (13, 'Write a Python program to calculate the sum of the digits present in a user entered string. Input: Python62#prog111new$@world08, Output: 19.', 4, 1),
+    (13, 'Predict the output of the code: def Changer(P, Q=10): P=P/Q; Q=P%Q; return P. A=200, B=20, A=Changer(A,B). Also convert 209.375 (decimal) to hexadecimal.', 4, 1),
+    (13, 'With the help of an example explain in detail positional and keyword arguments in Python functions.', 4, 1),
+    (13, 'Predict the output of the following: haystack = "Hay hay hay hey needle nah nah nah nah, hey hey, goodbye." Then find the substring starting at ''needle''.', 2, 1),
+    (13, 'Write a Python program to print a pyramid pattern.', 3, 1),
+    (13, 'What is a break, continue and pass statement in Python?', 3, 1),
+    (13, 'Write a while loop that computes the factorial of a given integer N.', 2, 1),
+    (13, 'Predict the output of the following string slicing operations on s = ''pythonisfun''.', 2, 1),
+    (13, 'Write a Python program to print the Fibonacci series.', 3, 1),
+    (13, 'Are strings mutable or immutable in Python? Explain the string functions split() and join() with examples.', 2, 1),
+    (13, 'Write a function calculation() that accepts two user entered int variables and calculates the total digits in both variables and sum of digits in both variables.', 3, 1),
+    (13, 'With the help of a diagram, explain the various stages in the Software Development Life Cycle with Waterfall Model.', 6, 1),
+    (13, 'Explain the various control flow statements in Python.', 4, 1)
 ON DUPLICATE KEY UPDATE frequency = frequency + VALUES(frequency);
