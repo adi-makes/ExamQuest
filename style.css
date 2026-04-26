@@ -221,7 +221,7 @@ ul, ol {
    =================================================== */
 .card {
     background: var(--color-surface);
-    border-radius: var(--radius-lg);
+    border-radius: var(--radius-xl);
     border: 1px solid var(--color-border);
     box-shadow: var(--shadow-card);
     padding: var(--space-lg);
@@ -926,17 +926,18 @@ ul, ol {
    =================================================== */
 .hero {
     text-align: center;
-    padding: 64px var(--space-lg) var(--space-xl);
+    padding: 72px var(--space-lg) 48px;
 }
 
 .hero__eyebrow {
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    padding: 6px 14px;
+    padding: 6px 16px;
     border-radius: var(--radius-full);
     background: var(--color-chip-bg);
     color: var(--color-chip-text);
+    border: 1px solid #C7D2FE;
     font-size: 11px;
     font-weight: 600;
     letter-spacing: 0.08em;
@@ -945,7 +946,7 @@ ul, ol {
 }
 
 .hero__title {
-    font-size: 36px;
+    font-size: 38px;
     font-weight: 700;
     color: var(--color-on-surface);
     line-height: 1.2;
@@ -957,17 +958,18 @@ ul, ol {
 .hero__sub {
     font-size: 16px;
     color: var(--color-secondary-text);
-    max-width: 440px;
-    margin: 0 auto var(--space-xl);
-    line-height: 1.6;
+    max-width: 460px;
+    margin: 0 auto 32px;
+    line-height: 1.65;
 }
 
 .filter-card {
-    max-width: 460px;
+    max-width: 480px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
     gap: var(--space-md);
+    padding: 28px 28px 20px;
 }
 
 .filter-card__note {
@@ -996,26 +998,32 @@ ul, ol {
     max-width: 1024px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 7fr 5fr;
+    grid-template-columns: 1.2fr 1fr;
     grid-template-rows: auto auto;
-    gap: var(--space-md);
+    gap: 18px;
 }
 
 .feature-card {
-    border-radius: var(--radius-lg);
+    border-radius: var(--radius-xl);
     border: 1px solid var(--color-border);
     padding: var(--space-lg);
     box-shadow: var(--shadow-card);
+    transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.feature-card:hover {
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-2px);
 }
 
 .feature-card--hero {
     grid-row: span 2;
-    background: var(--color-primary);
-    border-color: var(--color-primary);
+    background: linear-gradient(145deg, #0F172A 0%, #1E3A8A 50%, #2563EB 100%);
+    border-color: transparent;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    min-height: 220px;
+    min-height: 240px;
     position: relative;
     overflow: hidden;
 }
@@ -1024,8 +1032,9 @@ ul, ol {
     content: '';
     position: absolute;
     inset: 0;
-    background: radial-gradient(ellipse at 20% 50%, rgba(255,255,255,0.1) 0%, transparent 60%),
-                radial-gradient(ellipse at 80% 20%, rgba(255,255,255,0.08) 0%, transparent 50%);
+    background: radial-gradient(ellipse at 15% 85%, rgba(96,165,250,0.18) 0%, transparent 55%),
+                radial-gradient(ellipse at 85% 15%, rgba(255,255,255,0.06) 0%, transparent 45%),
+                radial-gradient(ellipse at 50% 50%, rgba(37,99,235,0.12) 0%, transparent 70%);
 }
 
 .feature-card--hero .feature-card__content {
@@ -1034,16 +1043,18 @@ ul, ol {
 }
 
 .feature-card--hero h3 {
-    font-size: 20px;
+    font-size: 22px;
     font-weight: 700;
     color: #ffffff;
-    margin-bottom: var(--space-sm);
+    margin-bottom: 10px;
+    line-height: 1.25;
+    letter-spacing: -0.02em;
 }
 
 .feature-card--hero p {
     font-size: 14px;
-    color: rgba(255,255,255,0.85);
-    line-height: 1.6;
+    color: rgba(255,255,255,0.78);
+    line-height: 1.65;
 }
 
 .feature-card--white {
@@ -1051,14 +1062,15 @@ ul, ol {
 }
 
 .feature-card__icon {
-    width: 40px;
-    height: 40px;
-    border-radius: var(--radius-md);
+    width: 44px;
+    height: 44px;
+    border-radius: var(--radius-lg);
     background: var(--color-chip-bg);
     display: flex;
     align-items: center;
     justify-content: center;
     margin-bottom: var(--space-sm);
+    flex-shrink: 0;
 }
 
 .feature-card__icon svg {
@@ -1068,22 +1080,24 @@ ul, ol {
 }
 
 .feature-card--white h3 {
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 600;
     color: var(--color-on-surface);
     margin-bottom: var(--space-xs);
+    line-height: 1.3;
 }
 
 .feature-card--white p {
     font-size: 13px;
     color: var(--color-secondary-text);
-    line-height: 1.6;
+    line-height: 1.65;
 }
 
 .feature-tag-row {
     display: flex;
     gap: var(--space-xs);
     margin-top: var(--space-sm);
+    flex-wrap: wrap;
 }
 
 /* ===================================================
@@ -1211,11 +1225,13 @@ ul, ol {
 
     .features__grid {
         grid-template-columns: 1fr 1fr;
+        gap: 14px;
     }
 
     .feature-card--hero {
         grid-column: span 2;
         grid-row: span 1;
+        min-height: 180px;
     }
 }
 
@@ -1246,16 +1262,18 @@ ul, ol {
     }
 
     .hero__title {
-        font-size: 28px;
+        font-size: 26px;
     }
 
     .features__grid {
         grid-template-columns: 1fr;
+        gap: 12px;
     }
 
     .feature-card--hero {
         grid-column: span 1;
-        min-height: 180px;
+        grid-row: span 1;
+        min-height: 160px;
     }
 
     .footer {

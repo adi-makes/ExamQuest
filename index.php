@@ -43,9 +43,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <a href="index.php" class="nav__brand">ExamQuest</a>
         <div class="nav__links">
             <a href="index.php" class="active">Home</a>
-            <a href="subject.php">Subjects</a>
-            <a href="admin.php">Admin</a>
-            <a href="about.php">About</a>
         </div>
     </div>
 </nav>

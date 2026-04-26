@@ -96,17 +96,6 @@ function getSubjectIconSvg(string $name): string {
         <a href="index.php" class="nav__brand">ExamQuest</a>
         <div class="nav__links">
             <a href="index.php">Home</a>
-            <a href="subject.php" class="active">Subjects</a>
-            <a href="admin.php">Admin</a>
-            <a href="about.php">About</a>
-        </div>
-        <div class="nav__actions">
-            <button class="nav__icon-btn" title="Search" aria-label="Search">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-            </button>
-            <button class="nav__icon-btn" title="Account" aria-label="Account">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-            </button>
         </div>
     </div>
 </nav>

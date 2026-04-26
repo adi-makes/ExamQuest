@@ -116,9 +116,6 @@ $form = [
         <a href="index.php" class="nav__brand">ExamQuest</a>
         <div class="nav__links">
             <a href="index.php">Home</a>
-            <a href="subject.php">Subjects</a>
-            <a href="admin.php" class="active">Admin</a>
-            <a href="about.php">About</a>
         </div>
     </div>
 </nav>
