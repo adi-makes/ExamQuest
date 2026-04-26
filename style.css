@@ -1,10 +1,16 @@
 /* ===================================================
    1. GOOGLE FONTS
+   Inter is used throughout the UI for its clean, modern
+   look and excellent readability at small sizes.
+   display=swap prevents invisible text during font load.
    =================================================== */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
 /* ===================================================
    2. CSS CUSTOM PROPERTIES (Design Tokens)
+   Centralised variables for every colour, shadow,
+   radius, and spacing value used in the project.
+   Changing a value here updates the entire UI at once.
    =================================================== */
 :root {
     --color-primary:        #2563EB;
@@ -53,6 +59,8 @@
 
 /* ===================================================
    3. RESET & BASE
+   Strips browser default margins/padding and enforces
+   border-box sizing (width includes padding and border).
    =================================================== */
 *, *::before, *::after {
     box-sizing: border-box;
@@ -70,14 +78,14 @@ body {
     line-height: 1.6;
     color: var(--color-on-surface);
     background-color: var(--color-bg);
-    -webkit-font-smoothing: antialiased;
+    -webkit-font-smoothing: antialiased; /* crisper text on macOS/iOS */
     min-height: 100vh;
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* allows the footer to be pushed to the bottom */
 }
 
 main {
-    flex: 1;
+    flex: 1; /* <main> grows to fill remaining height, keeping footer at bottom */
 }
 
 a {
@@ -100,16 +108,21 @@ ul, ol {
 
 /* ===================================================
    4. LAYOUT
+   .container  — standard centred content wrapper (1024px max)
+   .container--narrow — narrow wrapper for single-column forms
+   .form-row   — two-column grid for side-by-side form fields
+   .stats-row  — three-column grid for the stat cards
+   .subject-grid — three-column grid for subject cards
    =================================================== */
 .container {
     width: 100%;
     max-width: 1024px;
-    margin: 0 auto;
+    margin: 0 auto;       /* horizontally centred */
     padding: 0 var(--space-lg);
 }
 
 .container--narrow {
-    max-width: 700px;
+    max-width: 700px; /* used on admin.php to keep the form compact */
 }
 
 .form-row {
@@ -134,11 +147,13 @@ ul, ol {
 
 /* ===================================================
    5. NAVIGATION
+   Sticky bar that stays visible while scrolling.
+   z-index: 100 keeps it above cards and dropdowns.
    =================================================== */
 .nav {
-    position: sticky;
+    position: sticky; /* sticks to the top of the viewport on scroll */
     top: 0;
-    z-index: 100;
+    z-index: 100;     /* ensures nav overlaps page content while scrolling */
     background: var(--color-surface);
     border-bottom: 1px solid var(--color-border);
     padding: 0 var(--space-lg);
@@ -192,32 +207,10 @@ ul, ol {
     border-bottom-color: var(--color-primary);
 }
 
-.nav__actions {
-    display: flex;
-    align-items: center;
-    gap: var(--space-sm);
-}
-
-.nav__icon-btn {
-    width: 36px;
-    height: 36px;
-    border-radius: var(--radius-full);
-    border: 1px solid var(--color-border);
-    background: var(--color-surface);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    color: var(--color-secondary-text);
-    transition: background 0.15s;
-}
-
-.nav__icon-btn:hover {
-    background: var(--color-hover-row);
-}
-
 /* ===================================================
    6. CARDS (base)
+   The base surface element used throughout the app.
+   .card--dashed is the "Can't find subject?" prompt style.
    =================================================== */
 .card {
     background: var(--color-surface);
@@ -228,12 +221,18 @@ ul, ol {
 }
 
 .card--dashed {
-    border-style: dashed;
+    border-style: dashed; /* visually distinct "add / request" prompt card */
     box-shadow: none;
 }
 
 /* ===================================================
    7. BUTTONS
+   Base .btn class with variants:
+     .btn--primary  — filled blue (main CTA)
+     .btn--secondary — light grey (secondary action)
+     .btn--outline  — transparent with border (subtle)
+     .btn--sm       — compact size for card footers
+     .btn--full     — stretches to 100% width
    =================================================== */
 .btn {
     display: inline-flex;
@@ -294,16 +293,6 @@ ul, ol {
     color: var(--color-on-surface);
 }
 
-.btn--pdf {
-    background: #1E40AF;
-    color: #ffffff;
-}
-
-.btn--pdf:hover {
-    background: #1E3A8A;
-    color: #ffffff;
-}
-
 .btn--sm {
     padding: 6px 14px;
     font-size: 13px;
@@ -315,6 +304,11 @@ ul, ol {
 
 /* ===================================================
    8. FORM ELEMENTS
+   .input           — base text / number input style
+   .input--select   — adds the custom dropdown chevron via SVG background-image
+   .input--textarea — taller, resizable variant for the question text field
+   .input-with-icon — wraps an input + a decorative icon span
+   .input--search   — adds a magnifier icon via background-image
    =================================================== */
 .form-group {
     display: flex;
@@ -357,10 +351,12 @@ ul, ol {
 }
 
 .input--select {
+    /* Custom chevron arrow SVG encoded as a data URI replaces the OS-default
+       dropdown arrow, giving a consistent look across all browsers */
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2364748B' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
     background-position: right 12px center;
-    padding-right: 40px;
+    padding-right: 40px; /* space so text doesn't overlap the arrow */
     cursor: pointer;
 }
 
@@ -401,6 +397,11 @@ ul, ol {
 
 /* ===================================================
    9. CHIPS & BADGES
+   .chip     — pill-shaped filter tag (syllabus, branch, semester)
+   .badge    — tiny inline label on question rows
+     .badge--red   → HIGH PRIORITY   (freq >= 5)
+     .badge--blue  → MODERATE        (freq >= 3)
+     .badge--green → LOW PRIORITY    (freq < 3)
    =================================================== */
 .chip {
     display: inline-flex;
@@ -464,6 +465,9 @@ ul, ol {
 
 /* ===================================================
    10. ALERTS
+   Inline notification banners used for success/error feedback.
+   .alert--success — green, shown after a successful DB insert
+   .alert--error   — red, shown when form validation fails
    =================================================== */
 .alert {
     display: flex;
@@ -512,6 +516,9 @@ ul, ol {
 
 /* ===================================================
    11. BREADCRUMB
+   Horizontal navigation trail: Home › Subjects › SUBJECT
+   styled in uppercase small caps to visually separate
+   it from body text.
    =================================================== */
 .breadcrumb {
     display: flex;
@@ -545,7 +552,10 @@ ul, ol {
 }
 
 /* ===================================================
-   12. FILTER BAR
+   12. FILTER BAR & ACTIVE FILTERS
+   .filter-bar      — two-column flex row (chips left, search right)
+   .active-filters  — compact chip row shown on the questions page
+   .link--clear     — plain "Clear All" text link
    =================================================== */
 .filter-bar {
     display: flex;
@@ -608,6 +618,9 @@ ul, ol {
 
 /* ===================================================
    13. SUBJECT CARDS
+   Card components in the subject grid on subject.php.
+   Slight lift on hover (translateY + shadow) gives a
+   tactile feel without heavy animation.
    =================================================== */
 .subject-card {
     display: flex;
@@ -674,6 +687,9 @@ ul, ol {
 
 /* ===================================================
    14. QUESTION TABLE
+   Full-width borderless table inside a .card wrapper.
+   overflow:hidden on the card clips the table corners
+   so they follow the card's border-radius.
    =================================================== */
 .question-table {
     overflow: hidden;
@@ -757,6 +773,9 @@ ul, ol {
 
 /* ===================================================
    15. PAGINATION
+   Row of page number buttons at the bottom of the table.
+   .page-btn--active  — current page (filled blue)
+   .page-btn--ellipsis — non-clickable "…" spacer
    =================================================== */
 .pagination {
     display: flex;
@@ -826,6 +845,9 @@ ul, ol {
 
 /* ===================================================
    16. STATS CARDS
+   Summary cards shown below the question table (questions.php)
+   and below the form (admin.php). Displays a large numeric
+   value with a label and optional note.
    =================================================== */
 .stat-card {
     display: flex;
@@ -884,6 +906,8 @@ ul, ol {
 
 /* ===================================================
    17. EMPTY STATE
+   Centred call-to-action block used when there are no
+   subjects or as the "Can't find your subject?" prompt.
    =================================================== */
 .empty-state {
     text-align: center;
@@ -923,6 +947,9 @@ ul, ol {
 
 /* ===================================================
    18. HERO SECTION (index.php)
+   Full-width centred landing area containing the tagline
+   and the filter card. .filter-card is the white card
+   that wraps the Syllabus / Branch / Semester form.
    =================================================== */
 .hero {
     text-align: center;
@@ -989,6 +1016,9 @@ ul, ol {
 
 /* ===================================================
    19. FEATURES SECTION (index.php)
+   Asymmetric two-column grid of feature cards.
+   .feature-card--hero spans two rows (grid-row: span 2)
+   and uses a dark-blue gradient background.
    =================================================== */
 .features {
     padding: 0 var(--space-lg) var(--space-xl);
@@ -1102,6 +1132,10 @@ ul, ol {
 
 /* ===================================================
    20. PAGE HEADER
+   Two-column flex row: h1 + subtitle on the left,
+   action button on the right.
+   .page-header--centered stacks both columns vertically
+   (used on admin.php).
    =================================================== */
 .page-header {
     padding: var(--space-lg) 0 var(--space-md);
@@ -1133,6 +1167,9 @@ ul, ol {
 
 /* ===================================================
    21. ADMIN FORM
+   Styles scoped to admin.php's question-entry form.
+   .form-actions wraps the submit + reset buttons in a
+   horizontal flex row.
    =================================================== */
 .admin-form {
     margin-bottom: var(--space-lg);
@@ -1150,6 +1187,8 @@ ul, ol {
 
 /* ===================================================
    22. FOOTER
+   Horizontal bar at the bottom of every page.
+   Wraps to a vertical stack on mobile (flex-direction:column).
    =================================================== */
 .footer {
     border-top: 1px solid var(--color-border);
@@ -1190,6 +1229,9 @@ ul, ol {
 
 /* ===================================================
    23. SUBJECT PAGE HEADER
+   Title block at the top of subject.php.
+   Kept separate from .page-header because it doesn't
+   need the flex layout (no right-side button here).
    =================================================== */
 .subjects-header {
     padding: var(--space-md) 0 var(--space-lg);
@@ -1210,13 +1252,19 @@ ul, ol {
 
 /* ===================================================
    24. QUESTIONS PAGE LAYOUT
+   Adds extra bottom padding on questions.php so the
+   stats cards don't sit flush against the footer.
    =================================================== */
 .questions-layout {
     padding-bottom: var(--space-xl);
 }
 
 /* ===================================================
-   25. RESPONSIVE
+   25. RESPONSIVE BREAKPOINTS
+   900px — tablet landscape: subject grid → 2 columns
+   768px — tablet portrait : stacks grids, forms, footer
+   560px — mobile phone    : subject grid → 1 column,
+                             reduced hero padding
    =================================================== */
 @media (max-width: 900px) {
     .subject-grid {
