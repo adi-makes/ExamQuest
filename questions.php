@@ -242,7 +242,6 @@ function pageUrl(int $p): string {
         <!-- Empty state — no questions in the DB for this subject yet -->
         <div class="card" style="text-align:center;padding:48px;color:var(--color-secondary-text);">
             <p>No questions available for this subject yet.</p>
-            <a href="admin.php" class="btn btn--primary" style="margin-top:16px;">Add Questions</a>
         </div>
         <?php else: ?>
         <div class="card question-table">

@@ -1,11 +1,11 @@
 -- =============================================================
 -- ExamQuest Database — Full Setup (CUSAT B.Tech, 2023 Scheme)
 -- =============================================================
--- IMPORTANT for InfinityFree:
---   Do NOT add CREATE DATABASE or USE statements here.
---   Import this file directly via phpMyAdmin into your
---   pre-created InfinityFree database.
--- =============================================================
+
+CREATE DATABASE IF NOT EXISTS examquest_db
+CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+USE examquest_db;
 
 SET FOREIGN_KEY_CHECKS = 0;
 DROP TABLE IF EXISTS questions;

@@ -15,7 +15,7 @@ Students select their **Syllabus → Branch → Semester**, browse the matching 
 | Layer     | Technology                        |
 |-----------|-----------------------------------|
 | Backend   | PHP 8+ (procedural + OOP MySQLi)  |
-| Database  | MySQL 5.7+ / MariaDB              |
+| Database  | MySQL 5.7+                        |
 | Frontend  | Vanilla HTML5, CSS3, JavaScript   |
 | Styling   | Custom CSS with CSS custom properties (no framework) |
 | Fonts     | Google Fonts — Inter              |
@@ -31,7 +31,6 @@ ExamQuest/
 ├── index.php         — Landing page: Syllabus / Branch / Semester selector
 ├── subject.php       — Subject grid for the chosen filter combination
 ├── questions.php     — Paginated question table for a chosen subject
-├── admin.php         — Internal form to add new questions to the database
 ├── style.css         — All CSS (design tokens, layout, components, responsive)
 ├── database.sql      — Full DB schema + seed data (import via phpMyAdmin)
 └── UI_References/    — Design mockups used during development
@@ -126,21 +125,6 @@ A `UNIQUE KEY` on `(subject_id, question_text(500))` prevents duplicate question
 
 ---
 
-## Adding Questions (Admin Panel)
-
-Navigate to `admin.php`. The form presents a cascading dropdown:
-
-1. **Select Syllabus** — choose the regulation year.
-2. **Select Branch** — choose the engineering department.
-3. **Select Semester** — the Subject dropdown is populated in real-time by JavaScript.
-4. **Select Subject** — from the filtered list.
-5. **Enter Question Text**, **Marks**, and **Frequency** (number of past papers it appeared in).
-6. Click **Add Question to Database**.
-
-The page uses the **Post-Redirect-Get (PRG)** pattern: after a successful insert, the browser is redirected to `?success=1` so that refreshing the page doesn't re-submit the form.
-
----
-
 
 ## Key Concepts Demonstrated
 
@@ -149,9 +133,8 @@ The page uses the **Post-Redirect-Get (PRG)** pattern: after a successful insert
 | Relational DB design     | Four normalised tables with foreign keys      |
 | Multi-table JOIN         | `subject.php` — LEFT JOIN to count questions  |
 | Prepared statements      | All user-input queries (prevents SQL injection)|
-| Post-Redirect-Get (PRG)  | `admin.php` — avoids duplicate inserts on F5  |
 | Pagination               | `questions.php` — LIMIT / OFFSET + smart page list |
-| Cascading dropdown (JS)  | `admin.php` — client-side filter of JSON array|
+| Client-side search (JS)  | `subject.php` — real-time subject filtering   |
 | CSS custom properties    | `style.css` — design token system             |
 | Responsive layout        | CSS Grid + three media query breakpoints      |
 | XSS prevention           | `htmlspecialchars()` on every output          |
@@ -159,3 +142,7 @@ The page uses the **Post-Redirect-Get (PRG)** pattern: after a successful insert
 ---
 
 ## Developed as part of DBMS Mini Project — CUSAT B.Tech CSE
+## Abhidev B. Nath
+## Abhijith K. S.
+## Adinath M. C.
+## Adith R. Lal

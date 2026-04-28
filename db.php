@@ -4,19 +4,27 @@
  *
  * Included by every page via require_once 'db.php'.
  * Opens one shared MySQLi connection and stores it in $conn.
- * All DB credentials are defined as constants so they only
- * need to be changed in one place when deploying to a new server.
+ * All DB credentials are defined as constants below.
  *
- * Local (XAMPP)    : host=localhost, user=root, pass='', db=examquest_db
- * Production       : update constants below to match your hosting panel
+ * ✓ LOCAL DEPLOYMENT (XAMPP):
+ *   - Start XAMPP (Apache + MySQL)
+ *   - Run database.sql in phpMyAdmin to create DB
+ *   - Visit http://localhost/examquest/
+ *   - Credentials below are already set for XAMPP defaults
+ *
+ * ✓ PRODUCTION DEPLOYMENT (InfinityFree / Other Hosting):
+ *   - Update the four constants below with your hosting panel credentials
+ *   - Import database.sql via phpMyAdmin into your pre-created database
  */
 
 // ── Connection constants ──────────────────────────────────────────────────────
+// Default values configured for XAMPP local development.
+// Update these when deploying to production.
 
-define('DB_HOST', 'localhost');    // MySQL server (usually 'localhost')
-define('DB_USER', 'root');         // MySQL username
-define('DB_PASS', '');             // Password — blank by default on XAMPP
-define('DB_NAME', 'examquest_db'); // The database created for this project
+define('DB_HOST', 'localhost');    // MySQL server (localhost for XAMPP)
+define('DB_USER', 'root');         // MySQL username (root for XAMPP)
+define('DB_PASS', '');             // Password (empty by default on XAMPP)
+define('DB_NAME', 'examquest_db'); // Database name (created by database.sql)
 
 // ── Open the connection ───────────────────────────────────────────────────────
 // mysqli_connect() returns a connection resource on success, FALSE on failure.
